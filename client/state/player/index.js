@@ -42,10 +42,10 @@ export default function (x, y, game, socket) {
 
       // Drive forward if W is pressed down
       if (isDown(game, KEYS.W) && this.speed <= 400) {
-        this.speed += 100
+        this.speed += 10
       } else {
-        if (this.speed >= 100) {
-          this.speed -= 100
+        if (this.speed >= 10) {
+          this.speed -= 10
         }
       }
 
