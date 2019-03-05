@@ -7,6 +7,7 @@ export default function (x, y, game, socket) {
     sprite: createPlayer(x, y, game),
     playerName: null,
     speed: 0,
+    myVariale: 0,
     speedText: null,
     drive (game) {
       /*
@@ -20,12 +21,23 @@ export default function (x, y, game, socket) {
         W: Phaser.Keyboard.W,
         S: Phaser.Keyboard.S,
         A: Phaser.Keyboard.A,
-        D: Phaser.Keyboard.D
+        D: Phaser.Keyboard.D,
+        F: Phaser.Keyboard.F,
+        G: Phaser.Keyboard.G
       }
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
+      }
+
+      // TJ added F is pressed down
+      if (isDown(game, KEYS.F) && this.speed <= 400) {
+        this.myVariale = 1
+      }
+      // TJ added G is pressed down
+      if (isDown(game, KEYS.G) && this.speed <= 400) {
+        this.myVariale = 0
       }
 
       // Drive forward if W is pressed down
@@ -62,7 +74,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.sprite)
 
       this.updatePlayerName()
-      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
+      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText, this.myVariable)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -90,7 +102,7 @@ export default function (x, y, game, socket) {
       // Bring the player's name to top
       game.world.bringToTop(this.playerName)
     },
-    updatePlayerStatusText (status, x, y, text) {
+    updatePlayerStatusText (status, x, y, text, myVariable) {
       // Capitalize the status text
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
       let newText = ''
@@ -99,7 +111,8 @@ export default function (x, y, game, socket) {
       // Updates the text position and string
       text.x = x
       text.y = y
-      text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
+      //text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` TJ changed speed text to show myVariable instead of newText
+      text.text = `${capitalizedStatus}: ${parseInt(this.myVariable)}`
       game.world.bringToTop(text)
     }
   }
