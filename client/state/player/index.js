@@ -1,6 +1,6 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
-
+//TJ discoveries, things I change in this file dont seem to reflect on the herokuapp
 export default function (x, y, game, socket) {
   const player = {
     socket,
