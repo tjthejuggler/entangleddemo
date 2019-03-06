@@ -33,11 +33,11 @@ export default function (x, y, game, socket) {
 
       // TJ added F is pressed down
       if (isDown(game, KEYS.F) && this.speed <= 400) {
-        this.myVariale = 1
+        this.myVariable = 1
       }
       // TJ added G is pressed down
       if (isDown(game, KEYS.G) && this.speed <= 400) {
-        this.myVariale = 0
+        this.myVariable = 0
       }
 
       // Drive forward if W is pressed down
@@ -74,7 +74,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.sprite)
 
       this.updatePlayerName()
-      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText, 'x')
+      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText, this.myVariable)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -113,7 +113,7 @@ export default function (x, y, game, socket) {
       text.x = x
       text.y = y
       //text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
-      text.text = `speeeeeeed2: ${this.myVariable}`
+      text.text = `speeeeeeed2: ${parseInt(myVariable)}`
       game.world.bringToTop(text)
     }
   }
