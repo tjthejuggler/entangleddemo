@@ -94,7 +94,8 @@ export default function (x, y, game, socket) {
         }
       })
     },
-    updatePlayerName (name = this.socket.id, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
+    //updatePlayerName (name = this.socket.id, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
+    updatePlayerName (name = this.myVariable, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
       // Updates the player's name text and position
       this.playerName.text = String(name)
       this.playerName.x = x
