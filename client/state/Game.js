@@ -7,7 +7,7 @@ import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 
-const SERVER_IP = 'https://simple-car-game.herokuapp.com/'
+const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
 
@@ -24,6 +24,7 @@ class Game extends Phaser.State {
 
   create () {
     const { width, height } = WORLD_SIZE
+
     // Creates the world
     createWorld(this.game)
     // Connects the player to the server
