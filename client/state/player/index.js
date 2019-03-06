@@ -7,7 +7,7 @@ export default function (x, y, game, socket) {
     sprite: createPlayer(x, y, game),
     playerName: null,
     speed: 0,
-    //myVariale: 0,
+    myVariale: 0,
     speedText: null,
     drive (game) {
       /*
@@ -21,9 +21,9 @@ export default function (x, y, game, socket) {
         W: Phaser.Keyboard.W,
         S: Phaser.Keyboard.S,
         A: Phaser.Keyboard.A,
-        D: Phaser.Keyboard.D
-        // F: Phaser.Keyboard.F,
-        // G: Phaser.Keyboard.G
+        D: Phaser.Keyboard.D,
+        F: Phaser.Keyboard.F,
+        G: Phaser.Keyboard.G
       }
 
       // Only emit if the player is moving
@@ -31,14 +31,14 @@ export default function (x, y, game, socket) {
         this.emitPlayerData()
       }
 
-      // // TJ added F is pressed down
-      // if (isDown(game, KEYS.F) && this.speed <= 400) {
-      //   this.myVariale = 1
-      // }
-      // // TJ added G is pressed down
-      // if (isDown(game, KEYS.G) && this.speed <= 400) {
-      //   this.myVariale = 0
-      // }
+      // TJ added F is pressed down
+      if (isDown(game, KEYS.F) && this.speed <= 400) {
+        this.myVariale = 1
+      }
+      // TJ added G is pressed down
+      if (isDown(game, KEYS.G) && this.speed <= 400) {
+        this.myVariale = 0
+      }
 
       // Drive forward if W is pressed down
       if (isDown(game, KEYS.W) && this.speed <= 400) {
@@ -112,8 +112,8 @@ export default function (x, y, game, socket) {
       // Updates the text position and string
       text.x = x
       text.y = y
-      text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
-      //text.text = `speeeeeeed: ${parseInt(this.myVariable)}`
+      //text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
+      text.text = `speeeeeeed: ${parseInt(this.myVariable)}`
       game.world.bringToTop(text)
     }
   }
