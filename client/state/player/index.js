@@ -7,7 +7,7 @@ export default function (x, y, game, socket) {
     sprite: createPlayer(x, y, game),
     playerName: null,
     speed: 0,
-    myVariale: 0,
+    myVariable: 0,
     speedText: null,
     drive (game) {
       /*
@@ -112,8 +112,8 @@ export default function (x, y, game, socket) {
       // Updates the text position and string
       text.x = x
       text.y = y
-      text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
-      //text.text = `speeeeeeed2: ${parseInt(myVariable)}`
+      //text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
+      text.text = `speeeeeeed2: ${parseInt(myVariable)}`
       game.world.bringToTop(text)
     }
   }
