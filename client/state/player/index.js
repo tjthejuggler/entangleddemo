@@ -74,7 +74,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.sprite)
 
       this.updatePlayerName()
-      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText, this.myVariable)
+      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText, 'x')
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
