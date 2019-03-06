@@ -113,7 +113,7 @@ export default function (x, y, game, socket) {
       text.x = x
       text.y = y
       //text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
-      text.text = `speeeeeeed: ${parseInt(this.myVariable)}`
+      text.text = `speeeeeeed2: ${this.myVariable}`
       game.world.bringToTop(text)
     }
   }
