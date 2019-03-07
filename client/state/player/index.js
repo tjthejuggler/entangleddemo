@@ -111,7 +111,7 @@ export default function (x, y, game, socket) {
     updatePlayerStatusText (status, x, y, text, mySentVariable) {
       // Capitalize the status text
       //const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
-      const capitalizedStatus = mySentVariable.toString()
+      const capitalizedStatus = this.myVariable.toString()
       let newText = ''
       // Set the speed text to either 0 or the current speed
       this[status] < 0 ? this.newText = 0 : this.newText = this[status]
