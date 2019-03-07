@@ -77,7 +77,7 @@ export default function (x, y, game, socket) {
       //TJ's observations on this 'speedMINE' and 'speedOTHERS'(playerMovementInterpolation):
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
-      this.updatePlayerStatusText('speedMINE', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
+      this.updatePlayerStatusText('speedMINE', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText, this.myVariable)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -108,7 +108,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.playerName)
     },
     //updatePlayerStatusText (status, x, y, text, myVariable) {
-    updatePlayerStatusText (status, x, y, text) {
+    updatePlayerStatusText (status, x, y, text, mySentVariable) {
       // Capitalize the status text
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
       let newText = ''
@@ -117,6 +117,7 @@ export default function (x, y, game, socket) {
       // Updates the text position and string
       text.x = x
       text.y = y
+      newText = mySentVariable.toString()
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
       //text.text = `speeeeeeed2: ${parseInt(this.myVariable)}`
       game.world.bringToTop(text)
