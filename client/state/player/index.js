@@ -32,11 +32,11 @@ export default function (x, y, game, socket) {
       }
 
       // TJ added F is pressed down
-      if (isDown(game, KEYS.F) && this.speed <= 400) {
+      if (isDown(game, KEYS.F)) {
         this.myVariable = 1
       }
       // TJ added G is pressed down
-      if (isDown(game, KEYS.G) && this.speed <= 400) {
+      if (isDown(game, KEYS.G)) {
         this.myVariable = 0
       }
 
@@ -74,6 +74,9 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.sprite)
 
       this.updatePlayerName()
+      //TJ's observations on this 'speedMINE' and 'speedOTHERS'(playerMovementInterpolation):
+      //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
+      //  All players see themseleves as speedMINE
       this.updatePlayerStatusText('speedMINE', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
     },
     emitPlayerData () {
