@@ -34,17 +34,10 @@ export default function (x, y, game, socket) {
       // TJ added F is pressed down
       if (isDown(game, KEYS.F)) {
         this.myVariable = 1
-        playerName: {
-          name: this.myVariable
-        }
-
       }
       // TJ added G is pressed down
       if (isDown(game, KEYS.G)) {
         this.myVariable = 0
-                playerName: {
-          name: this.myVariable
-        }
       }
 
       // Drive forward if W is pressed down
@@ -93,7 +86,7 @@ export default function (x, y, game, socket) {
         y: this.sprite.body.y,
         angle: this.sprite.body.rotation,
         playerName: {
-          name: this.playerName.text,
+          name: this.myVariable,
           x: this.playerName.x,
           y: this.playerName.y
         },
