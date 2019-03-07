@@ -86,7 +86,7 @@ export default function (x, y, game, socket) {
         y: this.sprite.body.y,
         angle: this.sprite.body.rotation,
         playerName: {
-          name: this.myVariable,
+          name: this.myVariable.text,
           x: this.playerName.x,
           y: this.playerName.y
         },
