@@ -81,7 +81,7 @@ export default function (x, y, game, socket) {
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
       this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
-      this.updatePlayerStatusText('myVariable', this.sprite.body.x - 157, this.sprite.body.y - 139, this.myVariableText)
+      //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 157, this.sprite.body.y - 139, this.myVariableText)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -137,8 +137,6 @@ export default function (x, y, game, socket) {
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
       //const capitalizedStatus = this.myVariable.toString()
       let newText = ''
-      // Set the speed text to either 0 or the current speed
-      this[status] < 0 ? this.newText = 0 : this.newText = this[status]
       //this.newText = this['myVariable']
       // Updates the text position and string
       text.x = x
