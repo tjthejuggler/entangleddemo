@@ -81,7 +81,7 @@ export default function (x, y, game, socket) {
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
       this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
-      //this.updatePlayerStatusTextMyVariable('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.myVariableText)
+      //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.myVariableText)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -124,21 +124,6 @@ export default function (x, y, game, socket) {
       // Set the speed text to either 0 or the current speed
       this[status] < 0 ? this.newText = 0 : this.newText = this[status]
       //this.newText = this['myVariable']
-      // Updates the text position and string
-      text.x = x
-      text.y = y
-      //this.newText = mySentVariable.toString()
-      text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
-      //text.text = `speeeeeeed2: ${parseInt(this.myVariable)}`
-      game.world.bringToTop(text)
-    },
-        updatePlayerStatusTextMyVariable (status, x, y, text) {
-      // Capitalize the status text
-      const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
-      //const capitalizedStatus = this.myVariable.toString()
-      let newText = ''
-      //this.newText = this['myVariable']
-      this[status] < 0 ? this.newText = 0 : this.newText = this[status]
       // Updates the text position and string
       text.x = x
       text.y = y
