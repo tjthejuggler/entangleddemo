@@ -30,7 +30,7 @@ const playerMovementInterpolation = otherPlayers => {
 
 //TODO NEXT
       //THE SPEED TEXT IS STAYING IN ONE PLACE!!
-      player.updatePlayerStatusText('speed', player.speedText.x, player.speedText.y, player.speedText)
+      player.updatePlayerStatusText('myVariable', player.speedText.x, player.speedText.y, player.speedText)
       
 
     }
