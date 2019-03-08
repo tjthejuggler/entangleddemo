@@ -35,6 +35,8 @@ class Game extends Phaser.State {
     this.player.playerName = createText(this.game, this.player.sprite.body)
     // Creates the player speed text
     this.player.speedText = createText(this.game, this.player.sprite.body)
+        // Creates the player myVariable text
+    this.player.myVariableText = createText(this.game, this.player.sprite.body)//TJ added this
 
     // Sends a new-player event to the server
     newPlayer(socket, this.player)

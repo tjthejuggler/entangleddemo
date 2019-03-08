@@ -126,6 +126,22 @@ export default function (x, y, game, socket) {
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
       //text.text = `speeeeeeed2: ${parseInt(this.myVariable)}`
       game.world.bringToTop(text)
+    },
+        updatePlayerStatusTextMyVariable (status, x, y, text) {
+      // Capitalize the status text
+      const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
+      //const capitalizedStatus = this.myVariable.toString()
+      let newText = ''
+      // Set the speed text to either 0 or the current speed
+      this[status] < 0 ? this.newText = 0 : this.newText = this[status]
+      //this.newText = this['myVariable']
+      // Updates the text position and string
+      text.x = x
+      text.y = y
+      //this.newText = mySentVariable.toString()
+      text.text = `${capitalizedStatus}: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
+      //text.text = `speeeeeeed2: ${parseInt(this.myVariable)}`
+      game.world.bringToTop(text)
     }
 
   }
