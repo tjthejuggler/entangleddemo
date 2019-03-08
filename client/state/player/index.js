@@ -1,6 +1,6 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
-//TJ discoveries, things I change in this file dont seem to reflect on the herokuapp
+
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -9,6 +9,7 @@ export default function (x, y, game, socket) {
     speed: 0,
     myVariable: 0,
     speedText: null,
+    myVariableText: null,
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
@@ -78,6 +79,7 @@ export default function (x, y, game, socket) {
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
       this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
+      this.updatePlayerStatusText('myVariable', this.sprite.body.x - 157, this.sprite.body.y - 139, this.myVariableText)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
@@ -86,8 +88,7 @@ export default function (x, y, game, socket) {
         y: this.sprite.body.y,
         angle: this.sprite.body.rotation,
         playerName: {
-          //name: this.playerName.text,
-          name: this.myVariable.text,
+          name: this.playerName.text,
           x: this.playerName.x,
           y: this.playerName.y
         },
@@ -97,7 +98,9 @@ export default function (x, y, game, socket) {
           y: this.speedText.y
         },
         myVariable: {
-          value: this.myVariable
+          value: this.myVariable,
+          x: this.myVariableText.x,
+          y: this.myVariableText.y
         }
       })
     },
