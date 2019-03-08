@@ -111,7 +111,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.playerName)
     },
     //updatePlayerStatusText (status, x, y, text, myVariable) {
-    updatePlayerStatusText (status, x, y, text, mySentVariable) {
+    updatePlayerStatusText (status, x, y, text) {
       // Capitalize the status text
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1)
       //const capitalizedStatus = this.myVariable.toString()
@@ -127,6 +127,7 @@ export default function (x, y, game, socket) {
       //text.text = `speeeeeeed2: ${parseInt(this.myVariable)}`
       game.world.bringToTop(text)
     }
+
   }
   return player
 }
