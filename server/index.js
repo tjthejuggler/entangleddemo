@@ -46,6 +46,11 @@ io.on('connection', socket => {
       x: speed.x,
       y: speed.y
     }
+    players[socket.id].myVariable = {
+      value: myVariable.value,
+      x: myVariable.x,
+      y: myVariable.y
+    }
 
     // Send the data back to the client
     io.emit('update-players', players)
