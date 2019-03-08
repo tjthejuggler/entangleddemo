@@ -32,6 +32,8 @@ const updatePlayers = (socket, otherPlayers, game) => {
         otherPlayers[index].speedText.target_x = data.speed.x
         otherPlayers[index].speedText.target_y = data.speed.y
 
+        otherPlayers[index].myVariable = data.myVariable.value
+
         otherPlayers[index].speed = data.speed.value
       }
     }
@@ -42,6 +44,7 @@ const updatePlayers = (socket, otherPlayers, game) => {
         otherPlayers[id].sprite.destroy()
         otherPlayers[id].playerName.destroy()
         otherPlayers[id].speedText.destroy()
+        otherPlayers[id].myVariable.destroy()//TJ added this
         delete otherPlayers[id]
       }
     }
