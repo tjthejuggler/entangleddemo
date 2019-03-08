@@ -35,12 +35,12 @@ export default function (x, y, game, socket) {
       // TJ added F is pressed down
       if (isDown(game, KEYS.F)) {
         this.myVariable = 1
-        this.emitPlayerData()
+        //this.emitPlayerData()
       }
       // TJ added G is pressed down
       if (isDown(game, KEYS.G)) {
         this.myVariable = 0
-        this.emitPlayerData()
+        //this.emitPlayerData()
       }
 
       // Drive forward if W is pressed down
