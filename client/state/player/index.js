@@ -81,7 +81,7 @@ export default function (x, y, game, socket) {
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
       this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
-      this.updatePlayerStatusText('myVariable', this.sprite.body.x - 157, this.sprite.body.y - 139, this.myVariableText)
+      //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 157, this.sprite.body.y - 139, this.myVariableText)
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server

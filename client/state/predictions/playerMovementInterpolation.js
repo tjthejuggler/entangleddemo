@@ -28,7 +28,10 @@ const playerMovementInterpolation = otherPlayers => {
       //player.updatePlayerStatusText(player.myVariable.toString(), player.speedText.x, player.speedText.y, player.speedText)
       player.updatePlayerStatusText('speed', player.speedText.x, player.speedText.y, player.speedText)
 
-      player.updatePlayerStatusTextMyVariable('myVariable', player.myVariableText.x, player.myVariableText.y, player.myVariableText)
+      //player.updatePlayerStatusTextMyVariable('myVariable', player.myVariableText.x, player.myVariableText.y, player.myVariableText)
+      
+
+
       //player.updatePlayerStatusText('speed', player.speedText.x, player.speedText.y, player.myVariable.toString())
     }
   }
