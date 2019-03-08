@@ -95,6 +95,9 @@ export default function (x, y, game, socket) {
           value: this.speed,
           x: this.speedText.x,
           y: this.speedText.y
+        },
+        myVariable: {
+          value: this.myVariable.text
         }
       })
     },
