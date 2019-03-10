@@ -65,7 +65,7 @@ class Game extends Phaser.State {
         // Creates the player myVariable text
     this.player.myVariableText = createText(this.game, this.player.sprite.body)//TJ added this
 
-    alert(countPlayers().toString());
+
 
     // Sends a new-player event to the server
     newPlayer(socket, this.player)
@@ -78,6 +78,8 @@ class Game extends Phaser.State {
 
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
+
+    alert(countPlayers().toString());
   }
 
   update () {
