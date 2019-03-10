@@ -5,6 +5,7 @@ import createWorld from './world/createWorld'
 import player from './player'
 import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
+import countPlayers from './sockets/countPlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 //SIMPLEST VERSION REQUIREMENTS:
 //  -when second user joins, both users get 10 particles, each a part of a pair of entangled particles
@@ -47,10 +48,7 @@ class Game extends Phaser.State {
   }
 
   create () {
-    if (typeof otherPlayers !== 'undefined' && otherPlayers.length > 0) {
-        alert(otherPlayers.length.toString());
-    // the array is defined and has at least one element
-}
+
     
     const { width, height } = WORLD_SIZE
 
@@ -66,6 +64,8 @@ class Game extends Phaser.State {
     this.player.speedText = createText(this.game, this.player.sprite.body)
         // Creates the player myVariable text
     this.player.myVariableText = createText(this.game, this.player.sprite.body)//TJ added this
+
+    alert(countPlayers().toString());
 
     // Sends a new-player event to the server
     newPlayer(socket, this.player)
