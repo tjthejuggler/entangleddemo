@@ -47,8 +47,11 @@ class Game extends Phaser.State {
   }
 
   create () {
-    var myNums = [1,2,3]
-    alert(otherPlayers.length.toString());
+    if (typeof otherPlayers !== 'undefined' && otherPlayers.length > 0) {
+        alert(otherPlayers.length.toString());
+    // the array is defined and has at least one element
+}
+    
     const { width, height } = WORLD_SIZE
 
     // Creates the world
