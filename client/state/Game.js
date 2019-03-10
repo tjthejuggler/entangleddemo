@@ -47,7 +47,8 @@ class Game extends Phaser.State {
   }
 
   create () {
-    alert("hi2");
+    var myNums = [1,2,3]
+    alert(myNums.length.toString());
     const { width, height } = WORLD_SIZE
 
     // Creates the world
