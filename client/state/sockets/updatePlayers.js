@@ -1,5 +1,6 @@
 import player from './../player'
 import { createText } from '../utils'
+//RIGHT NOW THE FIRST PLAYER DOESNT GET TO SEE SECOND PLAYERS SPEED OR MYVARIABLE
 const updatePlayers = (socket, otherPlayers, game) => {
   socket.on('update-players', playersData => {
     let playersFound = {}
@@ -8,7 +9,6 @@ const updatePlayers = (socket, otherPlayers, game) => {
       const data = playersData[index]
       // In case a player hasn't been created yet
       // We make sure that we won't create a second instance of it
-      alert(playersData.length.toString());
       if (otherPlayers[index] === undefined && index !== socket.id) {
         const newPlayer = player(data.x, data.y, game)
         newPlayer.playerName = createText(game, newPlayer)
