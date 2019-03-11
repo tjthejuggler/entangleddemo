@@ -5,7 +5,7 @@ import createWorld from './world/createWorld'
 import player from './player'
 import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
-//import countPlayers from './sockets/countPlayers'
+import countPlayers from './sockets/countPlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 //CURRENT MISSION:
 //  -DEVISE A METHOD OF COUNTING ALL THE CURRENT PLAYERS AND PUT THE RESULT IN AN ALERT
@@ -84,7 +84,7 @@ class Game extends Phaser.State {
     this.game.camera.x = this.player.sprite.x - 800 / 2
     this.game.camera.y = this.player.sprite.y - 600 / 2
 
-    //alert(countPlayers(otherPlayers));
+    alert(countPlayers(otherPlayers));
 
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
