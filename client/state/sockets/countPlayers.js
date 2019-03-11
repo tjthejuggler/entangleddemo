@@ -1,8 +1,8 @@
 const countPlayers = otherPlayers => {
-	var counter = 0
-  for (let id in otherPlayers) {
-counter = counter +1
-  }
+	var counter = otherPlayers.length()
+//   for (let id in otherPlayers) {
+// counter = counter +1
+//   }
   return counter
 }
 
