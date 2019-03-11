@@ -7,6 +7,14 @@ import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
 import countPlayers from './sockets/countPlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
+//CURRENT MISSION:
+//  -DEVISE A METHOD OF COUNTING ALL THE CURRENT PLAYERS AND PUT THE RESULT IN AN ALERT
+//  THINGS TO TRY:
+//      -Move this line around down below: alert(countPlayers().toString());
+//          if it is before the newPlayer line then it restircts us to a small square of a play area
+//              so we can try putting it in at different points to see what happens
+//          we could try making the alert just show a number to isolate the issue from our countPlayers.js
+//      -Look into return functions that are involved in socket.io stuff
 //SIMPLEST VERSION REQUIREMENTS:
 //  -when second user joins, both users get 10 particles, each a part of a pair of entangled particles
 //  -one at a time each user can measure their particles on the X,Y, or D
@@ -76,7 +84,7 @@ class Game extends Phaser.State {
     this.game.camera.x = this.player.sprite.x - 800 / 2
     this.game.camera.y = this.player.sprite.y - 600 / 2
 
-    alert(countPlayers().toString());
+    alert(countPlayers(otherPlayers));
 
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
