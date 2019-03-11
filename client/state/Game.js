@@ -84,6 +84,7 @@ class Game extends Phaser.State {
     this.game.camera.x = this.player.sprite.x - 800 / 2
     this.game.camera.y = this.player.sprite.y - 600 / 2
 
+    alert("test");
     alert(countPlayers(otherPlayers));
 
     // Scale game to fit the entire window
