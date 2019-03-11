@@ -86,7 +86,7 @@ class Game extends Phaser.State {
 
     //alert("test");
     //alert(countPlayers(otherPlayers));
-    alert(countPlayers(socket, otherPlayers, this.game));
+    alert(countPlayers(otherPlayers).toString());
 
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
