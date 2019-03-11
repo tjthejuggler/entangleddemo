@@ -1,4 +1,4 @@
-function countPlayers (otherPlayers){
+function countPlayers (socket, otherPlayers, game){
 socket.on('update-players', playersData => {
   var counter = 0
   for (let index in playersData) {
