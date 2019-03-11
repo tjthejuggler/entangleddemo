@@ -86,7 +86,7 @@ class Game extends Phaser.State {
 
     //alert("test");
     //alert(countPlayers(otherPlayers));
-    playerMovementInterpolation(otherPlayers)
+    //playerMovementInterpolation(otherPlayers)
 
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
@@ -104,7 +104,7 @@ class Game extends Phaser.State {
     this.game.camera.y += (cameraY - this.game.camera.y) * 0.08
 
     // Interpolates the players movement
-    //playerMovementInterpolation(otherPlayers)
+    playerMovementInterpolation(otherPlayers)
   }
 }
 
