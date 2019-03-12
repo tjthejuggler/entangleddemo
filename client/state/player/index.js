@@ -52,7 +52,7 @@ document.addEventListener('keypress', function(event) {
     else if(event.keyCode == 39) {
         alert('Right was pressed');
     }
-});
+},{once: true});
 
 
       if (this.showPlayerCount == 'true'){
