@@ -38,7 +38,7 @@ export default function (x, y, game, socket) {
    if (event.keyCode === 80) {
     alert("This is a test1.")
 
-    alert("This is a test2."+getPlayerCount())
+    alert("This is a test2."+this.getPlayerCount('playerCount'))
     //var playersCountLocal = 0
 
            // socket.on('players-count', playersCount => {
@@ -105,8 +105,8 @@ export default function (x, y, game, socket) {
       //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
       this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
     },
-    getPlayerCount(){
-      return this.playerCount
+    getPlayerCount(status) {
+      return this[status]
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
