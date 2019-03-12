@@ -1,5 +1,6 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
+import globalPlayerCount from '../Game'
 
 export default function (x, y, game, socket) {
   const player = {
@@ -10,7 +11,7 @@ export default function (x, y, game, socket) {
     myVariable: 0,
     speedText: null,
     myVariableText: null,
-    playerCount: 0,
+    playerCount: globalPlayerCount,
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
@@ -38,7 +39,7 @@ export default function (x, y, game, socket) {
    if (event.keyCode === 80) {
     alert("This is a test1.")
 
-    alert("This is a test2."+globalPlayerCount)
+    alert("This is a test2."+this.playerCount)
     //var playersCountLocal = 0
 
            // socket.on('players-count', playersCount => {
