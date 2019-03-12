@@ -116,7 +116,7 @@ export default function (x, y, game, socket) {
       // Bring the player's name to top
 
       game.world.bringToTop(this.playerName)
-      alert(this.playerName.text )
+      //alert(this.playerName.text )
     },
     //updatePlayerStatusText (status, x, y, text, myVariable) {
     updatePlayerStatusText (status, x, y, text) {
