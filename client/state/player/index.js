@@ -106,7 +106,7 @@ export default function (x, y, game, socket) {
       this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
     },
     getPlayerCount(status) {
-      return this[status]
+      return 9
     },
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
