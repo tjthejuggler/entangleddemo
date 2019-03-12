@@ -45,7 +45,7 @@ export default function (x, y, game, socket) {
           // })
       } 
 
-document.addEventListener('keypress', function(event) {
+document.addEventListener('keydown', function(event) {
     if(event.keyCode == 37) {
         alert('Left was pressed');
     }
@@ -53,6 +53,8 @@ document.addEventListener('keypress', function(event) {
         alert('Right was pressed');
     }
 },{once: true});
+
+
 
 
       if (this.showPlayerCount == 'true'){
