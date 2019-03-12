@@ -58,4 +58,14 @@ io.on('connection', socket => {
     io.emit('update-players', players)
     //io.emit('count-players', players)
   })
+
+
+
+  socket.on('player-count-request', data => {
+    io.emit('player-count-response', players.length())
+    //io.emit('count-players', players)
+  })
+
+
+
 })

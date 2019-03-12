@@ -24,14 +24,22 @@ export default function (x, y, game, socket) {
         A: Phaser.Keyboard.A,
         D: Phaser.Keyboard.D,
         F: Phaser.Keyboard.F,
-        G: Phaser.Keyboard.G
+        G: Phaser.Keyboard.G,
+        P: Phaser.Keyboard.P
       }
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
       }
-
+      // TJ added F is pressed down
+      if (isDown(game, KEYS.P)) {
+          socket.emit('player-count-request')
+          socket.on('player-count-response', playerCount => {
+            alert(string(playerCount))
+        
+        })
+      }
       // TJ added F is pressed down
       if (isDown(game, KEYS.F)) {
         this.myVariable = 1
