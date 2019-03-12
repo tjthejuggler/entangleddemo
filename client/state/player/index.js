@@ -10,8 +10,6 @@ export default function (x, y, game, socket) {
     myVariable: 0,
     speedText: null,
     myVariableText: null,
-    playerCountLocal: 0,
-    showPlayerCount: 'false',
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
@@ -26,59 +24,29 @@ export default function (x, y, game, socket) {
         A: Phaser.Keyboard.A,
         D: Phaser.Keyboard.D,
         F: Phaser.Keyboard.F,
-        G: Phaser.Keyboard.G,
-        P: Phaser.Keyboard.P
+        G: Phaser.Keyboard.G
       }
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
       }
-      // TJ added F is pressed down
-      if (isDown(game, KEYS.P)) {
-        this.showPlayerCount = 'true'
-          // socket.emit('player-count-request')
-          // socket.on('player-count-response', playerCount => {
-            
-          //   showPlayerCount = true
-          //   playerCountLocal = playerCount
-          // })
-      } 
+
 
    window.onkeydown = function(event) {
-   if (event.keyCode === 37) {
-      alert("This is a test.");
+   if (event.keyCode === 80) {
+               socket.emit('player-count-request', none)
+           socket.on('player-count-response', playerCount => {
+            
+            alert("This is a test.");
+             
+           })
+      
    }
 };
-// var fired = false
-// document.addEventListener('keydown', function(event) {
-//     if(event.keyCode == 37) {
-//           if(!fired) {
-//         fired = true;
-//         alert('Left was pressed');
-//     }
-        
-//     }
-
-// });
-// document.addEventListener('keydown', function(event) {
-//     if(event.keyCode == 37) {
-//         fired = false
-//     }
-
-// });
 
 
 
-
-
-
-
-      if (this.showPlayerCount == 'true'){
-        alert("P Pressed")
-        this.showPlayerCount = 'false'
-          //alert(string(playerCountLocal))
-      }
       // TJ added F is pressed down
       if (isDown(game, KEYS.F)) {
         this.myVariable = 1
