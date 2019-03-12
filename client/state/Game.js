@@ -5,7 +5,6 @@ import createWorld from './world/createWorld'
 import player from './player'
 import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
-import countPlayers from './sockets/countPlayers'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 //CURRENT MISSION:
 //  -DEVISE A METHOD OF COUNTING ALL THE CURRENT PLAYERS AND PUT THE RESULT IN AN ALERT
@@ -43,7 +42,6 @@ import playerMovementInterpolation from './predictions/playerMovementInterpolati
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
-let globalPlayersCount = 1
 
 class Game extends Phaser.State {
   constructor () {
