@@ -34,6 +34,7 @@ export default function (x, y, game, socket) {
       }
       // TJ added F is pressed down
       if (isDown(game, KEYS.P)) {
+        alert("P Pressed")
           socket.emit('player-count-request')
           socket.on('player-count-response', playerCount => {
             alert(string(playerCount))
