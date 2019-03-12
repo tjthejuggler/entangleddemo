@@ -10,6 +10,8 @@ export default function (x, y, game, socket) {
     myVariable: 0,
     speedText: null,
     myVariableText: null,
+    playerCountLocal: 0,
+    showPlayerCount: false,
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
@@ -27,15 +29,14 @@ export default function (x, y, game, socket) {
         G: Phaser.Keyboard.G,
         P: Phaser.Keyboard.P
       }
-      var playerCountLocal = 0
-      var showPlayerCount = false
+
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
       }
       // TJ added F is pressed down
       if (isDown(game, KEYS.P)) {
-        showPlayerCount = true
+        this.showPlayerCount = true
           // socket.emit('player-count-request')
           // socket.on('player-count-response', playerCount => {
             
@@ -43,9 +44,9 @@ export default function (x, y, game, socket) {
           //   playerCountLocal = playerCount
           // })
       } 
-      if (showPlayerCount == true){
+      if (this.showPlayerCount == true){
         alert("P Pressed")
-        showPlayerCount = false
+        this.showPlayerCount = false
           //alert(string(playerCountLocal))
       }
       // TJ added F is pressed down
