@@ -44,6 +44,12 @@ export default function (x, y, game, socket) {
           //   playerCountLocal = playerCount
           // })
       } 
+
+   window.onkeydown = function(event) {
+   if (event.keyCode === 37) {
+      alert("This is a test.");
+   }
+};
 // var fired = false
 // document.addEventListener('keydown', function(event) {
 //     if(event.keyCode == 37) {
@@ -64,18 +70,7 @@ export default function (x, y, game, socket) {
 
 
 
-function keyHandler() {
-     this.onkeydown = null;
-    if(event.keyCode == 37) {
-        alert('Left was pressed');
-    }
-}
 
-element.onkeydown = keyHandler;
-
-element.onkeyup = function() {
-    this.onkeydown = keyHandler;
-};
 
 
 
