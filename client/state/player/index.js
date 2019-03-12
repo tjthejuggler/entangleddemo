@@ -10,6 +10,7 @@ export default function (x, y, game, socket) {
     myVariable: 0,
     speedText: null,
     myVariableText: null,
+    playerCount: 0,
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
@@ -37,7 +38,7 @@ export default function (x, y, game, socket) {
    if (event.keyCode === 80) {
     alert("This is a test1.")
     var house = 3
-    alert("This is a test2."+globalPlayersCount.toString())
+    alert("This is a test2."+playerCount.toString())
     //var playersCountLocal = 0
 
            // socket.on('players-count', playersCount => {

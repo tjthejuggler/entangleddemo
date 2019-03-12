@@ -19,6 +19,9 @@ const newPlayer = (socket, player) => {
         value: player.myVariable,
         x: player.myVariable.x,
         y: player.myVariable.y
+      },
+      playerCount: {//TJ added this
+        value: 0
       }
     })
   })
