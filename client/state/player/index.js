@@ -11,7 +11,7 @@ export default function (x, y, game, socket) {
     speedText: null,
     myVariableText: null,
     playerCountLocal: 0,
-    showPlayerCount: false,
+    showPlayerCount: 'false',
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
@@ -36,7 +36,7 @@ export default function (x, y, game, socket) {
       }
       // TJ added F is pressed down
       if (isDown(game, KEYS.P)) {
-        this.showPlayerCount = true
+        this.showPlayerCount = 'true'
           // socket.emit('player-count-request')
           // socket.on('player-count-response', playerCount => {
             
@@ -55,9 +55,9 @@ document.addEventListener('keypress', function(event) {
 });
 
 
-      if (this.showPlayerCount == true){
+      if (this.showPlayerCount == 'true'){
         alert("P Pressed")
-        this.showPlayerCount = false
+        this.showPlayerCount = 'false'
           //alert(string(playerCountLocal))
       }
       // TJ added F is pressed down
