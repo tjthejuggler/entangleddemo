@@ -44,16 +44,23 @@ export default function (x, y, game, socket) {
           //   playerCountLocal = playerCount
           // })
       } 
-
+var fired = false
 document.addEventListener('keydown', function(event) {
     if(event.keyCode == 37) {
+          if(!fired) {
+        fired = true;
         alert('Left was pressed');
     }
-    else if(event.keyCode == 39) {
-        alert('Right was pressed');
+        
     }
-},{once: true});
 
+});
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+        fired = false
+    }
+
+});
 
 
 
