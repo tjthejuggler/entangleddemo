@@ -44,23 +44,38 @@ export default function (x, y, game, socket) {
           //   playerCountLocal = playerCount
           // })
       } 
-var fired = false
-document.addEventListener('keydown', function(event) {
+// var fired = false
+// document.addEventListener('keydown', function(event) {
+//     if(event.keyCode == 37) {
+//           if(!fired) {
+//         fired = true;
+//         alert('Left was pressed');
+//     }
+        
+//     }
+
+// });
+// document.addEventListener('keydown', function(event) {
+//     if(event.keyCode == 37) {
+//         fired = false
+//     }
+
+// });
+
+
+
+function keyHandler() {
+     this.onkeydown = null;
     if(event.keyCode == 37) {
-          if(!fired) {
-        fired = true;
         alert('Left was pressed');
     }
-        
-    }
+}
 
-});
-document.addEventListener('keydown', function(event) {
-    if(event.keyCode == 37) {
-        fired = false
-    }
+element.onkeydown = keyHandler;
 
-});
+element.onkeyup = function() {
+    this.onkeydown = keyHandler;
+};
 
 
 
