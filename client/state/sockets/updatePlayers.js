@@ -5,7 +5,7 @@ const updatePlayers = (socket, otherPlayers, game) => {
   socket.on('update-players', playersData => {
     let playersFound = {}
     // Iterate over all players
-    globalPlayerCount = playersData.length()
+    //globalPlayerCount = playersData.length()
     for (let index in playersData) {
       const data = playersData[index]
       // In case a player hasn't been created yet
