@@ -45,6 +45,7 @@ export default function (x, y, game, socket) {
       } 
       if (showPlayerCount == true){
         alert("P Pressed")
+        showPlayerCount = false
           //alert(string(playerCountLocal))
       }
       // TJ added F is pressed down
