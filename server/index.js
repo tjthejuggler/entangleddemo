@@ -53,6 +53,14 @@ io.on('connection', socket => {
       x: myVariable.x,
       y: myVariable.y
     }
+
+    var count = 0
+for (let index in players) {
+  // if the object has this property and it isn't a property
+  // further up the prototype chain
+  count++;
+}
+
     //io.emit('players-count', players.length())
     // Send the data back to the client
     io.emit('update-players', players)
