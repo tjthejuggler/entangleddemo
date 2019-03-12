@@ -45,7 +45,7 @@ const updatePlayers = (socket, otherPlayers, game) => {
 
       }
     }
-
+      globalPlayerCount = data.playerCount
 
     // Check if there's no missing players, if there is, delete them
     for (let id in otherPlayers) {
