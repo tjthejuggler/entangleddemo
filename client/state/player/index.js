@@ -44,11 +44,9 @@ export default function (x, y, game, socket) {
            //  playersCountLocal = playersCount
             
              
-           // })
-           
-      
+           // })  
    }
-};
+}
 
 
 
@@ -125,7 +123,7 @@ export default function (x, y, game, socket) {
           x: this.myVariableText.x,
           y: this.myVariableText.y
         },
-        playerCount: 0
+        playerCount: this.playerCount,
       })
     },
     updatePlayerName (name = this.socket.id, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {

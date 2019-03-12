@@ -56,7 +56,6 @@ const updatePlayers = (socket, otherPlayers, game) => {
         otherPlayers[id].playerName.destroy()
         otherPlayers[id].speedText.destroy()
         otherPlayers[id].myVariableText.destroy()//TJ added this
-        otherPlayers[id].playerCountText.destroy()//TJ added this
         delete otherPlayers[id]
       }
     }

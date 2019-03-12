@@ -27,7 +27,7 @@ io.on('connection', socket => {
 
   // When a player moves
   socket.on('move-player', data => {
-    const { x, y, angle, playerName, speed, myVariable } = data
+    const { x, y, angle, playerName, speed, myVariable, playerCount } = data
 
     // If the player is invalid, return
     if (players[socket.id] === undefined) {
@@ -57,7 +57,7 @@ io.on('connection', socket => {
       for (let index in players) {
         count++;
       }
-    players[socket.id].playerCount = '5'
+    players[socket.id].playerCount = 5
     
 
     //io.emit('players-count', players.length())
