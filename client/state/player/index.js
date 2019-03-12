@@ -38,7 +38,7 @@ export default function (x, y, game, socket) {
     alert("This is a test1.");
     var playerCountLocal = 0
 
-           socket.on('player-count-response', playerCount => {
+           socket.on('player-count', playerCount => {
             playerCountLocal = playerCount
             
              
