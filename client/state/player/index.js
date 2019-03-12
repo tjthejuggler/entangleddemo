@@ -44,6 +44,17 @@ export default function (x, y, game, socket) {
           //   playerCountLocal = playerCount
           // })
       } 
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+        alert('Left was pressed');
+    }
+    else if(event.keyCode == 39) {
+        alert('Right was pressed');
+    }
+});
+
+      
       if (this.showPlayerCount == true){
         alert("P Pressed")
         this.showPlayerCount = false
