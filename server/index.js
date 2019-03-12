@@ -57,9 +57,8 @@ io.on('connection', socket => {
       for (let index in players) {
         count++;
       }
-    players[socket.id].playerCount = {
-      value: count
-    }
+    players[socket.id].playerCount = count
+    
 
     //io.emit('players-count', players.length())
     // Send the data back to the client
