@@ -11,7 +11,6 @@ export default function (x, y, game, socket) {
     speedText: null,
     myVariableText: null,
     playerCount: 0,
-    localPlayerCount: globalPlayerCount,
     drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
