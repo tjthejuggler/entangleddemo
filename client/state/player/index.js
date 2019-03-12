@@ -27,21 +27,21 @@ export default function (x, y, game, socket) {
         G: Phaser.Keyboard.G,
         P: Phaser.Keyboard.P
       }
-      playerCountLocal = 0
-      showPlayerCount = false
+      var playerCountLocal = 0
+      var showPlayerCount = false
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
       }
       // TJ added F is pressed down
       if (isDown(game, KEYS.P)) {
-        
-          socket.emit('player-count-request')
-          socket.on('player-count-response', playerCount => {
+        showPlayerCount = true
+          // socket.emit('player-count-request')
+          // socket.on('player-count-response', playerCount => {
             
-            showPlayerCount = true
-            playerCountLocal = playerCount
-          })
+          //   showPlayerCount = true
+          //   playerCountLocal = playerCount
+          // })
       } 
       if (showPlayerCount == true){
         alert("P Pressed")
