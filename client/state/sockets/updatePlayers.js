@@ -1,7 +1,7 @@
 import player from './../player'
 import { createText } from '../utils'
 //RIGHT NOW THE FIRST PLAYER DOESNT GET TO SEE SECOND PLAYERS SPEED OR MYVARIABLE
-var globalPlayerCount = 0
+
 const updatePlayers = (socket, otherPlayers, game) => {
   socket.on('update-players', playersData => {
     let playersFound = {}
