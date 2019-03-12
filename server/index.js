@@ -55,9 +55,11 @@ io.on('connection', socket => {
     }
     var count = 0
       for (let index in players) {
-        count++;
+        count++
       }
-    players[socket.id].playerCount = 5
+    players[socket.id].playerCount = {
+      value: myVariable.value
+    }
     
 
     //io.emit('players-count', players.length())

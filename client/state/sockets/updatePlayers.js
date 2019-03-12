@@ -42,12 +42,11 @@ const updatePlayers = (socket, otherPlayers, game) => {
 
         otherPlayers[index].myVariable = data.myVariable.value//TJ added this
 
-        otherPlayers[index].playerCount = data.playerCount//TJ added this
+        otherPlayers[index].playerCount = data.playerCount.value//TJ added this
 
 
       }
     }
-      globalPlayerCount = data.playerCount
 
     // Check if there's no missing players, if there is, delete them
     for (let id in otherPlayers) {

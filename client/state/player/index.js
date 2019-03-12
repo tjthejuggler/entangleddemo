@@ -123,7 +123,9 @@ export default function (x, y, game, socket) {
           x: this.myVariableText.x,
           y: this.myVariableText.y
         },
-        playerCount: this.playerCount,
+        playerCount: {
+          value: this.playerCount
+        },
       })
     },
     updatePlayerName (name = this.socket.id, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
