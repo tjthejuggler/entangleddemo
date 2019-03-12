@@ -1,5 +1,4 @@
 import createPlayer from './createPlayer'
-import player from './../player'
 import { isDown } from '../utils'
 
 export default function (x, y, game, socket) {
