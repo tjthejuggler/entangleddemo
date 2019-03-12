@@ -61,11 +61,5 @@ io.on('connection', socket => {
 
 
 
-  socket.on('player-count-request', nothing => {
-    io.emit('player-count-response', players.length().toString())
-    //io.emit('count-players', players)
-  })
-
-
 
 })
