@@ -58,7 +58,7 @@ io.on('connection', socket => {
         count++
       }
     players[socket.id].playerCount = {
-      value: count
+      value: 5
     }
     
 
