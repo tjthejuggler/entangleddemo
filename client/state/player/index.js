@@ -36,12 +36,15 @@ export default function (x, y, game, socket) {
    window.onkeydown = function(event) {
    if (event.keyCode === 80) {
     alert("This is a test1.");
-               //socket.emit('player-count-request', none)
+    var playerCountLocal = 0
+            socket.emit('player-count-request', 'nothing')
+
            socket.on('player-count-response', playerCount => {
+            playerCountLocal = playerCount
             
-            alert("This is a test2.");
              
            })
+           alert("This is a test2."+playerCountLocal);
       
    }
 };
