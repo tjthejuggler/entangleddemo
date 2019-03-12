@@ -45,7 +45,7 @@ export default function (x, y, game, socket) {
           // })
       } 
 
-document.addEventListener('keyup', function(event) {
+document.addEventListener('keyupd', function(event) {
     if(event.keyCode == 37) {
         alert('Left was pressed');
     }
