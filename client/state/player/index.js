@@ -1,4 +1,5 @@
 import createPlayer from './createPlayer'
+import player from './../player'
 import { isDown } from '../utils'
 
 export default function (x, y, game, socket) {
@@ -36,14 +37,14 @@ export default function (x, y, game, socket) {
    window.onkeydown = function(event) {
    if (event.keyCode === 80) {
     alert("This is a test1.");
-    var playersCountLocal = 0
+    //var playersCountLocal = 0
 
-           socket.on('players-count', playersCount => {
-            playersCountLocal = playersCount
+           // socket.on('players-count', playersCount => {
+           //  playersCountLocal = playersCount
             
              
-           })
-           alert("This is a test2."+playersCountLocal.toString());
+           // })
+           alert("This is a test2."+globalPlayersCount.toString());
       
    }
 };

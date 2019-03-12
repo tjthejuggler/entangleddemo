@@ -43,6 +43,7 @@ import playerMovementInterpolation from './predictions/playerMovementInterpolati
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
+let globalPlayersCount = 1
 
 class Game extends Phaser.State {
   constructor () {
