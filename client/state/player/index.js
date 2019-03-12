@@ -46,8 +46,8 @@ export default function (x, y, game, socket) {
             
              
            // })  
-   }
-}
+         }
+      }
 
 
 
@@ -104,7 +104,7 @@ export default function (x, y, game, socket) {
 
       //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
 
-      this.updatePlayerStatusText('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
+      this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
     },
     getPlayerCount(status) {
       return 9
