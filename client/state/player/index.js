@@ -43,10 +43,12 @@ export default function (socket) {
 
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
+    console.log("this is a test0.5") 
     alert("This is a test1.")
-    //console.log("this.socket.id", this.socket.id)    
-    console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2." + this.playerName.name)
+    alert("This is a test1.5")
+    console.log("this.socket.id", String(this.socket.id))  
+    //console.log("this.playerName.name", this.playerName.name)
+    alert("This is a test2." + String(this.socket.id))
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test2.", this.playerName.name)
     alert("This is a test3.")
