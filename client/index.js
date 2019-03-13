@@ -8,7 +8,7 @@ let otherPlayers = {}
 
 //myPlayer = {}
 
-myVar = 1
+var myVar = 1
 
 socket = io(SERVER_IP)
 
