@@ -3,10 +3,12 @@ import Game from './state/Game'
 import player from './state/player/index'
 class App extends Phaser.Game {
   constructor () {
+  	super()
+    this.player = {}
 
-    super(WINDOW_WIDTH, WINDOW_HEIGHT, Phaser.AUTO)
-    this.state.add('Game', Game)
-    this.state.start('Game')
+    // super(WINDOW_WIDTH, WINDOW_HEIGHT, Phaser.AUTO)
+    // this.state.add('Game', Game)
+    // this.state.start('Game')
 
 		var clickMeButton = document.createElement('button');
     clickMeButton.id = 'myButton';

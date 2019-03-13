@@ -52,7 +52,7 @@ class Game extends Phaser.State {
 
   preload () {
     // Loads files
-    fileLoader(this.game)
+    //fileLoader(this.game)
 
 
   }
@@ -85,7 +85,7 @@ class Game extends Phaser.State {
 
 
 
-    createButton();
+    //createButton();
 
 
       //   var count = 0
