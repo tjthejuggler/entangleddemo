@@ -58,7 +58,8 @@ class Game extends Phaser.State {
   }
 
   create () {
-
+    if (playerIndex.globalPlayerCount < 2){
+    // Sends a new-player event to the server
     
     const { width, height } = WORLD_SIZE
 
@@ -77,10 +78,9 @@ class Game extends Phaser.State {
 
 
 
-    if (playerIndex.globalPlayerCount < 2){
-    // Sends a new-player event to the server
+
         newPlayer(socket, this.player)
-    }
+    
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
 
@@ -95,7 +95,7 @@ class Game extends Phaser.State {
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
 
-
+}
   }
 
   update () {
