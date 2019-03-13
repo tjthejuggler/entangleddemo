@@ -25,6 +25,21 @@ functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("mic check 2")
 
+     window.onkeydown = function(event) {
+     if (event.keyCode === 80) {
+      console.log('New player joined with state:', this)
+    console.log("this is a test0.5") 
+    alert("This is a test1.")
+    alert("This is a test1.5")
+    console.log("this.socket.id", String(this.socket.id))  
+    //console.log("this.playerName.name", this.playerName.name)
+    alert("This is a test2." + String(this.socket.id))
+    //console.log("this.playerName.name", this.playerName.name)
+    alert("This is a test2.", this.playerName)
+    alert("This is a test3.")
+         }
+      }
+
 
 // class App extends Phaser.Game {
 //   constructor () {
