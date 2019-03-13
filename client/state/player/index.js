@@ -44,6 +44,7 @@ export default function (socket) {
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
     alert("This is a test1.")
+    alert("This is a test2." +this.socket.id)
          }
       }
 
@@ -131,12 +132,12 @@ export default function (socket) {
         },
       })
     },
-    updatePlayerName (name = this.socket.id, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
+    updatePlayerName (name = this.socket.id) {
     //updatePlayerName (name = this.myVariable, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
       // Updates the player's name text and position
       this.playerName.text = String(name)
-      this.playerName.x = x
-      this.playerName.y = y
+      // this.playerName.x = x
+      // this.playerName.y = y
       // Bring the player's name to top
 
       game.world.bringToTop(this.playerName)
