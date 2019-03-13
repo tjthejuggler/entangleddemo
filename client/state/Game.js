@@ -63,29 +63,29 @@ class Game extends Phaser.State {
     const { width, height } = WORLD_SIZE
 
     // Creates the world
-    createWorld(this.game)
+    //createWorld(this.game)
     // Connects the player to the server
     socket = io(SERVER_IP)
     // Creates the player passing the X, Y, game and socket as arguments
     this.player = player(Math.random() * width, Math.random() * height / 2, this.game, socket)
     // Creates the player name text
-    this.player.playerName = createText(this.game, this.player.sprite.body)
+    //this.player.playerName = createText(this.game, this.player.sprite.body)
     // Creates the player speed text
-    this.player.speedText = createText(this.game, this.player.sprite.body)
+    //this.player.speedText = createText(this.game, this.player.sprite.body)
         // Creates the player myVariable text
-    this.player.myVariableText = createText(this.game, this.player.sprite.body)//TJ added this
+    //this.player.myVariableText = createText(this.game, this.player.sprite.body)//TJ added this
 
     // Sends a new-player event to the server
     newPlayer(socket, this.player)
     
     // update all players
-    updatePlayers(socket, otherPlayers, this.game)
+    updatePlayers(socket, otherPlayers)
 
-    var clickMeButton = document.createElement('button');
+    
 
 
 
-    //createButton();
+    createButton();
 
 
       //   var count = 0
@@ -98,36 +98,56 @@ class Game extends Phaser.State {
       // }
 
     // Configures the game camera
-    this.game.camera.x = this.player.sprite.x - 800 / 2
-    this.game.camera.y = this.player.sprite.y - 600 / 2
+    // this.game.camera.x = this.player.sprite.x - 800 / 2
+    // this.game.camera.y = this.player.sprite.y - 600 / 2
 
     //alert("test");
     //alert(countPlayers(otherPlayers));
     //playerMovementInterpolation(otherPlayers)
 
     // Scale game to fit the entire window
-    this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
+    //this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
 
 
 
 
   }
 
+  createButton(){
+
+                    var button = game.add.button(
+                        game.world.centerX,
+                        game.world.centerY,
+                        'ms',
+                        function openWindow() {
+                            alert('Hello Phaser!');
+                        },
+                        this,
+                        0,
+                        1,
+                        2,
+                        3);
+                    button.anchor.x = .5;
+                    button.anchor.y = .5;
+                    button.input.useHandCursor = true;
+
+  
+  }
 
 
   update () {
     //alert("test2")
     //if (this.player.canPlay == true){
-    this.player.drive(this.game)
+    this.player.drive()
 
     // Move the camera to follow the player
-    let cameraX = this.player.sprite.x - 800 / 2
-    let cameraY = this.player.sprite.y - 600 / 2
-    this.game.camera.x += (cameraX - this.game.camera.x) * 0.08
-    this.game.camera.y += (cameraY - this.game.camera.y) * 0.08
+    // let cameraX = this.player.sprite.x - 800 / 2
+    // let cameraY = this.player.sprite.y - 600 / 2
+    // this.game.camera.x += (cameraX - this.game.camera.x) * 0.08
+    // this.game.camera.y += (cameraY - this.game.camera.y) * 0.08
 
-    // Interpolates the players movement
-    playerMovementInterpolation(otherPlayers)
+    // // Interpolates the players movement
+    // playerMovementInterpolation(otherPlayers)
     //}
   }
 }

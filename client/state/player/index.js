@@ -5,19 +5,20 @@ export function getPlayerCount (){
   return globalPlayerCount
 }
 
-export default function (x, y, game, socket) {
+export default function (socket) {
   //module.exports = { globalPlayerCount: 0 };
   const player = {
     socket,
-    sprite: createPlayer(x, y, game),
+    //sprite: createPlayer(x, y, game),
     playerName: null,
-    speed: 0,
+    //speed: 0,
     myVariable: 0,
-    speedText: null,
-    myVariableText: null,
+    //speedText: null,
+    //myVariableText: null,
     playerCount: 0,
-    canPlay: true,
-    drive (game) {
+    //canPlay: true,
+    drive () {
+    //drive (game) {
       /*
       Most of the driving logic was written by Daniel Wuggenig
       https://www.anexia-it.com/blog/en/introduction-to-the-phaser-framework/
@@ -25,82 +26,75 @@ export default function (x, y, game, socket) {
       online car game, his driving solution is simple and clean and fits perfectly
       */
 
-      const KEYS = {
-        W: Phaser.Keyboard.W,
-        S: Phaser.Keyboard.S,
-        A: Phaser.Keyboard.A,
-        D: Phaser.Keyboard.D,
-        F: Phaser.Keyboard.F,
-        G: Phaser.Keyboard.G
-      }
+      // const KEYS = {
+      //   W: Phaser.Keyboard.W,
+      //   S: Phaser.Keyboard.S,
+      //   A: Phaser.Keyboard.A,
+      //   D: Phaser.Keyboard.D,
+      //   F: Phaser.Keyboard.F,
+      //   G: Phaser.Keyboard.G
+      // }
 
-      // Only emit if the player is moving
-      if (this.speed !== 0) {
-        this.emitPlayerData()
-      }
+      // // Only emit if the player is moving
+      // if (this.speed !== 0) {
+      //   this.emitPlayerData()
+      // }
 
 
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
     alert("This is a test1.")
-    //var sourceFile = require('../Game.js');//TODO check current code 
-    //console.log(sourceFile.variableName);
-    //alert("This is a test2."+globalPlayerCount)
-    //var playersCountLocal = 0
-           // socket.on('players-count', playersCount => {
-           //  playersCountLocal = playersCount             
-           // })  
          }
       }
 
 
 
 
-      // TJ added F is pressed down
-      if (isDown(game, KEYS.F)) {
-        this.myVariable = 1
-        //this.emitPlayerData()
-      }
-      // TJ added G is pressed down
-      if (isDown(game, KEYS.G)) {
-        this.myVariable = 0
-        //this.emitPlayerData()
-      }
+      // // TJ added F is pressed down
+      // if (isDown(game, KEYS.F)) {
+      //   this.myVariable = 1
+      //   //this.emitPlayerData()
+      // }
+      // // TJ added G is pressed down
+      // if (isDown(game, KEYS.G)) {
+      //   this.myVariable = 0
+      //   //this.emitPlayerData()
+      // }
 
-      // Drive forward if W is pressed down
-      if (isDown(game, KEYS.W) && this.speed <= 400) {
-        this.speed += 10
-      } else {
-        if (this.speed >= 10) {
-          this.speed -= 10
-        }
-      }
+      // // Drive forward if W is pressed down
+      // if (isDown(game, KEYS.W) && this.speed <= 400) {
+      //   this.speed += 10
+      // } else {
+      //   if (this.speed >= 10) {
+      //     this.speed -= 10
+      //   }
+      // }
 
-      // Drive backwards if S is pressed down
-      if (isDown(game, KEYS.S) && this.speed >= -200) {
-        this.speed -= 5
-      } else {
-        if (this.speed <= -5) {
-          this.speed += 5
-        }
-      }
+      // // Drive backwards if S is pressed down
+      // if (isDown(game, KEYS.S) && this.speed >= -200) {
+      //   this.speed -= 5
+      // } else {
+      //   if (this.speed <= -5) {
+      //     this.speed += 5
+      //   }
+      // }
 
-      // Steers the car
-      if (isDown(game, KEYS.A)) {
-        this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
-      } else if (isDown(game, KEYS.D)) {
-        this.sprite.body.angularVelocity = 5 * (this.speed / 1000)
-      } else {
-        this.sprite.body.angularVelocity = 0
-      }
+      // // Steers the car
+      // if (isDown(game, KEYS.A)) {
+      //   this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
+      // } else if (isDown(game, KEYS.D)) {
+      //   this.sprite.body.angularVelocity = 5 * (this.speed / 1000)
+      // } else {
+      //   this.sprite.body.angularVelocity = 0
+      // }
 
-      this.sprite.body.velocity.x = this.speed * Math.cos((this.sprite.body.angle - 360) * 0.01745)
-      this.sprite.body.velocity.y = this.speed * Math.sin((this.sprite.body.angle - 360) * 0.01745)
+      // this.sprite.body.velocity.x = this.speed * Math.cos((this.sprite.body.angle - 360) * 0.01745)
+      // this.sprite.body.velocity.y = this.speed * Math.sin((this.sprite.body.angle - 360) * 0.01745)
 
-      // Brings the player's sprite to top
-      game.world.bringToTop(this.sprite)
+      // // Brings the player's sprite to top
+      // game.world.bringToTop(this.sprite)
 
-      this.updatePlayerName()
+      //this.updatePlayerName()
       //TJ's observations on this 'speedMINE' and 'speedOTHERS'(playerMovementInterpolation):
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
@@ -108,25 +102,25 @@ export default function (x, y, game, socket) {
       //this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
       //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
 
-      this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
+      //this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
     },
 
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
       socket.emit('move-player', {
-        x: this.sprite.body.x,
-        y: this.sprite.body.y,
-        angle: this.sprite.body.rotation,
-        playerName: {
-          name: this.playerName.text,
-          x: this.playerName.x,
-          y: this.playerName.y
-        },
-        speed: {
-          value: this.speed,
-          x: this.speedText.x,
-          y: this.speedText.y
-        },
+        // x: this.sprite.body.x,
+        // y: this.sprite.body.y,
+        // angle: this.sprite.body.rotation,
+        // playerName: {
+        //   name: this.playerName.text,
+        //   x: this.playerName.x,
+        //   y: this.playerName.y
+        // },
+        // speed: {
+        //   value: this.speed,
+        //   x: this.speedText.x,
+        //   y: this.speedText.y
+        // },
         myVariable: {
           value: this.myVariable,
           x: this.myVariableText.x,
