@@ -22,13 +22,13 @@ io.on('connection', socket => {
     console.log('New player joined with state:', state)
     players[socket.id] = state
 
-      var count = 0
-      for (let index in players) {
-        count++
-      }
-      if (count > 2){
-        delete players[socket.id]
-      }
+      // var count = 0
+      // for (let index in players) {
+      //   count++
+      // }
+      // if (count > 2){
+      //   delete players[socket.id]
+      // }
   
     // Emit the update-players method in the client side
     io.emit('update-players', players)

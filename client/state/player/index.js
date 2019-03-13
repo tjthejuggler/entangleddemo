@@ -13,7 +13,7 @@ export default function (socket) {
     //sprite: createPlayer(x, y, game),
     playerName: 'orig',
     //speed: 0,
-    myVariable: 0,
+    myVar: 0,
     //speedText: null,
     //myVariableText: null,
     //canPlay: true,
@@ -41,20 +41,20 @@ export default function (socket) {
       // }
 
 
-     window.onkeydown = function(event) {
-     if (event.keyCode === 80) {
-      console.log('New player joined with state:', this)
-    console.log("this is a test0.5") 
-    alert("This is a test1.")
-    alert("This is a test1.5")
-    console.log("this.socket.id", String(this.socket.id))  
-    //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2." + String(this.socket.id))
-    //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2.", this.playerName)
-    alert("This is a test3.")
-         }
-      }
+    //  window.onkeydown = function(event) {
+    //  if (event.keyCode === 80) {
+    //   console.log('New player joined with state:', this)
+    // console.log("this is a test0.5") 
+    // alert("This is a test1.")
+    // alert("This is a test1.5")
+    // console.log("this.socket.id", String(this.socket.id))  
+    // //console.log("this.playerName.name", this.playerName.name)
+    // alert("This is a test2." + String(this.socket.id))
+    // //console.log("this.playerName.name", this.playerName.name)
+    // alert("This is a test2.", this.playerName)
+    // alert("This is a test3.")
+    //      }
+    //   }
 
 
 
@@ -105,7 +105,7 @@ export default function (socket) {
 
     //updatePlayerName (name = this.myVariable, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
       // Updates the player's name text and position
-      this.playerName = String(this.socket.id)
+      //this.playerName = String(this.socket.id)
       //this.updatePlayerName()
       //TJ's observations on this 'speedMINE' and 'speedOTHERS'(playerMovementInterpolation):
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,

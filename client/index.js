@@ -7,6 +7,7 @@ import updatePlayers from './state/sockets/updatePlayers'
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
+let partnerVar = 0
 
 //myPlayer = {}
 
