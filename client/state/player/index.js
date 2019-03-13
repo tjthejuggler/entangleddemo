@@ -1,6 +1,5 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
-currentPlayerCount = 0
 export default function (x, y, game, socket) {
   const player = {
     socket,
