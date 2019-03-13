@@ -44,7 +44,7 @@ export default function (socket) {
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
     alert("This is a test1.")
-    alert("This is a test2." +this.socket.id)
+    alert("This is a test2." +String(this.socket.id))
          }
       }
 

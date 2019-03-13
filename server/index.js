@@ -88,3 +88,6 @@ io.on('connection', socket => {
 
 
 })
+
+//TO DEPLOY:
+//npx webpack --config webpack.config.js 
