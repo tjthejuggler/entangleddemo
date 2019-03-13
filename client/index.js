@@ -21,6 +21,7 @@ class App extends Phaser.Game {
         }else{
             this.player.myVariable = 0
         }
+        console.log("Button clicked!")
         alert("Button clicked!")
     }
     document.body.appendChild(clickMeButton);
