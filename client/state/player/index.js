@@ -11,12 +11,11 @@ export default function (socket) {
   const player = {
     socket,
     //sprite: createPlayer(x, y, game),
-    playerName: null,
+    playerName: 'orig',
     //speed: 0,
     myVariable: 0,
     //speedText: null,
     //myVariableText: null,
-    playerCount: 0,
     //canPlay: true,
     drive () {
     //drive (game) {
@@ -52,7 +51,7 @@ export default function (socket) {
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test2." + String(this.socket.id))
     //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2.", this.playerName.name)
+    alert("This is a test2.", this.playerName)
     alert("This is a test3.")
          }
       }
@@ -118,6 +117,7 @@ export default function (socket) {
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
       socket.emit('move-player', {
+        playerName: this.playerName,
         // x: this.sprite.body.x,
         // y: this.sprite.body.y,
         // angle: this.sprite.body.rotation,
@@ -132,19 +132,14 @@ export default function (socket) {
         //   y: this.speedText.y
         // },
         myVariable: {
-          value: this.myVariable,
-          x: this.myVariableText.x,
-          y: this.myVariableText.y
-        },
-        playerCount: {
-          value: this.playerCount
+          value: this.myVariable
         },
       })
     },
     updatePlayerName (name = this.socket.id) {
     //updatePlayerName (name = this.myVariable, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
       // Updates the player's name text and position
-      this.playerName.text = String(name)
+      this.playerName = String(name)
       // this.playerName.x = x
       // this.playerName.y = y
       // Bring the player's name to top

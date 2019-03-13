@@ -51,31 +51,27 @@ io.on('connection', socket => {
     }
 
     // Update the player's data if he moved
-    players[socket.id].x = x
-    players[socket.id].y = y
-    players[socket.id].angle = angle
-    players[socket.id].playerName = {
-      name: playerName.name,
-      x: playerName.x,
-      y: playerName.y
-    }
-    players[socket.id].speed = {
-      value: speed.value,
-      x: speed.x,
-      y: speed.y
-    }
+    
+    players[socket.id].playerName = playerName
+    // players[socket.id].x = x
+    // players[socket.id].y = y
+    // players[socket.id].angle = angle
+    // players[socket.id].playerName = {
+    //   name: playerName.name,
+    //   x: playerName.x,
+    //   y: playerName.y
+    // }
+    // players[socket.id].speed = {
+    //   value: speed.value,
+    //   x: speed.x,
+    //   y: speed.y
+    // }
     players[socket.id].myVariable = {
       value: myVariable.value,
-      x: myVariable.x,
-      y: myVariable.y
+      // x: myVariable.x,
+      // y: myVariable.y
     }
-    var count = 0
-      for (let index in players) {
-        count++
-      }
-    players[socket.id].playerCount = {
-      value: count
-    }
+
     
 
     //io.emit('players-count', players.length())

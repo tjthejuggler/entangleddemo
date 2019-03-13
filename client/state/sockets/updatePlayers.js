@@ -43,7 +43,7 @@ const updatePlayers = (socket, otherPlayers) => {
 
         otherPlayers[index].myVariable = data.myVariable.value//TJ added this
 
-        otherPlayers[index].playerCount = data.playerCount.value//TJ added this
+ 
 
         //globalPlayerCount = otherPlayers[index].playerCount
       }
