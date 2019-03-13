@@ -39,7 +39,7 @@ function getOtherPlayers()  {
 
 functionAsObjectProperty.print("mic check"); // "mic check"
 
-console.log(String(socket.id))
+console.log("String(socket.id)1", String(socket.id))  
 
 const myName = "house"
 
@@ -49,7 +49,7 @@ window.onkeydown = function(event) {
       //console.log('New player joined with state:', this)
     console.log("this is a test1") 
     alert("This is a test1.")
-    console.log("String(socket.id)", String(socket.id))  
+    console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayers())  
     //console.log("this.playerName.name", this.playerName.name)
