@@ -2,6 +2,7 @@ import { WORLD_SIZE } from '../config'
 import { createText } from './utils'
 import fileLoader from '../config/fileloader'
 import createWorld from './world/createWorld'
+import { getPlayerCount } from './player'
 import player from './player'
 import newPlayer from './sockets/newPlayer'
 import updatePlayers from './sockets/updatePlayers'
@@ -94,6 +95,7 @@ class Game extends Phaser.State {
 
   update () {
     //alert("test2")
+    if (getPlayerCount()>5){
     this.player.drive(this.game)
 
     // Move the camera to follow the player
@@ -104,6 +106,7 @@ class Game extends Phaser.State {
 
     // Interpolates the players movement
     playerMovementInterpolation(otherPlayers)
+}
   }
 }
 

@@ -1,5 +1,9 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
+export function getPlayerCount (){
+  return 7
+}
+
 export default function (x, y, game, socket) {
   //module.exports = { globalPlayerCount: 0 };
   const player = {
@@ -103,9 +107,7 @@ export default function (x, y, game, socket) {
 
       this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
     },
-    getPlayerCount(status) {
-      return 9
-    },
+
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
       socket.emit('move-player', {
