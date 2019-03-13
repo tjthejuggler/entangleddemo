@@ -28,13 +28,29 @@ const functionAsObjectProperty = {
     print: (value) => console.log(value)
 };
 
-function getOtherPlayers()  {
+function getOtherPlayersCount()  {
 	updatePlayers(socket, otherPlayers)
 	      var count = 0
       for (let index in otherPlayers) {
         count++
       }
     return count
+}
+
+function getOtherPlayersName()  {
+	updatePlayers(socket, otherPlayers)
+	let otherplayername = 'missing'
+      for (let id in otherPlayers) {
+    let otherplayer = otherPlayers[id]
+    otherplayername = otherplayer.playerName
+      }
+    return otherplayername
+
+
+
+
+
+
 }
 
 functionAsObjectProperty.print("mic check"); // "mic check"
@@ -55,7 +71,8 @@ window.onkeydown = function(event) {
     alert("This is a test1.")
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
-    console.log("getOtherPlayers count", getOtherPlayers())  
+    console.log("getOtherPlayers count", getOtherPlayersCount())  
+    console.log("getOtherPlayers name", getOtherPlayersName()) 
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test2." + String(socket.id))
     //console.log("this.playerName.name", this.playerName.name)

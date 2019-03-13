@@ -83,3 +83,8 @@ io.on('connection', socket => {
 
 //TO DEPLOY:
 //npx webpack --config webpack.config.js 
+
+//IDEAS
+//3 settings, 1)"I have no idea about anything, just want to be amazed"
+//            2)"The exadurated version of the CHSH quantum effect"
+//            3)"The way things actually are."
