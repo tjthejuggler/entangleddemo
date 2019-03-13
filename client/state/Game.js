@@ -79,6 +79,14 @@ class Game extends Phaser.State {
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
 
+        var count = 0
+      for (let index in otherPlayers) {
+        count++
+      }
+      if (count>1){
+        this.player.canPlay = false
+      }
+
     // Configures the game camera
     this.game.camera.x = this.player.sprite.x - 800 / 2
     this.game.camera.y = this.player.sprite.y - 600 / 2
@@ -94,7 +102,7 @@ class Game extends Phaser.State {
 
   update () {
     //alert("test2")
-
+    if (this.player.canPlay == true){
     this.player.drive(this.game)
 
     // Move the camera to follow the player
@@ -105,6 +113,7 @@ class Game extends Phaser.State {
 
     // Interpolates the players movement
     playerMovementInterpolation(otherPlayers)
+    }
   }
 }
 
