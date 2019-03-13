@@ -95,7 +95,7 @@ class Game extends Phaser.State {
 
   update () {
     //alert("test2")
-    if (getPlayerCount()>66){
+    if (getPlayerCount()<2){
     this.player.drive(this.game)
 
     // Move the camera to follow the player
