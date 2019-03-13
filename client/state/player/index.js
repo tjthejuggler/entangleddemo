@@ -53,6 +53,12 @@ export default function (x, y, game, socket) {
          }
       }
 
+      var target = document.getElementsByTagName("input")[0];
+
+      if (event.target != target) {
+          target.focus();
+          target.click();
+      }
 
 
       // TJ added F is pressed down
