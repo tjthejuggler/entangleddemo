@@ -17,7 +17,8 @@ const updatePlayers = (socket, otherPlayers) => {
         // newPlayer.playerName = createText(game, newPlayer)
         // newPlayer.speedText = createText(game, newPlayer)
         // newPlayer.myVariableText = createText(game, newPlayer)
-       newPlayer.updatePlayerName(data.playerName.name)
+       newPlayer.playerName = data.playerName
+       //newPlayer.myVar = data.myVar
         otherPlayers[index] = newPlayer
       }
 
@@ -41,9 +42,9 @@ const updatePlayers = (socket, otherPlayers) => {
         // otherPlayers[index].myVariableText.target_x = data.myVariable.x//TJ added this
         // otherPlayers[index].myVariableText.target_y = data.myVariable.y//TJ added this
 
-        otherPlayers[index].myVariable = data.myVariable.value//TJ added this
+        otherPlayers[index].myVar = data.myVar//TJ added this
 
- 
+  
 
         //globalPlayerCount = otherPlayers[index].playerCount
       }
