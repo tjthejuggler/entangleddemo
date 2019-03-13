@@ -53,6 +53,22 @@ class Game extends Phaser.State {
   preload () {
     // Loads files
     fileLoader(this.game)
+
+        clickMeButton.id = 'myButton';
+    clickMeButton.innerHTML = 'Click Me';
+    clickMeButton.style.background = '#4FFF8F';
+    clickMeButton.style.width = '200px'; // setting the width to 200px
+    clickMeButton.style.height = '200px'; // setting the height to 200px
+    clickMeButton.style.zIndex = 1000;
+    clickMeButton.onclick = function(){
+        if(this.player.myVariable == 0){
+            this.player.myVariable = 1
+        }else{
+            this.player.myVariable = 0
+        }
+        alert("Button clicked!")
+    }
+    document.body.appendChild(clickMeButton);
   }
 
   create () {
@@ -79,6 +95,13 @@ class Game extends Phaser.State {
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
 
+    var clickMeButton = document.createElement('button');
+
+
+
+
+
+
       //   var count = 0
       // for (let index in otherPlayers) {
       //   count++
@@ -99,15 +122,7 @@ class Game extends Phaser.State {
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
 
-    clickMeButton.id = 'myButton';
-    clickMeButton.innerHTML = 'Click Me';
-    clickMeButton.style.background = '#4FFF8F';
-    clickMeButton.style.width = '200px'; // setting the width to 200px
-    clickMeButton.style.height = '200px'; // setting the height to 200px
-    clickMeButton.onclick = function(){
-        alert("Button clicked!")
-    }
-    document.body.appendChild(clickMeButton);
+
 
 
   }
