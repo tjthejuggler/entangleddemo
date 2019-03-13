@@ -14,7 +14,7 @@ let partnerVar = 0
 //myPlayer = {}
 
 var myVar = 1
-var myName = null
+
 
 socket = io(SERVER_IP)
 
@@ -41,7 +41,7 @@ functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("mic check 2")
 
-myName = socket.id
+const myName = socket.id
 
 window.onkeydown = function(event) {
      if (event.keyCode === 80) {
