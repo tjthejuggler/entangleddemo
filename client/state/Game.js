@@ -40,7 +40,7 @@ import playerMovementInterpolation from './predictions/playerMovementInterpolati
 //                  If entangled particle is measured in the other axis (at this point either must be X or Y),
 //                      randomly set this particle
 
-var playerIndex = require('./player/index.js');
+var playerIndex = require('./player/index');
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
