@@ -20,7 +20,7 @@ socket = io(SERVER_IP)
 
 newPlayer(socket, myVar)
 
-myName = socket.id
+
 // Creates the player passing the X, Y, game and socket as arguments
 //myPlayer = player(socket)
 
@@ -43,6 +43,7 @@ console.log("mic check 2")
 
 window.onkeydown = function(event) {
      if (event.keyCode === 80) {
+     	myName = socket.id
       //console.log('New player joined with state:', this)
     console.log("this is a test1") 
     alert("This is a test1.")
