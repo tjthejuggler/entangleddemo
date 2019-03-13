@@ -14,13 +14,13 @@ let partnerVar = 0
 //myPlayer = {}
 
 var myVar = 1
-var myName = ''
+var myName = null
 
 socket = io(SERVER_IP)
 
 newPlayer(socket, myVar)
 
-myName = String(socket.id)
+myName = socket.id
 // Creates the player passing the X, Y, game and socket as arguments
 //myPlayer = player(socket)
 
@@ -41,20 +41,20 @@ functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("mic check 2")
 
-     window.onkeydown = function(event) {
+window.onkeydown = function(event) {
      if (event.keyCode === 80) {
       //console.log('New player joined with state:', this)
     console.log("this is a test1") 
     alert("This is a test1.")
     console.log("String(socket.id)", String(socket.id))  
-    console.log("myName", myName)
+    console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayers())  
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test2." + String(socket.id))
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test3.")
-         }
-      }
+    }
+}
 
 
 // class App extends Phaser.Game {
