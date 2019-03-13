@@ -152,9 +152,10 @@ export default function (x, y, game, socket) {
       let newText = ''
       // Set the speed text to either 0 or the current speed
       this[status] < 0 ? this.newText = 0 : this.newText = this[status]
-      if (this[status] !== 0){
-        globalPlayerCount = this[status]
-      }
+      if (this[status] > 2){
+        //globalPlayerCount = this[status]
+        delete this
+      }else{
       //this.newText = this['myVariable']
       //currentPlayerCount = this[status]
       // Updates the text position and string
@@ -164,6 +165,7 @@ export default function (x, y, game, socket) {
       text.text = `${capitalizedStatus}:::: ${parseInt(this.newText)}` //TJ changed speed text to show myVariable instead of newText
       //text.text = `speeeeeeed2: ${parseInt(this.myVariable)}`
       game.world.bringToTop(text)
+    }
     }
 
   }
