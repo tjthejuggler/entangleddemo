@@ -2,6 +2,7 @@ import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
 import Game from './state/Game'
 import player from './state/player/index'
 import newPlayer from './state/sockets/newPlayer'
+import updatePlayers from './state/sockets/updatePlayers'
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
@@ -22,7 +23,12 @@ const functionAsObjectProperty = {
 };
 
 function getOtherPlayers()  {
-    return "ok"
+	updatePlayers(socket, otherPlayers)
+	      var count = 0
+      for (let index in otherPlayers) {
+        count++
+      }
+    return count
 }
 
 functionAsObjectProperty.print("mic check"); // "mic check"
@@ -36,7 +42,7 @@ console.log("mic check 2")
     alert("This is a test1.")
     alert("This is a test1.5")
     console.log("this.socket.id", String(socket.id))  
-    console.log("this.socket.id", getOtherPlayers())  
+    console.log("getOtherPlayers count", getOtherPlayers())  
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test2." + String(socket.id))
     //console.log("this.playerName.name", this.playerName.name)
