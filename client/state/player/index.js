@@ -7,6 +7,7 @@ export function getPlayerCount (){
 
 export default function (socket) {
   //module.exports = { globalPlayerCount: 0 };
+  console.log('before const player')
   const player = {
     socket,
     //sprite: createPlayer(x, y, game),
@@ -43,6 +44,7 @@ export default function (socket) {
 
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
+      console.log('New player joined with state:', this)
     console.log("this is a test0.5") 
     alert("This is a test1.")
     alert("This is a test1.5")
