@@ -10,7 +10,7 @@ const functionAsObjectProperty = {
 
 functionAsObjectProperty.print("mic check"); // "mic check"
 
-
+console.log("mic check 2")
 
 
 // class App extends Phaser.Game {
