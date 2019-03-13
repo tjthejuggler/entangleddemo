@@ -84,8 +84,23 @@ class Game extends Phaser.State {
     
 
 
+                    var button = game.add.button(
+                        game.world.centerX,
+                        game.world.centerY,
+                        'ms',
+                        function openWindow() {
+                            alert('Hello Phaser!');
+                        },
+                        this,
+                        0,
+                        1,
+                        2,
+                        3);
+                    button.anchor.x = .5;
+                    button.anchor.y = .5;
+                    button.input.useHandCursor = true;
 
-    createButton();
+    //createButton();
 
 
       //   var count = 0
@@ -115,21 +130,6 @@ class Game extends Phaser.State {
 
   createButton(){
 
-                    var button = game.add.button(
-                        game.world.centerX,
-                        game.world.centerY,
-                        'ms',
-                        function openWindow() {
-                            alert('Hello Phaser!');
-                        },
-                        this,
-                        0,
-                        1,
-                        2,
-                        3);
-                    button.anchor.x = .5;
-                    button.anchor.y = .5;
-                    button.input.useHandCursor = true;
 
   
   }
