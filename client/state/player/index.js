@@ -4,7 +4,7 @@ var globalPlayerCount = 0
 export function getPlayerCount (){
   return globalPlayerCount
 }
-
+console.log('before export default function')
 export default function (socket) {
   //module.exports = { globalPlayerCount: 0 };
   console.log('before const player')
