@@ -79,10 +79,10 @@ class Game extends Phaser.State {
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
 
-        var count = 0
-      for (let index in otherPlayers) {
-        count++
-      }
+        var count = 2
+      // for (let index in otherPlayers) {
+      //   count++
+      // }
       if (count>1){
         this.player.canPlay = false
       }
