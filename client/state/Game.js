@@ -85,7 +85,7 @@ class Game extends Phaser.State {
 
 
 
-    //createButton();
+    createButton();
 
 
       //   var count = 0
