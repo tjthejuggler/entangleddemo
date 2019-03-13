@@ -39,7 +39,7 @@ function getOtherPlayers()  {
 
 functionAsObjectProperty.print("mic check"); // "mic check"
 
-console.log("mic check 2")
+console.log(String(socket.id))
 
 const myName = "house"
 
