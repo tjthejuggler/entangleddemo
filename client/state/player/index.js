@@ -39,7 +39,7 @@ export default function (x, y, game, socket) {
     alert("This is a test1.")
     //var sourceFile = require('../Game.js');//TODO check current code 
     //console.log(sourceFile.variableName);
-    alert("This is a test2."+this.playerCount)
+    //alert("This is a test2."+this.playerCount)
     //var playersCountLocal = 0
            // socket.on('players-count', playersCount => {
            //  playersCountLocal = playersCount             
