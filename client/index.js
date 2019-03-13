@@ -2,12 +2,16 @@ import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
 import Game from './state/Game'
 import player from './state/player/index'
 
-class myClass {
-constructor () {
-	console.log("myClass!")
-}
 
-}
+
+const functionAsObjectProperty = {
+    print: (value) => console.log(value)
+};
+
+functionAsObjectProperty.print("mic check"); // "mic check"
+
+
+
 
 // class App extends Phaser.Game {
 //   constructor () {
