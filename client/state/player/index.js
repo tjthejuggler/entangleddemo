@@ -1,7 +1,7 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
 export default function (x, y, game, socket) {
-  testVariable = "test"
+  var testVariable = "test"
   const player = {
     socket,
     sprite: createPlayer(x, y, game),
