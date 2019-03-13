@@ -40,7 +40,8 @@ import playerMovementInterpolation from './predictions/playerMovementInterpolati
 //                  If entangled particle is measured in the other axis (at this point either must be X or Y),
 //                      randomly set this particle
 
-var playerIndex = require('./player');
+//var playerIndex = require('./player');
+
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
@@ -76,10 +77,10 @@ class Game extends Phaser.State {
 
 
 
-if (playerIndex.globalPlayerCount < 2){
+//if (playerIndex.globalPlayerCount < 2){
     // Sends a new-player event to the server
     newPlayer(socket, this.player)
-}
+//}
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
 
