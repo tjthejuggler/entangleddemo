@@ -11,6 +11,8 @@ class App extends Phaser.Game {
 	clickMeButton.id = 'myButton';
 	clickMeButton.innerHTML = 'Click Me';
 	clickMeButton.style.background = '#4FFF8F';
+	clickMeButton.style.width = '200px'; // setting the width to 200px
+	clickMeButton.style.height = '200px'; // setting the height to 200px
 	clickMeButton.onclick = function(){
 		alert("Button clicked!")
 	}
