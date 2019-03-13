@@ -21,6 +21,10 @@ const functionAsObjectProperty = {
     print: (value) => console.log(value)
 };
 
+function getOtherPlayers()  {
+    return "ok"
+}
+
 functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("mic check 2")
@@ -32,10 +36,10 @@ console.log("mic check 2")
     alert("This is a test1.")
     alert("This is a test1.5")
     console.log("this.socket.id", String(socket.id))  
+    console.log("this.socket.id", getOtherPlayers())  
     //console.log("this.playerName.name", this.playerName.name)
     alert("This is a test2." + String(socket.id))
     //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2.", playerName)
     alert("This is a test3.")
          }
       }
