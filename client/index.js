@@ -7,9 +7,13 @@ class App extends Phaser.Game {
     this.state.add('Game', Game)
     this.state.start('Game')
     var clickMeButton = document.createElement('button');
+
 	clickMeButton.id = 'myButton';
 	clickMeButton.innerHTML = 'Click Me';
 	clickMeButton.style.background = '#4FFF8F';
+	clickMeButton.onclick = function(){
+		alert("Button clicked!")
+	}
 	document.body.appendChild(clickMeButton);
 	
   }
