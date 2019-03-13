@@ -22,7 +22,7 @@ io.on('connection', socket => {
       for (let index in players) {
         count++
       }
-      if (count < 0){
+      if (count < 1){
     console.log('New player joined with state:', state)
     players[socket.id] = state
   }
