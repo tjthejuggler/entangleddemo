@@ -1,10 +1,8 @@
-const newPlayer = (socket, player) => {
+const newPlayer = (socket, myVar) => {
   socket.on('connect', () => {
     socket.emit('new-player', {
       playerName: String(socket.id),
-      myVariable: {
-        value: player.myVariable
-      },
+      myVar: myVar
     })
   })
 }

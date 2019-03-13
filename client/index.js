@@ -6,11 +6,15 @@ const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
 
-myPlayer = {}
+//myPlayer = {}
+
+myVar = 1
 
 socket = io(SERVER_IP)
+
+newPlayer(socket, myVar)
 // Creates the player passing the X, Y, game and socket as arguments
-myPlayer = player(socket)
+//myPlayer = player(socket)
 
 const functionAsObjectProperty = {
     print: (value) => console.log(value)

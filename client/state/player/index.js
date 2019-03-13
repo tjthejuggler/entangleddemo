@@ -103,7 +103,10 @@ export default function (socket) {
       // // Brings the player's sprite to top
       // game.world.bringToTop(this.sprite)
 
-      this.updatePlayerName()
+    //updatePlayerName (name = this.myVariable, x = this.sprite.body.x - 57, y = this.sprite.body.y - 59) {
+      // Updates the player's name text and position
+      this.playerName = String(this.socket.id)
+      //this.updatePlayerName()
       //TJ's observations on this 'speedMINE' and 'speedOTHERS'(playerMovementInterpolation):
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
