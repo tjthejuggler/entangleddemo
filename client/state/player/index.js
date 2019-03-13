@@ -120,7 +120,8 @@ export default function (socket) {
     emitPlayerData () {
       // Emit the 'move-player' event, updating the player's data on the server
       socket.emit('move-player', {
-        playerName: this.playerName,
+        playerName: myName,
+        myVar: myVar,
         // x: this.sprite.body.x,
         // y: this.sprite.body.y,
         // angle: this.sprite.body.rotation,
@@ -134,9 +135,6 @@ export default function (socket) {
         //   x: this.speedText.x,
         //   y: this.speedText.y
         // },
-        myVariable: {
-          value: this.myVariable
-        },
       })
     },
     updatePlayerName (name = this.socket.id) {

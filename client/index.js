@@ -4,6 +4,7 @@ import player from './state/player/index'
 import newPlayer from './state/sockets/newPlayer'
 import updatePlayers from './state/sockets/updatePlayers'
 
+
 console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
@@ -14,6 +15,8 @@ let partnerVar = 0
 //myPlayer = {}
 
 var myVar = 1
+
+let myName = 'house'
 
 
 socket = io(SERVER_IP)
@@ -57,14 +60,25 @@ functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("String(socket.id)1", String(socket.id))  
 
-let myName = "house"
 //let firstPress = true
 getMyName()
+
+
+
+function emitMyData () {
+      // Emit the 'move-player' event, updating the player's data on the server
+      socket.emit('move-player', {
+        playerName: myName,
+        myVar: myVar,
+      })
+    }
+
 
 function getMyName(){
 
     setTimeout(function () {
 		myName = String(socket.id)
+		emitMyData ()
     }, 5000);
 
 
