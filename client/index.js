@@ -46,9 +46,13 @@ console.log("mic check 2")
       //console.log('New player joined with state:', this)
     console.log("this is a test1") 
     alert("This is a test1.")
-    console.log("myName", myName)  
-    console.log("getOtherPlayers count ", getOtherPlayers())  
-
+    console.log("String(socket.id)", String(socket.id))  
+    console.log("myName", myName)
+    console.log("getOtherPlayers count", getOtherPlayers())  
+    //console.log("this.playerName.name", this.playerName.name)
+    alert("This is a test2." + String(socket.id))
+    //console.log("this.playerName.name", this.playerName.name)
+    alert("This is a test3.")
          }
       }
 
