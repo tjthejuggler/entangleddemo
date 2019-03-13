@@ -10,7 +10,7 @@ const worldCreator = game => {
   // Here we set the bounds of our game world
   game.world.setBounds(0, 0, width/4, height/4)
   createMap(game)
-  createButton()
+  //createButton()
 }
 
 const createMap = game => {
