@@ -41,7 +41,7 @@ functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("mic check 2")
 
-const myName = socket.id
+const myName = "house"
 
 window.onkeydown = function(event) {
      if (event.keyCode === 80) {
