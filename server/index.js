@@ -18,11 +18,11 @@ const players = {}
 io.on('connection', socket => {
   // When a player connects
   socket.on('new-player', state => {
-        var count = 0
-      for (let index in players) {
-        count++
-      }
-      if (count < 1){
+      //   var count = 0
+      // for (let index in players) {
+      //   count++
+      // }
+      // if (count < 2){
     console.log('New player joined with state:', state)
     players[socket.id] = state
   }

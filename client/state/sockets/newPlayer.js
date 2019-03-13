@@ -23,6 +23,7 @@ const newPlayer = (socket, player) => {
       playerCount: { 
         value: player.playerCount
       },
+
     })
   })
 }
