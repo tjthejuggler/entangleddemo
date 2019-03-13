@@ -1,6 +1,7 @@
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
 import Game from './state/Game'
 import player from './state/player/index'
+import newPlayer from './state/sockets/newPlayer'
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
