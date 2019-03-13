@@ -4,6 +4,8 @@ import player from './state/player/index'
 import newPlayer from './state/sockets/newPlayer'
 import updatePlayers from './state/sockets/updatePlayers'
 
+console.log("begin program")
+
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
@@ -12,10 +14,13 @@ let partnerVar = 0
 //myPlayer = {}
 
 var myVar = 1
+var myName = ''
 
 socket = io(SERVER_IP)
 
 newPlayer(socket, myVar)
+
+myName = String(socket.id)
 // Creates the player passing the X, Y, game and socket as arguments
 //myPlayer = player(socket)
 
@@ -39,15 +44,11 @@ console.log("mic check 2")
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
       //console.log('New player joined with state:', this)
-    console.log("this is a test0.5") 
+    console.log("this is a test1") 
     alert("This is a test1.")
-    alert("This is a test1.5")
-    console.log("this.socket.id", String(socket.id))  
-    console.log("getOtherPlayers count", getOtherPlayers())  
-    //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2." + String(socket.id))
-    //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test3.")
+    console.log("myName", myName)  
+    console.log("getOtherPlayers count ", getOtherPlayers())  
+
          }
       }
 
