@@ -1,6 +1,6 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
-
+currentPlayerCount = 0
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -34,17 +34,15 @@ export default function (x, y, game, socket) {
       }
 
 
-   window.onkeydown = function(event) {
-   if (event.keyCode === 80) {
+     window.onkeydown = function(event) {
+     if (event.keyCode === 80) {
     alert("This is a test1.")
-
-    //alert("This is a test2."+globalPlayerCount)
+    //var sourceFile = require('../Game.js');//TODO check current code 
+    //console.log(sourceFile.variableName);
+    alert("This is a test2."+this.playerCount)
     //var playersCountLocal = 0
-
            // socket.on('players-count', playersCount => {
-           //  playersCountLocal = playersCount
-            
-             
+           //  playersCountLocal = playersCount             
            // })  
          }
       }
@@ -101,7 +99,6 @@ export default function (x, y, game, socket) {
       //  All players see themseleves as speedMINE
 
       //this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
-
       //this.updatePlayerStatusText('myVariable', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
 
       this.updatePlayerStatusText('playerCount', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText)
@@ -155,7 +152,9 @@ export default function (x, y, game, socket) {
       let newText = ''
       // Set the speed text to either 0 or the current speed
       this[status] < 0 ? this.newText = 0 : this.newText = this[status]
+      this.playerCount = this[status]
       //this.newText = this['myVariable']
+      //currentPlayerCount = this[status]
       // Updates the text position and string
       text.x = x
       text.y = y
