@@ -25,7 +25,7 @@ io.on('connection', socket => {
       // if (count < 2){
     console.log('New player joined with state:', state)
     players[socket.id] = state
-  }
+  //}
     // Emit the update-players method in the client side
     io.emit('update-players', players)
     //io.emit('count-players', players)

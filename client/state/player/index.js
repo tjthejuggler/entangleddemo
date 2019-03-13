@@ -1,7 +1,7 @@
 import createPlayer from './createPlayer'
 import { isDown } from '../utils'
 export default function (x, y, game, socket) {
-  //module.exports = { globalPlayerCount: 0 };
+  module.exports = { globalPlayerCount: 0 };
   const player = {
     socket,
     sprite: createPlayer(x, y, game),
@@ -153,7 +153,7 @@ export default function (x, y, game, socket) {
       // Set the speed text to either 0 or the current speed
       this[status] < 0 ? this.newText = 0 : this.newText = this[status]
 
-        //globalPlayerCount = this[status]
+        globalPlayerCount = this[status]
 
       //this.newText = this['myVariable']
       //currentPlayerCount = this[status]

@@ -77,10 +77,10 @@ class Game extends Phaser.State {
 
 
 
-//if (playerIndex.globalPlayerCount < 2){
+if (playerIndex.globalPlayerCount < 2){
     // Sends a new-player event to the server
     newPlayer(socket, this.player)
-//}
+}
     // update all players
     updatePlayers(socket, otherPlayers, this.game)
 
