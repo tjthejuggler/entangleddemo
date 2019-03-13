@@ -41,9 +41,11 @@ functionAsObjectProperty.print("mic check"); // "mic check"
 
 console.log("mic check 2")
 
+myName = socket.id
+
 window.onkeydown = function(event) {
      if (event.keyCode === 80) {
-     	myName = socket.id
+
       //console.log('New player joined with state:', this)
     console.log("this is a test1") 
     alert("This is a test1.")
