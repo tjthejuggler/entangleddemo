@@ -2,7 +2,15 @@ import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
 import Game from './state/Game'
 import player from './state/player/index'
 
+const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
+let socket = null
+let otherPlayers = {}
 
+this.player = {}
+
+socket = io(SERVER_IP)
+// Creates the player passing the X, Y, game and socket as arguments
+this.player = player(socket)
 
 const functionAsObjectProperty = {
     print: (value) => console.log(value)
