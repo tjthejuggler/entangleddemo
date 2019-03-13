@@ -44,7 +44,10 @@ export default function (socket) {
      window.onkeydown = function(event) {
      if (event.keyCode === 80) {
     alert("This is a test1.")
-    alert("This is a test2." +this.playerName.name)
+    console.log("this.socket.id", this.socket.id)    
+    alert("This is a test2." + this.playerName.name)
+    console.log("this.playerName.name", this.playerName.name)
+    alert("This is a test2.", this.playerName.name)
          }
       }
 
@@ -95,7 +98,7 @@ export default function (socket) {
       // // Brings the player's sprite to top
       // game.world.bringToTop(this.sprite)
 
-      //this.updatePlayerName()
+      this.updatePlayerName()
       //TJ's observations on this 'speedMINE' and 'speedOTHERS'(playerMovementInterpolation):
       //  If a player already exists when another player is born, then they will be labeled as speedOTHERS,
       //  All players see themseleves as speedMINE
@@ -140,7 +143,6 @@ export default function (socket) {
       // this.playerName.y = y
       // Bring the player's name to top
 
-      game.world.bringToTop(this.playerName)
       //alert(this.playerName.text )
     },
     //updatePlayerStatusText (status, x, y, text, myVariable) {
