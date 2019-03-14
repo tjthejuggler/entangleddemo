@@ -35,7 +35,8 @@ function checkStatus(){
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
-		theParticleState == 'superposition'
+		theParticleState = 'superposition'
+		measurementReadingText.innerHTML = theParticleState
 	}
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
@@ -264,6 +265,7 @@ function getMyName(){
 		theParticle.isSetTo = -1
 		hasMeasured = false
 		theParticleState = 'superposition'
+		measurementReadingText.innerHTML = theParticleState
 		emitMyData ()
 		console.log("theParticle", theParticle.isSetTo)
     }
