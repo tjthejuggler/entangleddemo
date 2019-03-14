@@ -22,10 +22,10 @@ getMyName()
 function getOtherPlayersCount()  {
 
 	updatePlayers(socket, myName, otherPlayer)
-	      var count = 0
-      for (let index in otherPlayers) {
-        count++
-      }
+	      var count = 1
+if (otherplayer.playerName !== "otherPlayer"){
+	count = 2
+}
     return count
 }
 
