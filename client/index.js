@@ -27,6 +27,7 @@ getMyName()
 var t=setInterval(checkStatus,1000);
 
 function checkStatus(){
+	emitMyData()
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	let theParticleState = 'superposition'
 	let measurementResult = ''
@@ -34,16 +35,16 @@ function checkStatus(){
 	if (theParticle.isSetTo>0){
 		if (myUserNumber == 1){
 			if (theParticle.isSetTo<150){
-				if (theParticle.isSetTo % 10 == 1){ //I think this can be combined with below by doing a (this and that) OR (other this and other that)
+				if (getOnesDigit(theParticle.isSetTo) == 1){ //I think this can be combined with below by doing a (this and that) OR (other this and other that)
 					measurementResult = 'Down Spin '
-				}else if(theParticle.isSetTo % 10 == 2){
+				}else if(getOnesDigit(theParticle.isSetTo) == 2){
 					measurementResult = 'Up Spin '
 				}
-				if (Math.round(theParticle.isSetTo/10) % 10 == 1){
+				if (getTensDigit(theParticle.isSetTo) == 1){
 					measurementAxis = '(X)'
-				}else if (Math.round(theParticle.isSetTo/10) % 10 == 2){
+				}else if (getTensDigit(theParticle.isSetTo) == 2){
 					measurementAxis = '(D)'
-				}else if (Math.round(theParticle.isSetTo/10) % 10 == 3){
+				}else if (getTensDigit(theParticle.isSetTo) == 3){
 					measurementAxis = '(Y)'
 				}
 				theParticleState = measurementResult + measurementAxis
@@ -56,11 +57,11 @@ function checkStatus(){
 				}else if(theParticle.isSetTo % 10 == 2){
 					measurementResult = 'Up Spin '
 				}
-				if (Math.round(theParticle.isSetTo/10) % 10 == 1){
+				if (getTensDigit(theParticle.isSetTo) == 1){
 					measurementAxis = '(X)'
-				}else if (Math.round(theParticle.isSetTo/10) % 10 == 2){
+				}else if (getTensDigit(theParticle.isSetTo) == 2){
 					measurementAxis = '(D)'
-				}else if (Math.round(theParticle.isSetTo/10) % 10 == 3){
+				}else if (getTensDigit(theParticle.isSetTo) == 3){
 					measurementAxis = '(Y)'
 				}
 				theParticleState = measurementResult + measurementAxis
@@ -69,6 +70,14 @@ function checkStatus(){
 	}
 	
 	myText.innerHTML = theParticleState
+}
+
+function getOnesDigit(numberToUse){
+	return numberToUse % 10
+}
+
+function getTensDigit(numberToUse){
+	return Math.round(numberToUse/10) % 10  
 }
 
 function getOtherPlayersCount()  {
@@ -207,9 +216,20 @@ function getMyName(){
     measureOnX.style.height = '200px'; // setting the height to 200px
     measureOnX.style.zIndex = 1000;
     measureOnX.onclick = function(){
-		theParticle.isSetTo = myUserNumber*100+10+1
-		hasMeasured = true
-		emitMyData ()
+    	if (!hasMeasured){
+    		let measurement = 0
+    		const randomMeasurement = Math.random() < 0.5 ? 1 : 2;
+	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 2 ){
+	    		measurement = randomMeasurement
+	    	}else{
+	    		measurement = getOneDigit(theParticle.isSetTo)
+	    	}
+			theParticle.isSetTo = myUserNumber*100+10+measurement
+			hasMeasured = true
+			emitMyData ()
+		}else{
+			alert("Particle already measured.")
+		}
     }
     document.body.appendChild(measureOnX);
 
@@ -221,9 +241,20 @@ function getMyName(){
     measureOnD.style.height = '200px'; // setting the height to 200px
     measureOnD.style.zIndex = 1000;
     measureOnD.onclick = function(){
-		theParticle.isSetTo = myUserNumber*100+20+1
-		hasMeasured = true
-		emitMyData ()
+    	if (!hasMeasured){
+    		let measurement = 0
+    		const randomMeasurement = Math.random() < 0.5 ? 1 : 2;
+	    	if (theParticle.isSetTo < 0){
+	    		measurement = randomMeasurement
+	    	}else{
+	    		measurement = getOneDigit(theParticle.isSetTo)
+	    	}
+			theParticle.isSetTo = myUserNumber*100+20+measurement
+			hasMeasured = true
+			emitMyData ()
+		}else{
+			alert("Particle already measured.")
+		}
     }
     document.body.appendChild(measureOnD);
 
@@ -235,15 +266,26 @@ function getMyName(){
     measureOnY.style.height = '200px'; // setting the height to 200px
     measureOnY.style.zIndex = 1000;
     measureOnY.onclick = function(){
-		theParticle.isSetTo = myUserNumber*100+30+1
-		hasMeasured = true
-		emitMyData ()
+    	if (!hasMeasured){
+    		let measurement = 0
+    		const randomMeasurement = Math.random() < 0.5 ? 1 : 2;
+	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 1 ){
+	    		measurement = randomMeasurement
+	    	}else{
+	    		measurement = getOneDigit(theParticle.isSetTo)
+	    	}
+			theParticle.isSetTo = myUserNumber*100+30+measurement
+			hasMeasured = true
+			emitMyData ()
+		}else{
+			alert("Particle already measured.")
+		}
     }
     document.body.appendChild(measureOnY);
 
     var createEntangledPair = document.createElement('button');
     createEntangledPair.id = 'createEntangledPair';
-    createEntangledPair.innerHTML = 'create entangled particles';
+    createEntangledPair.innerHTML = 'create entangled particle pair';
     createEntangledPair.style.background = '#4FFF8F';
     createEntangledPair.style.width = '200px'; // setting the width to 200px
     createEntangledPair.style.height = '200px'; // setting the height to 200px
@@ -253,7 +295,7 @@ function getMyName(){
 		hasMeasured = false
 		emitMyData ()
     }
-    document.body.appendChild(measureOnY);
+    document.body.appendChild(createEntangledPair);
 
 
 
