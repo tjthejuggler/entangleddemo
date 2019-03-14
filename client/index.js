@@ -10,6 +10,8 @@ console.log("begin program")
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayers = {}
+let otherPlayerName = 'otherPlayer'
+let otherPlayerVar = 5
 let partnerVar = 0
 
 //myPlayer = {}
@@ -19,9 +21,8 @@ let myName = 'house'
 socket = io(SERVER_IP)
 newPlayer(socket, myVar, myName)
 getMyName()
-
 function getOtherPlayersCount()  {
-	updatePlayers(socket, otherPlayers, myName)
+	updatePlayers(socket, myName, otherPlayerName, otherPlayerVar)
 	      var count = 0
       for (let index in otherPlayers) {
         count++
@@ -30,7 +31,7 @@ function getOtherPlayersCount()  {
 }
 
 function getOtherPlayersName()  {
-	updatePlayers(socket, otherPlayers, myName)
+	updatePlayers(socket, myName, otherPlayerName, otherPlayerVar)
 	let otherplayername = 'missing'
       for (let id in otherPlayers) {
     let otherplayer = otherPlayers[id]
@@ -73,6 +74,14 @@ window.onkeydown = function(event) {
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayersCount())  
     console.log("getOtherPlayers name", getOtherPlayersName()) 
+
+    }
+}
+
+window.onkeydown = function(event) {
+     if (event.keyCode === 79) {
+	emitMyData()
+    console.log("emitMyData ()") 
 
     }
 }
