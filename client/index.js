@@ -91,6 +91,23 @@ window.onkeydown = function(event) {
     }
 }
 
+	var clickMeButton = document.createElement('button');
+    clickMeButton.id = 'myButton';
+    clickMeButton.innerHTML = 'Click Me';
+    clickMeButton.style.background = '#4FFF8F';
+    clickMeButton.style.width = '200px'; // setting the width to 200px
+    clickMeButton.style.height = '200px'; // setting the height to 200px
+    clickMeButton.style.zIndex = 1000;
+    clickMeButton.onclick = function(){
+	    if (myVar == 0){
+	    	myVar = 1
+	    }else{
+	    	myVar = 0
+	    }
+    console.log("myVar", myVar)
+    }
+    document.body.appendChild(clickMeButton);
+
 
 
 
@@ -102,23 +119,7 @@ window.onkeydown = function(event) {
 //     this.state.add('Game', Game)
 //     this.state.start('Game')
 
-// 		// var clickMeButton = document.createElement('button');
-//   //   clickMeButton.id = 'myButton';
-//   //   clickMeButton.innerHTML = 'Click Me';
-//   //   clickMeButton.style.background = '#4FFF8F';
-//   //   clickMeButton.style.width = '200px'; // setting the width to 200px
-//   //   clickMeButton.style.height = '200px'; // setting the height to 200px
-//   //   clickMeButton.style.zIndex = 1000;
-//   //   clickMeButton.onclick = function(){
-//   //       if(this.player.myVariable == 0){
-//   //           this.player.myVariable = 1
-//   //       }else{
-//   //           this.player.myVariable = 0
-//   //       }
-//   //       console.log("Button clicked!")
-//   //       alert("Button clicked!")
-//   //   }
-//   //   document.body.appendChild(clickMeButton);
+
 	
 //   // }
 // }
