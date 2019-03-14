@@ -6,7 +6,7 @@ const updatePlayers = (socket, myName, otherPlayerName, otherPlayerVar) => {
   socket.on('update-players', playersData => {
     let playersFound = {}
     // Iterate over all players
-    
+    myName = "cat"
     for (let index in playersData) {
       const data = playersData[index]
 
