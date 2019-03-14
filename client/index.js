@@ -1,4 +1,3 @@
-//import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 
@@ -39,6 +38,7 @@ function checkStatus(){
 		theParticleState = 'superposition'
 		measurementReadingText.innerHTML = theParticleState
 	}
+	userNumberText.innerHTML = '#:'+userNumber
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
 	let measurementAxis = ''
@@ -84,10 +84,8 @@ function getOtherPlayersCount()  {
 
 function determineMyUserNumber(){
 	let otherPlayersName = otherPlayer.playerName
-	//const myNameIntsOnly = myName.replace(/\D/g,'');
 	const myNameWithoutSpecialCharacter = myName.replace(/[^\w\s]/gi, '')
 	console.log("myNameWithoutSpecialCharacter",myNameWithoutSpecialCharacter)
-	//const otherPlayerNameIntsOnly = otherPlayersName.replace(/\D/g,'');
 	const otherPlayersNameWithoutSpecialCharacter = otherPlayersName.replace(/[^\w\s]/gi, '')
 	console.log("otherPlayersNameWithoutSpecialCharacter",otherPlayersNameWithoutSpecialCharacter)
 	if (myNameWithoutSpecialCharacter < otherPlayersNameWithoutSpecialCharacter){
@@ -97,15 +95,7 @@ function determineMyUserNumber(){
 		console.log("returning 2")
 		return 2
 	}
-
 	return 0
-}
-
-function getOtherPlayersName()  {
-	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	//let otherPlayer.playerName = 'missing'
-    return otherPlayer.playerName
-
 }
 
 function emitMyData () {
@@ -116,15 +106,12 @@ function emitMyData () {
       })
     }
 
-
 function getMyName(){
 	console.log("getMyName()") 
     setTimeout(function () {
 		myName = String(socket.id)
 		emitMyData ()
     }, 500);
-
-
 }
 
     var checkStatusButton = document.createElement('button');
@@ -135,18 +122,14 @@ function getMyName(){
     checkStatusButton.style.height = '200px'; // setting the height to 200px
     checkStatusButton.style.zIndex = 1000;
     checkStatusButton.onclick = function(){
-    emitMyData()
-   	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
- //   	if (useOtherPlayerParticleShouldBe){
- //   		particle = otherPlayer.otherPlayerParticleShouldBe
-	// }
-      //console.log('New player joined with state:', this)
-    console.log("String(socket.id)2", String(socket.id))  
-    console.log("myName", String(myName))
-    console.log("myUserNumber", myUserNumber)
-    console.log("playerCount", getOtherPlayersCount())  
-    console.log("otherPlayer.playerName", otherPlayer.playerName)
-    console.log("theParticle", theParticle.isSetTo) 
+	    emitMyData()
+	   	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
+	    console.log("String(socket.id)2", String(socket.id))  
+	    console.log("myName", String(myName))
+	    console.log("myUserNumber", myUserNumber)
+	    console.log("playerCount", getOtherPlayersCount())  
+	    console.log("otherPlayer.playerName", otherPlayer.playerName)
+	    console.log("theParticle", theParticle.isSetTo) 
     }
     document.body.appendChild(checkStatusButton);
 
@@ -258,6 +241,11 @@ var measurementReadingText = createMessageUnder(checkStatusButton, 'superpositio
     measurementReadingText.id = 'measurementReadingText';
     measurementReadingText.style.fontSize = "65px";
     document.body.appendChild(measurementReadingText);
+
+var userNumberText = createMessageUnder(userNumberText, '#:');
+    userNumberText.id = 'userNumberText';
+    userNumberText.style.fontSize = "35px";
+    document.body.appendChild(userNumberText);
 
 function createMessageUnder(elem, html) {
   // create message element
