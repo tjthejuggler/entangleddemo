@@ -4,6 +4,15 @@ import player from './state/player/index'
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 
+//TODO
+//	-remove files not being used
+//	-get rid of the personal particle stuff
+//	-make the userNumber situation more robust, maybe give either player a spot for it for the other to see,
+//		if someone has a number, the other should take the other, if neighter has a number, get it from name
+//	-allow user to input 'lab name'
+//	-make an array of entangled particles and show their states with the buttons
+//	-get rid of all the phaser stuff
+//	-see what i need in node_modules and get rid of anything extra
 
 console.log("begin program")
 
@@ -212,7 +221,9 @@ function getMyName(){
     measureOnD.onclick = function(){
     	if (!hasMeasured){
     		let measurement = 0
-    		const randomMeasurement = Math.random() < 0.5 ? 1 : 2;
+    		let randomNumber = Math.random()
+    		console.log(randomNumber)
+    		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
 	    	if (theParticle.isSetTo < 0){
 	    		measurement = randomMeasurement
 	    	}else{
