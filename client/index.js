@@ -21,6 +21,12 @@ socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
 
+var t=setInterval(checkStatus,1000);
+
+function checkStatus(){
+	getOtherPlayerInfo(socket, myName, otherPlayer)	
+}
+
 function getOtherPlayersCount()  {
 
 	getOtherPlayerInfo(socket, myName, otherPlayer)
@@ -126,8 +132,12 @@ function getMyName(){
     }
     document.body.appendChild(changeOtherPlayerVar);
 
+var myText = document.createElement('text');
+    myText.id = 'myText';
+    myText.innerHTML = 'Hello world!';
+    document.body.appendChild(myText);
 
-
+//document.getElementById("myelement1") = "Hello world!";
 
 // class App extends Phaser.Game {
 //   constructor () {
