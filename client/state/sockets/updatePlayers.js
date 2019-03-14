@@ -1,4 +1,4 @@
-//import player from './../player'
+import player from './../player'
 //import { createText } from '../utils'
 //RIGHT NOW THE FIRST PLAYER DOESNT GET TO SEE SECOND PLAYERS SPEED OR MYVARIABLE
 
