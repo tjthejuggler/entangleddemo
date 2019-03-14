@@ -76,15 +76,15 @@ window.onkeydown = function(event) {
     console.log("getOtherPlayers name", getOtherPlayersName()) 
 
     }
-}
-
-window.onkeydown = function(event) {
+     
      if (event.keyCode === 79) {
 	emitMyData()
     console.log("emitMyData ()") 
 
     }
 }
+
+
 
 
 // class App extends Phaser.Game {
