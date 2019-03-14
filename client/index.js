@@ -132,7 +132,7 @@ function getMyName(){
     }
     document.body.appendChild(changeOtherPlayerVar);
 
-var myText = createMessageUnder(elem, 'Hello, world!');
+var myText = createMessageUnder(changeParticleButton, 'Hello, world!');
     myText.id = 'myText';
     document.body.appendChild(myText);
 
