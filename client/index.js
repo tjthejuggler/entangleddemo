@@ -271,7 +271,7 @@ function getMyName(){
 
 
 
-var measurementReadingText = createMessageUnder(changeParticleButton, 'superposition');
+var measurementReadingText = createMessageUnder(checkStatusButton, 'superposition');
     measurementReadingText.id = 'measurementReadingText';
     measurementReadingText.style.fontSize = "65px";
     document.body.appendChild(measurementReadingText);
