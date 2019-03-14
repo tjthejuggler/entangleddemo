@@ -9,7 +9,7 @@ console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
-let otherPlayer = {playerName:"otherPlayer",particle:6}
+let otherPlayer = {playerName:"otherPlayer",particle:6,otherPlayerParticleShouldBe:0}
 //let partnerVar = 0
 
 //myPlayer = {}
@@ -60,39 +60,7 @@ function getMyName(){
 
 }
 
-window.onkeydown = function(event) {
-     if (event.keyCode === 80) {//P keypress (checkStatusButton)
-   //   	if (firstPress){
-			// myName = String(socket.id)
-			// firstPress = false
-   //   	}
-   getOtherPlayerInfo(socket, myName, otherPlayer)
-      //console.log('New player joined with state:', this)
-    console.log("String(socket.id)2", String(socket.id))  
-    console.log("myName", String(myName))
-    console.log("playerCount", getOtherPlayersCount())  
-    console.log("otherPlayer.playerName", otherPlayer.playerName)
-    console.log("otherPlayer.particle", otherPlayer.particle) 
 
-    }
-     
-     if (event.keyCode === 79) {//O keypress
-	emitMyData()
-    console.log("emitMyData ()") 
-
-    }
-
-    if (event.keyCode === 73) {//I keyPress (changeParticleButton)
-
-	    if (particle == 0){
-	    	particle = 1
-	    }else{
-	    	particle = 0
-	    }
-    console.log("particle", particle) 
-    emitMyData()
-    }
-}
 
 	var changeParticleButton = document.createElement('button');
     changeParticleButton.id = 'changeParticleButton';
