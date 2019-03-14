@@ -69,16 +69,11 @@ window.onkeydown = function(event) {
 			// firstPress = false
    //   	}
       //console.log('New player joined with state:', this)
-    console.log("this is a test1") 
-    alert("This is a test1.")
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayersCount())  
     console.log("getOtherPlayers name", getOtherPlayersName()) 
-    //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test2." + String(socket.id))
-    //console.log("this.playerName.name", this.playerName.name)
-    alert("This is a test3.")
+
     }
 }
 
