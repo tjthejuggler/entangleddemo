@@ -20,6 +20,7 @@ let myOtherPlayerParticleShouldBe = 0
 socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
+
 function getOtherPlayersCount()  {
 
 	getOtherPlayerInfo(socket, myName, otherPlayer)
@@ -36,9 +37,6 @@ function getOtherPlayersName()  {
     return otherPlayer.playerName
 
 }
-
-
-
 
 function emitMyData () {
       // Emit the 'move-player' event, updating the player's data on the server

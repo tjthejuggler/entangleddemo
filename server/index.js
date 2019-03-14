@@ -43,7 +43,7 @@ io.on('connection', socket => {
 
   // When a player moves
   socket.on('move-player', data => {
-    const { playerName, myVar, otherPlayerParticleShouldBe } = data
+    const { playerName, particle, otherPlayerParticleShouldBe } = data
 
     // If the player is invalid, return
     if (players[socket.id] === undefined) {
@@ -53,7 +53,7 @@ io.on('connection', socket => {
     // Update the player's data if he moved
     
     players[socket.id].playerName = playerName
-    players[socket.id].myVar = myVar
+    players[socket.id].particle = particle
     players[socket.id].otherPlayerParticleShouldBe = otherPlayerParticleShouldBe
 
     
