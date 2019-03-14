@@ -35,6 +35,7 @@ function checkStatus(){
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
 	}
+	if (!hasMeasured){
 	let theParticleState = 'superposition'
 	let measurementResult = ''
 	let measurementAxis = ''
@@ -74,8 +75,11 @@ function checkStatus(){
 			}
 		}
 	}
-	
+
 	myText.innerHTML = theParticleState
+}
+	
+	
 }
 
 function getOnesDigit(numberToUse){
