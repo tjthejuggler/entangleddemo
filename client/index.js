@@ -132,13 +132,30 @@ function getMyName(){
     }
     document.body.appendChild(changeOtherPlayerVar);
 
-var myText = document.createElement('text');
+var myText = createMessageUnder(elem, 'Hello, world!');
     myText.id = 'myText';
-    myText.innerHTML = 'Hello world!';
-    myText.style.left = "100px";
-    myText.style.top = "300px";
-    myText.style.fontSize = "25px";
     document.body.appendChild(myText);
+
+function createMessageUnder(elem, html) {
+  // create message element
+  let message = document.createElement('div');
+  // better to use a css class for the style here
+  message.style.cssText = "position:fixed; color: red";
+
+  // assign coordinates, don't forget "px"!
+  let coords = elem.getBoundingClientRect();
+
+  message.style.left = coords.left + "px";
+  message.style.top = coords.bottom + "px";
+
+  message.innerHTML = html;
+
+  return message;
+}
+
+
+
+
 
 //document.getElementById("myelement1") = "Hello world!";
 
