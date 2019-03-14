@@ -22,6 +22,7 @@ socket = io(SERVER_IP)
 newPlayer(socket, myVar, myName)
 getMyName()
 function getOtherPlayersCount()  {
+
 	updatePlayers(socket, myName, otherPlayerName, otherPlayerVar)
 	      var count = 0
       for (let index in otherPlayers) {
@@ -73,7 +74,7 @@ window.onkeydown = function(event) {
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayersCount())  
-    console.log("getOtherPlayers name", getOtherPlayersName()) 
+    console.log("getOtherPlayers name", otherPlayerName) 
 
     }
      
