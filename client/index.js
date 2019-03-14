@@ -242,7 +242,7 @@ var measurementReadingText = createMessageUnder(checkStatusButton, 'superpositio
     measurementReadingText.style.fontSize = "65px";
     document.body.appendChild(measurementReadingText);
 
-var userNumberText = createMessageUnder(userNumberText, '#:');
+var userNumberText = createMessageUnder(measurementReadingText, '#:');
     userNumberText.id = 'userNumberText';
     userNumberText.style.fontSize = "35px";
     document.body.appendChild(userNumberText);
