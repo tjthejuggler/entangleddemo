@@ -15,9 +15,7 @@ const getOtherPlayerInfo = (socket, myName, otherPlayer, theParticle) => {
       // Update otherPlayer data
       if (data.playerName !== myName) {
         otherPlayer.playerName = data.playerName
-        otherPlayer.particle = data.particle
-        otherPlayer.otherPlayerParticleShouldBe = data.otherPlayerParticleShouldBe
-        
+
       }
     }
   theParticle.isSetTo = theParticleFromServer

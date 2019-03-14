@@ -1,6 +1,6 @@
 import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
-import Game from './state/Game'
-import player from './state/player/index'
+//import Game from './state/Game'
+//import player from './state/player/index'
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 
@@ -18,20 +18,18 @@ console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
-let otherPlayer = {playerName:"otherPlayer",particle:6,otherPlayerParticleShouldBe:0}
+let otherPlayer = {playerName:"otherPlayer"}
 //let partnerVar = 0
 
 //myPlayer = {}
 
 const theParticle = {isSetTo: -1}
-var myParticle = 1
 let myName = 'house'
-let myOtherPlayerParticleShouldBe = 0
 let myUserNumber = 3
 let hasMeasured = false
 let theParticleState = ''
 socket = io(SERVER_IP)
-newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
+newPlayer(socket, myName)
 getMyName()
 
 var t=setInterval(checkStatus,100);
@@ -142,8 +140,6 @@ function emitMyData () {
       // Emit the 'move-player' event, updating the player's data on the server
       socket.emit('move-player', {
         playerName: myName,
-        particle: myParticle,
-        otherPlayerParticleShouldBe: myOtherPlayerParticleShouldBe,
         toSetTheParticleTo: theParticle.isSetTo,
       })
     }
@@ -175,11 +171,9 @@ function getMyName(){
       //console.log('New player joined with state:', this)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
-    console.log("my particle", myParticle)
     console.log("myUserNumber", myUserNumber)
     console.log("playerCount", getOtherPlayersCount())  
     console.log("otherPlayer.playerName", otherPlayer.playerName)
-    console.log("otherPlayer.particle", otherPlayer.particle)
     console.log("theParticle", theParticle.isSetTo) 
     }
     document.body.appendChild(checkStatusButton);

@@ -44,28 +44,18 @@ io.on('connection', socket => {
 
   // When a player moves
   socket.on('move-player', data => {
-    const { playerName, particle, otherPlayerParticleShouldBe, toSetTheParticleTo } = data
+    const { playerName, toSetTheParticleTo } = data
 
     // If the player is invalid, return
     if (players[socket.id] === undefined) {
       return
     }
 
-    // Update the player's data if he moved
-    
     players[socket.id].playerName = playerName
-    players[socket.id].particle = particle
-    players[socket.id].otherPlayerParticleShouldBe = otherPlayerParticleShouldBe
-    //console.log("theParticle before set", theParticle)
+
     theParticle = toSetTheParticleTo
-    //console.log("theParticle after set", theParticle)
 
-    
-
-    //io.emit('players-count', players.length())
-    // Send the data back to the client
     io.emit('update-players', {playersVar: players, theParticleVar:theParticle})
-    //io.emit('count-players', players)
   })
 
 
