@@ -127,7 +127,8 @@ function getMyName(){
     console.log("my particle", myParticle)
     console.log("playerCount", getOtherPlayersCount())  
     console.log("otherPlayer.playerName", otherPlayer.playerName)
-    console.log("otherPlayer.particle", otherPlayer.particle) 
+    console.log("otherPlayer.particle", otherPlayer.particle)
+    console.log("theParticle", theParticle.isSetTo) 
     }
     document.body.appendChild(checkStatusButton);
 
