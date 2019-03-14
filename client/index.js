@@ -25,6 +25,7 @@ var t=setInterval(checkStatus,1000);
 
 function checkStatus(){
 	getOtherPlayerInfo(socket, myName, otherPlayer)	
+	myText.innerHTML = otherPlayer.particle
 }
 
 function getOtherPlayersCount()  {
@@ -107,7 +108,6 @@ function getMyName(){
     console.log("playerCount", getOtherPlayersCount())  
     console.log("otherPlayer.playerName", otherPlayer.playerName)
     console.log("otherPlayer.particle", otherPlayer.particle) 
- 	myText.innerHTML = "clicked!"
     }
     document.body.appendChild(checkStatusButton);
 
