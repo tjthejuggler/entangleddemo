@@ -8,7 +8,7 @@ const io = require('socket.io')(Server)
 Server.listen(PORT, () => console.log('Game server running on:', PORT))
 
 const players = {}
-const theParticle = -1
+let theParticle = -1
 //todo
 //  right now we should be showing a player count on all the other cars, just not the players, so we cannot show the player
 //    count by pressing a key either, in order to do this
