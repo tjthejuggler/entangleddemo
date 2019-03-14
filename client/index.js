@@ -230,6 +230,7 @@ function getMyName(){
 		}else{
 			alert("Particle already measured.")
 		}
+		console.log("theParticle", theParticle.isSetTo)
     }
     document.body.appendChild(measureOnX);
 
@@ -255,6 +256,7 @@ function getMyName(){
 		}else{
 			alert("Particle already measured.")
 		}
+		console.log("theParticle", theParticle.isSetTo)
     }
     document.body.appendChild(measureOnD);
 
@@ -280,6 +282,7 @@ function getMyName(){
 		}else{
 			alert("Particle already measured.")
 		}
+		console.log("theParticle", theParticle.isSetTo) 
     }
     document.body.appendChild(measureOnY);
 
@@ -294,6 +297,7 @@ function getMyName(){
 		theParticle.isSetTo = -1
 		hasMeasured = false
 		emitMyData ()
+		console.log("theParticle", theParticle.isSetTo)
     }
     document.body.appendChild(createEntangledPair);
 
