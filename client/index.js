@@ -24,11 +24,17 @@ socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
 
-var t=setInterval(checkStatus,1000);
+var t=setInterval(checkStatus,250);
 
 function checkStatus(){
+	if (myUserNumber == 3){
+		var playerCount = getOtherPlayersCount()
+	}
 	emitMyData()
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
+	if (theParticle.isSetTo < 0){
+		hasMeasured = false
+	}
 	let theParticleState = 'superposition'
 	let measurementResult = ''
 	let measurementAxis = ''
