@@ -15,21 +15,10 @@ let partnerVar = 0
 //myPlayer = {}
 
 var myVar = 1
-
 let myName = 'house'
-
-
 socket = io(SERVER_IP)
-
-newPlayer(socket, myVar)
-
-
-// Creates the player passing the X, Y, game and socket as arguments
-//myPlayer = player(socket)
-
-const functionAsObjectProperty = {
-    print: (value) => console.log(value)
-};
+newPlayer(socket, myVar, myName)
+getMyName()
 
 function getOtherPlayersCount()  {
 	updatePlayers(socket, otherPlayers)
@@ -49,19 +38,8 @@ function getOtherPlayersName()  {
       }
     return otherplayername
 
-
-
-
-
-
 }
 
-functionAsObjectProperty.print("mic check"); // "mic check"
-
-console.log("String(socket.id)1", String(socket.id))  
-
-//let firstPress = true
-getMyName()
 
 
 
@@ -75,7 +53,7 @@ function emitMyData () {
 
 
 function getMyName(){
-
+	console.log("getMyName()") 
     setTimeout(function () {
 		myName = String(socket.id)
 		emitMyData ()
