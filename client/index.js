@@ -23,7 +23,7 @@ function getOtherPlayersCount()  {
 
 	updatePlayers(socket, myName, otherPlayer)
 	      var count = 1
-if (otherplayer.playerName !== "otherPlayer"){
+if (otherPlayer.playerName !== "otherPlayer"){
 	count = 2
 }
     return count
@@ -32,7 +32,7 @@ if (otherplayer.playerName !== "otherPlayer"){
 function getOtherPlayersName()  {
 	updatePlayers(socket, myName, otherPlayer)
 	//let otherplayer.playerName = 'missing'
-    return otherplayer.playerName
+    return otherPlayer.playerName
 
 }
 
@@ -69,7 +69,7 @@ window.onkeydown = function(event) {
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayersCount())  
-    console.log("getOtherPlayers name", otherplayer.playerName) 
+    console.log("getOtherPlayers name", otherPlayer.playerName) 
 
     }
      
