@@ -75,7 +75,7 @@ function getMyName(){
 	    }else{
 	    	particle = 0
 	    }
-	    otherPlayer.otherPlayerParticleShouldBe = particle
+	    useOtherPlayerParticleShouldBe = false
     console.log("my particle", particle)
     console.log("emitMyData ()") 
     emitMyData()
@@ -91,8 +91,10 @@ function getMyName(){
     checkStatusButton.style.height = '200px'; // setting the height to 200px
     checkStatusButton.style.zIndex = 1000;
     checkStatusButton.onclick = function(){
-   getOtherPlayerInfo(socket, myName, otherPlayer)
-   particle = otherPlayer.otherPlayerParticleShouldBe
+   	getOtherPlayerInfo(socket, myName, otherPlayer)
+   	if (useOtherPlayerParticleShouldBe){
+   		particle = otherPlayer.otherPlayerParticleShouldBe
+	}
       //console.log('New player joined with state:', this)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
@@ -113,12 +115,14 @@ function getMyName(){
     changeOtherPlayerVar.style.height = '200px'; // setting the height to 200px
     changeOtherPlayerVar.style.zIndex = 1000;
     changeOtherPlayerVar.onclick = function(){
+    	getOtherPlayerInfo(socket, myName, otherPlayer)
 	    if (otherPlayer.particle == 0){
 	    	otherPlayerParticleShouldBe = 1
 	    }else{
 	    	otherPlayerParticleShouldBe = 0
 	    }
     emitMyData()
+    console.log("otherPlayerParticleShouldBe", otherPlayerParticleShouldBe) 
 
     }
     document.body.appendChild(changeOtherPlayerVar);
