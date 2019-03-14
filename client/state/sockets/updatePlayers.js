@@ -2,7 +2,7 @@
 //import { createText } from '../utils'
 //RIGHT NOW THE FIRST PLAYER DOESNT GET TO SEE SECOND PLAYERS SPEED OR MYVARIABLE
 
-const updatePlayers = (socket, otherPlayers) => {
+const updatePlayers = (socket, otherPlayers, myName) => {
   socket.on('update-players', playersData => {
     let playersFound = {}
     // Iterate over all players
@@ -12,20 +12,22 @@ const updatePlayers = (socket, otherPlayers) => {
       // In case a player hasn't been created yet
       // We make sure that we won't create a second instance of it
 
-      if (otherPlayers.playerName === "house" && index !== socket.id) {
+
+
+      if (data.playerName === "house" && data.playerName !== myName) {
         const newPlayer = player()
         // newPlayer.playerName = createText(game, newPlayer)
         // newPlayer.speedText = createText(game, newPlayer)
         // newPlayer.myVariableText = createText(game, newPlayer)
        newPlayer.playerName = data.playerName
-       //newPlayer.myVar = data.myVar
+       newPlayer.myVar = data.myVar
         otherPlayers[index] = newPlayer
       }
 
       playersFound[index] = true
 
       // Update players data
-      if (index !== socket.id) {
+      if (data.playerName !== myName) {
         // Update players target but not their real position
         // otherPlayers[index].target_x = data.x
         // otherPlayers[index].target_y = data.y
@@ -41,7 +43,7 @@ const updatePlayers = (socket, otherPlayers) => {
 
         // otherPlayers[index].myVariableText.target_x = data.myVariable.x//TJ added this
         // otherPlayers[index].myVariableText.target_y = data.myVariable.y//TJ added this
-        //otherPlayers[index].playerName = data.playerName
+        otherPlayers[index].playerName = data.playerName
         otherPlayers[index].myVar = data.myVar//TJ added this
 
   

@@ -21,7 +21,7 @@ newPlayer(socket, myVar, myName)
 getMyName()
 
 function getOtherPlayersCount()  {
-	updatePlayers(socket, otherPlayers)
+	updatePlayers(socket, otherPlayers, myName)
 	      var count = 0
       for (let index in otherPlayers) {
         count++
@@ -30,7 +30,7 @@ function getOtherPlayersCount()  {
 }
 
 function getOtherPlayersName()  {
-	updatePlayers(socket, otherPlayers)
+	updatePlayers(socket, otherPlayers, myName)
 	let otherplayername = 'missing'
       for (let id in otherPlayers) {
     let otherplayer = otherPlayers[id]
