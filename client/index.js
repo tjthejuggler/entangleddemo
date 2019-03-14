@@ -42,46 +42,25 @@ function checkStatus(){
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
 	let measurementAxis = ''
-	if (theParticle.isSetTo>0){
-		if ((myUserNumber == 1 && theParticle.isSetTo<150) || (myUserNumber == 2 && theParticle.isSetTo>150) ){
-
-				if (getOnesDigit(theParticle.isSetTo) == 1){ //I think this can be combined with below by doing a (this and that) OR (other this and other that)
+		if (theParticle.isSetTo>0){
+			if ((myUserNumber == 1 && theParticle.isSetTo<150) || (myUserNumber == 2 && theParticle.isSetTo>150) ){
+				if (getOnesDigit(theParticle.isSetTo) == 1){ 
 					measurementResult = 'Down Spin '
 				}else if(getOnesDigit(theParticle.isSetTo) == 2){
 					measurementResult = 'Up Spin '
 				}
-				if (getTensDigit(theParticle.isSetTo) == 1){
+				if (getTensDigit(theParticle.isSetTo) == 1){//TODO these conditionals could turn into some kind of case usage
 					measurementAxis = '(X)'
 				}else if (getTensDigit(theParticle.isSetTo) == 2){
 					measurementAxis = '(D)'
 				}else if (getTensDigit(theParticle.isSetTo) == 3){
 					measurementAxis = '(Y)'
 				}
-				theParticleState = measurementResult + measurementAxis
-			
+				theParticleState = measurementResult + measurementAxis			
+			}
 		}
-		// 		if (myUserNumber == 2){
-		// 	if (theParticle.isSetTo>150){
-		// 		if (getOnesDigit(theParticle.isSetTo) == 1){
-		// 			measurementResult = 'Down Spin '
-		// 		}else if(getOnesDigit(theParticle.isSetTo) == 2){
-		// 			measurementResult = 'Up Spin '
-		// 		}
-		// 		if (getTensDigit(theParticle.isSetTo) == 1){
-		// 			measurementAxis = '(X)'
-		// 		}else if (getTensDigit(theParticle.isSetTo) == 2){
-		// 			measurementAxis = '(D)'
-		// 		}else if (getTensDigit(theParticle.isSetTo) == 3){
-		// 			measurementAxis = '(Y)'
-		// 		}
-		// 		theParticleState = measurementResult + measurementAxis
-		// 	}
-		// }
-	}
-
-	measurementReadingText.innerHTML = theParticleState
-}
-	
+		measurementReadingText.innerHTML = theParticleState
+	}	
 	
 }
 
@@ -94,33 +73,32 @@ function getTensDigit(numberToUse){
 }
 
 function getOtherPlayersCount()  {
-
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	      var count = 1
-if (otherPlayer.playerName !== "otherPlayer"){
-	count = 2
-	myUserNumber = determineMyUserNumber()
-
-}
+	    var count = 1
+	if (otherPlayer.playerName !== "otherPlayer"){
+		count = 2
+		myUserNumber = determineMyUserNumber()
+	}
     return count
 }
 
 function determineMyUserNumber(){
 	let otherPlayersName = otherPlayer.playerName
+	//const myNameIntsOnly = myName.replace(/\D/g,'');
+	const myNameWithoutSpecialCharacter = myName.replace(/[^\w\s]/gi, '')
+	console.log("myNameWithoutSpecialCharacter",myNameWithoutSpecialCharacter)
+	//const otherPlayerNameIntsOnly = otherPlayersName.replace(/\D/g,'');
+	const otherPlayersNameWithoutSpecialCharacter = otherPlayersName.replace(/[^\w\s]/gi, '')
+	console.log("otherPlayersNameWithoutSpecialCharacter",otherPlayersNameWithoutSpecialCharacter)
+	if (myNameWithoutSpecialCharacter < otherPlayersNameWithoutSpecialCharacter){
+		console.log("returning 1")
+		return 1
+	}else{
+		console.log("returning 2")
+		return 2
+	}
 
-const myNameIntsOnly = myName.replace(/\D/g,'');
-console.log("myNameIntsOnly",myNameIntsOnly)
-const otherPlayerNameIntsOnly = otherPlayersName.replace(/\D/g,'');
-console.log("otherPlayerNameIntsOnly",otherPlayerNameIntsOnly)
-if (myNameIntsOnly < otherPlayerNameIntsOnly){
-	console.log("returning 1")
-	return 1
-}else{
-	console.log("returning 2")
-	return 2
-}
-
-return 0
+	return 0
 }
 
 function getOtherPlayersName()  {
