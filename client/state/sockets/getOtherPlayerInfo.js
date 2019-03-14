@@ -2,8 +2,8 @@
 //import { createText } from '../utils'
 
 
-const getOtherPlayerInfo = (socket, myName, otherPlayer) => {
-  socket.on('update-players', playersData => {
+const getOtherPlayerInfo = (socket, myName, otherPlayer, theParticle) => {
+  socket.on('update-players', (playersData, theParticleFromServer) => {
     // Iterate over all players
     for (let index in playersData) {
       const data = playersData[index]
@@ -13,6 +13,7 @@ const getOtherPlayerInfo = (socket, myName, otherPlayer) => {
         otherPlayer.playerName = data.playerName
         otherPlayer.particle = data.particle
         otherPlayer.otherPlayerParticleShouldBe = data.otherPlayerParticleShouldBe
+        theParticle.isSetTo = theParticleFromServer
       }
     }
 

@@ -14,9 +14,11 @@ let otherPlayer = {playerName:"otherPlayer",particle:6,otherPlayerParticleShould
 
 //myPlayer = {}
 
+const theParticle = {isSetTo: -1}
 var myParticle = 1
 let myName = 'house'
 let myOtherPlayerParticleShouldBe = 0
+let myUserNumber = 3
 socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
@@ -24,22 +26,37 @@ getMyName()
 var t=setInterval(checkStatus,1000);
 
 function checkStatus(){
-	getOtherPlayerInfo(socket, myName, otherPlayer)	
-	myText.innerHTML = otherPlayer.particle
+	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
+	myText.innerHTML = theParticle.isSetTo
 }
 
 function getOtherPlayersCount()  {
 
-	getOtherPlayerInfo(socket, myName, otherPlayer)
+	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
 	      var count = 1
 if (otherPlayer.playerName !== "otherPlayer"){
 	count = 2
+	myUserNumber = determineMyUserNumber()
+
 }
     return count
 }
 
+function determineMyUserNumber(){
+	let otherPlayersName = otherPlayer.playerName
+	let array = {myName, otherPlayersName}
+	array.sort(function(a, b){
+	 var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+	 if (nameA < nameB) //sort string ascending
+	  return 1;
+	 if (nameA > nameB)
+	  return 2;
+	 return 0; //default return value (no sorting)
+	});
+}
+
 function getOtherPlayersName()  {
-	getOtherPlayerInfo(socket, myName, otherPlayer)
+	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
 	//let otherPlayer.playerName = 'missing'
     return otherPlayer.playerName
 
@@ -51,6 +68,7 @@ function emitMyData () {
         playerName: myName,
         particle: myParticle,
         otherPlayerParticleShouldBe: myOtherPlayerParticleShouldBe,
+        theParticle: toSetTheParticleTo,
       })
     }
 
@@ -97,7 +115,7 @@ function getMyName(){
     checkStatusButton.style.zIndex = 1000;
     checkStatusButton.onclick = function(){
     emitMyData()
-   	getOtherPlayerInfo(socket, myName, otherPlayer)
+   	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
  //   	if (useOtherPlayerParticleShouldBe){
  //   		particle = otherPlayer.otherPlayerParticleShouldBe
 	// }
@@ -121,7 +139,7 @@ function getMyName(){
     changeOtherPlayerVar.style.height = '200px'; // setting the height to 200px
     changeOtherPlayerVar.style.zIndex = 1000;
     changeOtherPlayerVar.onclick = function(){
-    	getOtherPlayerInfo(socket, myName, otherPlayer)
+    	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
 	    if (otherPlayer.particle == 0){
 	    	myOtherPlayerParticleShouldBe = 1
 	    }else{
@@ -132,6 +150,47 @@ function getMyName(){
 
     }
     document.body.appendChild(changeOtherPlayerVar);
+
+    var measureOnX = document.createElement('button');
+    measureOnX.id = 'measureOnX';
+    measureOnX.innerHTML = 'measure On X';
+    measureOnX.style.background = '#4FFF8F';
+    measureOnX.style.width = '200px'; // setting the width to 200px
+    measureOnX.style.height = '200px'; // setting the height to 200px
+    measureOnX.style.zIndex = 1000;
+    measureOnX.onclick = function(){
+		theParticle.isSetTo = myUserNumber*100+10+1
+		emitMyData ()
+    }
+    document.body.appendChild(measureOnX);
+
+        var measureOnD = document.createElement('button');
+    measureOnD.id = 'measureOnD';
+    measureOnD.innerHTML = 'measure On D';
+    measureOnD.style.background = '#4FFF8F';
+    measureOnD.style.width = '200px'; // setting the width to 200px
+    measureOnD.style.height = '200px'; // setting the height to 200px
+    measureOnD.style.zIndex = 1000;
+    measureOnD.onclick = function(){
+		theParticle.isSetTo = myUserNumber*100+20+1
+		emitMyData ()
+    }
+    document.body.appendChild(measureOnD);
+
+        var measureOnY = document.createElement('button');
+    measureOnY.id = 'measureOnY';
+    measureOnY.innerHTML = 'measure On Y';
+    measureOnY.style.background = '#4FFF8F';
+    measureOnY.style.width = '200px'; // setting the width to 200px
+    measureOnY.style.height = '200px'; // setting the height to 200px
+    measureOnY.style.zIndex = 1000;
+    measureOnY.onclick = function(){
+		theParticle.isSetTo = myUserNumber*100+30+1
+		emitMyData ()
+    }
+    document.body.appendChild(measureOnY);
+
+
 
 var myText = createMessageUnder(changeParticleButton, 'Hello, world!');
     myText.id = 'myText';

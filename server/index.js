@@ -8,6 +8,7 @@ const io = require('socket.io')(Server)
 Server.listen(PORT, () => console.log('Game server running on:', PORT))
 
 const players = {}
+const theParticle = -1
 //todo
 //  right now we should be showing a player count on all the other cars, just not the players, so we cannot show the player
 //    count by pressing a key either, in order to do this
@@ -31,19 +32,19 @@ io.on('connection', socket => {
       }
   
     // Emit the update-players method in the client side
-    io.emit('update-players', players)
+    io.emit('update-players', {players, theParticle} )
     //io.emit('count-players', players)
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
-    io.emit('update-players', players)
+    io.emit('update-players', {players, theParticle})
     //io.emit('count-players', players)
   })
 
   // When a player moves
   socket.on('move-player', data => {
-    const { playerName, particle, otherPlayerParticleShouldBe } = data
+    const { playerName, particle, otherPlayerParticleShouldBe, toSetTheParticleTo } = data
 
     // If the player is invalid, return
     if (players[socket.id] === undefined) {
@@ -55,12 +56,13 @@ io.on('connection', socket => {
     players[socket.id].playerName = playerName
     players[socket.id].particle = particle
     players[socket.id].otherPlayerParticleShouldBe = otherPlayerParticleShouldBe
+    theParticle = toSetTheParticleTo
 
     
 
     //io.emit('players-count', players.length())
     // Send the data back to the client
-    io.emit('update-players', players)
+    io.emit('update-players', {players, theParticle})
     //io.emit('count-players', players)
   })
 
