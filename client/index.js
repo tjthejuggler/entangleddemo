@@ -17,10 +17,6 @@ console.log("begin program")
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
 let otherPlayer = {playerName:"otherPlayer"}
-//let partnerVar = 0
-
-//myPlayer = {}
-
 const theParticle = {isSetTo: -1}
 let myName = 'house'
 let myUserNumber = 3
@@ -47,8 +43,8 @@ function checkStatus(){
 	let measurementResult = ''
 	let measurementAxis = ''
 	if (theParticle.isSetTo>0){
-		if (myUserNumber == 1){
-			if (theParticle.isSetTo<150){
+		if ((myUserNumber == 1 && theParticle.isSetTo<150) || (myUserNumber == 2 && theParticle.isSetTo>150) ){
+
 				if (getOnesDigit(theParticle.isSetTo) == 1){ //I think this can be combined with below by doing a (this and that) OR (other this and other that)
 					measurementResult = 'Down Spin '
 				}else if(getOnesDigit(theParticle.isSetTo) == 2){
@@ -62,25 +58,25 @@ function checkStatus(){
 					measurementAxis = '(Y)'
 				}
 				theParticleState = measurementResult + measurementAxis
-			}
+			
 		}
-				if (myUserNumber == 2){
-			if (theParticle.isSetTo>150){
-				if (theParticle.isSetTo % 10 == 1){
-					measurementResult = 'Down Spin '
-				}else if(theParticle.isSetTo % 10 == 2){
-					measurementResult = 'Up Spin '
-				}
-				if (getTensDigit(theParticle.isSetTo) == 1){
-					measurementAxis = '(X)'
-				}else if (getTensDigit(theParticle.isSetTo) == 2){
-					measurementAxis = '(D)'
-				}else if (getTensDigit(theParticle.isSetTo) == 3){
-					measurementAxis = '(Y)'
-				}
-				theParticleState = measurementResult + measurementAxis
-			}
-		}
+		// 		if (myUserNumber == 2){
+		// 	if (theParticle.isSetTo>150){
+		// 		if (getOnesDigit(theParticle.isSetTo) == 1){
+		// 			measurementResult = 'Down Spin '
+		// 		}else if(getOnesDigit(theParticle.isSetTo) == 2){
+		// 			measurementResult = 'Up Spin '
+		// 		}
+		// 		if (getTensDigit(theParticle.isSetTo) == 1){
+		// 			measurementAxis = '(X)'
+		// 		}else if (getTensDigit(theParticle.isSetTo) == 2){
+		// 			measurementAxis = '(D)'
+		// 		}else if (getTensDigit(theParticle.isSetTo) == 3){
+		// 			measurementAxis = '(Y)'
+		// 		}
+		// 		theParticleState = measurementResult + measurementAxis
+		// 	}
+		// }
 	}
 
 	measurementReadingText.innerHTML = theParticleState

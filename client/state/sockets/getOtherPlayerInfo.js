@@ -1,7 +1,3 @@
-//import player from './../player'
-//import { createText } from '../utils'
-
-
 const getOtherPlayerInfo = (socket, myName, otherPlayer, theParticle) => {
   socket.on('update-players', function(data) {
       var playersData = data.playersVar
