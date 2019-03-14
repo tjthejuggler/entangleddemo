@@ -135,6 +135,9 @@ function getMyName(){
 var myText = document.createElement('text');
     myText.id = 'myText';
     myText.innerHTML = 'Hello world!';
+    myText.style.left = "100px";
+    myText.style.top = "300px";
+    myText.style.fontSize = "25px";
     document.body.appendChild(myText);
 
 //document.getElementById("myelement1") = "Hello world!";
