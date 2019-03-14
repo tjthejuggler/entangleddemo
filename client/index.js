@@ -25,7 +25,7 @@ socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
 
-var t=setInterval(checkStatus,250);
+var t=setInterval(checkStatus,50);
 
 function checkStatus(){
 	if (myUserNumber == 3){
