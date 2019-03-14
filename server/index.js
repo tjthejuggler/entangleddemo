@@ -56,9 +56,9 @@ io.on('connection', socket => {
     players[socket.id].playerName = playerName
     players[socket.id].particle = particle
     players[socket.id].otherPlayerParticleShouldBe = otherPlayerParticleShouldBe
-    console.log("theParticle before set", theParticle)
+    //console.log("theParticle before set", theParticle)
     theParticle = toSetTheParticleTo
-    console.log("theParticle after set", theParticle)
+    //console.log("theParticle after set", theParticle)
 
     
 

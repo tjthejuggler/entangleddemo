@@ -125,6 +125,7 @@ function getMyName(){
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("my particle", myParticle)
+    console.log("myUserNumber", myUserNumber)
     console.log("playerCount", getOtherPlayersCount())  
     console.log("otherPlayer.playerName", otherPlayer.playerName)
     console.log("otherPlayer.particle", otherPlayer.particle)
