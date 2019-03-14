@@ -27,6 +27,7 @@ getMyName()
 var t=setInterval(checkStatus,1000);
 
 function checkStatus(){
+	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	let theParticleState = 'superposition'
 	let measurementResult = ''
 	let measurementAxis = ''
@@ -66,8 +67,8 @@ function checkStatus(){
 			}
 		}
 	}
-	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
-	myText.innerHTML = theParticle.isSetTo
+	
+	myText.innerHTML = theParticleState
 }
 
 function getOtherPlayersCount()  {
