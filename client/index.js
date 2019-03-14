@@ -50,8 +50,10 @@ console.log("myNameIntsOnly",myNameIntsOnly)
 const otherPlayerNameIntsOnly = otherPlayersName.replace(/\D/g,'');
 console.log("otherPlayerNameIntsOnly",otherPlayerNameIntsOnly)
 if (myNameIntsOnly < otherPlayerNameIntsOnly){
+	console.log("returning 1")
 	return 1
 }else{
+	console.log("returning 2")
 	return 2
 }
 
