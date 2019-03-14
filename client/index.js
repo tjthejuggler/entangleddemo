@@ -18,7 +18,7 @@ var particle = 1
 let myName = 'house'
 let otherPlayerParticleShouldBe = 0
 socket = io(SERVER_IP)
-newPlayer(socket, particle, myName)
+newPlayer(socket, myName, particle, otherPlayerParticleShouldBe)
 getMyName()
 function getOtherPlayersCount()  {
 
