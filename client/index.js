@@ -34,9 +34,9 @@ function checkStatus(){
 		if (myUserNumber == 1){
 			if (theParticle.isSetTo<150){
 				if (theParticle.isSetTo % 10 == 1){ //I think this can be combined with below by doing a (this and that) OR (other this and other that)
-					measurementResult = 'Down Spin'
+					measurementResult = 'Down Spin '
 				}else if(theParticle.isSetTo % 10 == 2){
-					measurementResult = 'Up Spin'
+					measurementResult = 'Up Spin '
 				}
 				if (Math.round(theParticle.isSetTo/10) % 10 == 1){
 					measurementAxis = '(X)'
@@ -45,14 +45,15 @@ function checkStatus(){
 				}else if (Math.round(theParticle.isSetTo/10) % 10 == 3){
 					measurementAxis = '(Y)'
 				}
+				theParticleState = measurementResult + measurementAxis
 			}
 		}
 				if (myUserNumber == 2){
 			if (theParticle.isSetTo>150){
 				if (theParticle.isSetTo % 10 == 1){
-					measurementResult = 'Down Spin'
+					measurementResult = 'Down Spin '
 				}else if(theParticle.isSetTo % 10 == 2){
-					measurementResult = 'Up Spin'
+					measurementResult = 'Up Spin '
 				}
 				if (Math.round(theParticle.isSetTo/10) % 10 == 1){
 					measurementAxis = '(X)'
@@ -61,6 +62,7 @@ function checkStatus(){
 				}else if (Math.round(theParticle.isSetTo/10) % 10 == 3){
 					measurementAxis = '(Y)'
 				}
+				theParticleState = measurementResult + measurementAxis
 			}
 		}
 	}
