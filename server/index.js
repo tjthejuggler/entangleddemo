@@ -43,7 +43,7 @@ io.on('connection', socket => {
 
   // When a player moves
   socket.on('move-player', data => {
-    const { playerName, myVar } = data
+    const { playerName, myVar, otherPlayerParticleShouldBe } = data
 
     // If the player is invalid, return
     if (players[socket.id] === undefined) {
@@ -53,20 +53,8 @@ io.on('connection', socket => {
     // Update the player's data if he moved
     
     players[socket.id].playerName = playerName
-    // players[socket.id].x = x
-    // players[socket.id].y = y
-    // players[socket.id].angle = angle
-    // players[socket.id].playerName = {
-    //   name: playerName.name,
-    //   x: playerName.x,
-    //   y: playerName.y
-    // }
-    // players[socket.id].speed = {
-    //   value: speed.value,
-    //   x: speed.x,
-    //   y: speed.y
-    // }
     players[socket.id].myVar = myVar
+    players[socket.id].otherPlayerParticleShouldBe = otherPlayerParticleShouldBe
 
     
 

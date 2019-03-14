@@ -4,7 +4,7 @@ import fileLoader from '../config/fileloader'
 import createWorld from './world/createWorld'
 import player from './player'
 import newPlayer from './sockets/newPlayer'
-import updatePlayers from './sockets/updatePlayers'
+import getOtherPlayerInfo from './sockets/getOtherPlayerInfo'
 import playerMovementInterpolation from './predictions/playerMovementInterpolation'
 
 //CURRENT MISSION:
@@ -79,7 +79,7 @@ class Game extends Phaser.State {
     newPlayer(socket, this.player)
     
     // update all players
-    updatePlayers(socket, otherPlayers)
+    getOtherPlayerInfo(socket, otherPlayers)
 
     
 
