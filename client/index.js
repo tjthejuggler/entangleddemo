@@ -32,7 +32,7 @@ if (otherPlayer.playerName !== "otherPlayer"){
 
 function getOtherPlayersName()  {
 	getOtherPlayerInfo(socket, myName, otherPlayer)
-	//let otherplayer.playerName = 'missing'
+	//let otherPlayer.playerName = 'missing'
     return otherPlayer.playerName
 
 }
@@ -91,7 +91,7 @@ function getMyName(){
     checkStatusButton.style.zIndex = 1000;
     checkStatusButton.onclick = function(){
    getOtherPlayerInfo(socket, myName, otherPlayer)
-   particle = otherplayer.otherPlayerParticleShouldBe
+   particle = otherPlayer.otherPlayerParticleShouldBe
       //console.log('New player joined with state:', this)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
