@@ -107,6 +107,7 @@ function getMyName(){
     console.log("playerCount", getOtherPlayersCount())  
     console.log("otherPlayer.playerName", otherPlayer.playerName)
     console.log("otherPlayer.particle", otherPlayer.particle) 
+ 	myText.innerHTML = "clicked!"
     }
     document.body.appendChild(checkStatusButton);
 
@@ -134,6 +135,7 @@ function getMyName(){
 
 var myText = createMessageUnder(changeParticleButton, 'Hello, world!');
     myText.id = 'myText';
+    myText.style.fontSize = "100px";
     document.body.appendChild(myText);
 
 function createMessageUnder(elem, html) {
