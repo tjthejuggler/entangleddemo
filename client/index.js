@@ -44,15 +44,17 @@ if (otherPlayer.playerName !== "otherPlayer"){
 
 function determineMyUserNumber(){
 	let otherPlayersName = otherPlayer.playerName
-	let array = {myName, otherPlayersName}
-	array.sort(function(a, b){
-	 var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-	 if (nameA < nameB) //sort string ascending
-	  return 1;
-	 if (nameA > nameB)
-	  return 2;
-	 return 0; //default return value (no sorting)
-	});
+
+const myNameIntsOnly = myName.replace(/\D/g,'');
+const otherPlayerNameIntsOnly = otherPlayersName.replace(/\D/g,'');
+
+if (myNameIntsOnly < otherPlayerNameIntsOnly){
+	return 1
+}else{
+	return 2
+}
+
+return 0
 }
 
 function getOtherPlayersName()  {
