@@ -14,11 +14,11 @@ let otherPlayer = {playerName:"otherPlayer",particle:6,otherPlayerParticleShould
 
 //myPlayer = {}
 
-var particle = 1
+var myParticle = 1
 let myName = 'house'
-let otherPlayerParticleShouldBe = 0
+let myOtherPlayerParticleShouldBe = 0
 socket = io(SERVER_IP)
-newPlayer(socket, myName, particle, otherPlayerParticleShouldBe)
+newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
 function getOtherPlayersCount()  {
 
@@ -44,8 +44,8 @@ function emitMyData () {
       // Emit the 'move-player' event, updating the player's data on the server
       socket.emit('move-player', {
         playerName: myName,
-        particle: particle,
-        otherPlayerParticleShouldBe: otherPlayerParticleShouldBe,
+        particle: myParticle,
+        otherPlayerParticleShouldBe: myOtherPlayerParticleShouldBe,
       })
     }
 
@@ -64,19 +64,19 @@ function getMyName(){
 
 	var changeParticleButton = document.createElement('button');
     changeParticleButton.id = 'changeParticleButton';
-    changeParticleButton.innerHTML = 'Change particle';
+    changeParticleButton.innerHTML = 'Change myParticle';
     changeParticleButton.style.background = '#4FFF8F';
     changeParticleButton.style.width = '200px'; // setting the width to 200px
     changeParticleButton.style.height = '200px'; // setting the height to 200px
     changeParticleButton.style.zIndex = 1000;
     changeParticleButton.onclick = function(){
-	    if (particle == 0){
-	    	particle = 1
+	    if (myParticle == 0){
+	    	myParticle = 1
 	    }else{
-	    	particle = 0
+	    	myParticle = 0
 	    }
 	    //useOtherPlayerParticleShouldBe = false
-    console.log("my particle", particle)
+    console.log("my particle", myParticle)
     console.log("emitMyData ()") 
     emitMyData()
     }
@@ -99,7 +99,7 @@ function getMyName(){
       //console.log('New player joined with state:', this)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
-    console.log("my particle", particle)
+    console.log("my particle", myParticle)
     console.log("playerCount", getOtherPlayersCount())  
     console.log("otherPlayer.playerName", otherPlayer.playerName)
     console.log("otherPlayer.particle", otherPlayer.particle) 
@@ -118,12 +118,12 @@ function getMyName(){
     changeOtherPlayerVar.onclick = function(){
     	getOtherPlayerInfo(socket, myName, otherPlayer)
 	    if (otherPlayer.particle == 0){
-	    	otherPlayerParticleShouldBe = 1
+	    	myOtherPlayerParticleShouldBe = 1
 	    }else{
-	    	otherPlayerParticleShouldBe = 0
+	    	myOtherPlayerParticleShouldBe = 0
 	    }
     emitMyData()
-    console.log("otherPlayerParticleShouldBe", otherPlayerParticleShouldBe) 
+    console.log("otherPlayerParticleShouldBe", myOtherPlayerParticleShouldBe) 
 
     }
     document.body.appendChild(changeOtherPlayerVar);
