@@ -2,20 +2,16 @@
 //import { createText } from '../utils'
 //RIGHT NOW THE FIRST PLAYER DOESNT GET TO SEE SECOND PLAYERS SPEED OR MYVARIABLE
 
-const updatePlayers = (socket, myName, otherPlayerName, otherPlayerVar) => {
+const updatePlayers = (socket, myName, otherPlayer) => {
   socket.on('update-players', playersData => {
-    let playersFound = {}
     // Iterate over all players
-    myName = "cat"
     for (let index in playersData) {
       const data = playersData[index]
 
-      playersFound[index] = true
-
       // Update otherPlayer data
       if (data.playerName !== myName) {
-        otherPlayerName = data.playerName
-        otherPlayerVar = data.myVar
+        otherPlayer.playerName = data.playerName
+        otherPlayer.myVar = data.myVar
       }
     }
 

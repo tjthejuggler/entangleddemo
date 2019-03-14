@@ -9,10 +9,8 @@ console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = null
-let otherPlayers = {}
-let otherPlayerName = 'otherPlayer'
-let otherPlayerVar = 5
-let partnerVar = 0
+let otherPlayer = {playerName:"otherPlayer",myVar:6}
+//let partnerVar = 0
 
 //myPlayer = {}
 
@@ -32,13 +30,9 @@ function getOtherPlayersCount()  {
 }
 
 function getOtherPlayersName()  {
-	updatePlayers(socket, myName, otherPlayerName, otherPlayerVar)
-	let otherplayername = 'missing'
-      for (let id in otherPlayers) {
-    let otherplayer = otherPlayers[id]
-    otherplayername = otherplayer.playerName
-      }
-    return otherplayername
+	updatePlayers(socket, myName, otherPlayer)
+	//let otherplayer.playerName = 'missing'
+    return otherplayer.playerName
 
 }
 
@@ -70,11 +64,12 @@ window.onkeydown = function(event) {
 			// myName = String(socket.id)
 			// firstPress = false
    //   	}
+   updatePlayers(socket, myName, otherPlayer)
       //console.log('New player joined with state:', this)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayersCount())  
-    console.log("getOtherPlayers name", otherPlayerName) 
+    console.log("getOtherPlayers name", otherplayer.playerName) 
 
     }
      
