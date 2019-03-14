@@ -41,7 +41,7 @@ const updatePlayers = (socket, otherPlayers) => {
 
         // otherPlayers[index].myVariableText.target_x = data.myVariable.x//TJ added this
         // otherPlayers[index].myVariableText.target_y = data.myVariable.y//TJ added this
-        otherPlayers[index].playerName = data.playerName
+        //otherPlayers[index].playerName = data.playerName
         otherPlayers[index].myVar = data.myVar//TJ added this
 
   
