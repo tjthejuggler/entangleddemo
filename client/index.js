@@ -60,7 +60,7 @@ function getMyName(){
     setTimeout(function () {
 		myName = String(socket.id)
 		emitMyData ()
-    }, 5000);
+    }, 500);
 
 
 }
