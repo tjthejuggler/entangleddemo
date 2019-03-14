@@ -9,13 +9,6 @@ Server.listen(PORT, () => console.log('Game server running on:', PORT))
 
 const players = {}
 let theParticle = -1
-//todo
-//  right now we should be showing a player count on all the other cars, just not the players, so we cannot show the player
-//    count by pressing a key either, in order to do this
-//  we need a way to share variables between files, maybe this will have a lead:
-//    https://stackoverflow.com/questions/7612011/how-to-get-a-variable-from-a-file-to-another-file-in-node-js/7612052
-//  
-
 io.on('connection', socket => {
   // When a player connects
   socket.on('new-player', state => {

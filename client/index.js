@@ -2,10 +2,8 @@ import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 
 //TODO
-//	-remove files not being used
-//	-get rid of the personal particle stuff
-//	-make the userNumber situation more robust, maybe give either player a spot for it for the other to see,
-//		if someone has a number, the other should take the other, if neighter has a number, get it from name
+//	-make a function that makes buttons
+//	-delete files not being used
 //	-allow user to input 'lab name'
 //	-make an array of entangled particles and show their states with the buttons
 //	-get rid of all the phaser stuff
