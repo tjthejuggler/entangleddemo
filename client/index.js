@@ -69,13 +69,23 @@ window.onkeydown = function(event) {
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("getOtherPlayers count", getOtherPlayersCount())  
-    console.log("getOtherPlayers name", otherPlayer.playerName) 
+    console.log("getOtherPlayers name", otherPlayer.playerName)
+    console.log("getOtherPlayers myVar", otherPlayer.myVar) 
 
     }
      
      if (event.keyCode === 79) {
 	emitMyData()
     console.log("emitMyData ()") 
+
+    }
+
+    if (event.keyCode === 78) {
+    if (myVar == 0){
+    	myVar = 1
+    }else{
+    	myVar = 0
+    }
 
     }
 }
