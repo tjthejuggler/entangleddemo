@@ -68,7 +68,7 @@ window.onkeydown = function(event) {
       //console.log('New player joined with state:', this)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
-    console.log("getOtherPlayers count", getOtherPlayersCount())  
+    console.log("playerCount", getOtherPlayersCount())  
     console.log("getOtherPlayers name", otherPlayer.playerName)
     console.log("getOtherPlayers myVar", otherPlayer.myVar) 
 
@@ -86,7 +86,7 @@ window.onkeydown = function(event) {
     }else{
     	myVar = 0
     }
-
+    console.log("myVar", myVar) 
     }
 }
 
