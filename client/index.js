@@ -195,7 +195,9 @@ function getMyName(){
     measureOnX.onclick = function(){
     	if (!hasMeasured){
     		let measurement = 0
-    		const randomMeasurement = Math.random() < 0.5 ? 1 : 2;
+    		let randomNumber = Math.random()
+    		console.log(randomNumber)
+    		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
 	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 2 ){
 	    		measurement = randomMeasurement
 	    	}else{
@@ -249,7 +251,9 @@ function getMyName(){
     measureOnY.onclick = function(){
     	if (!hasMeasured){
     		let measurement = 0
-    		const randomMeasurement = Math.random() < 0.5 ? 1 : 2;
+    		let randomNumber = Math.random()
+    		console.log(randomNumber)
+    		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
 	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 1 ){
 	    		measurement = randomMeasurement
 	    	}else{
