@@ -59,7 +59,7 @@ function getMyName(){
 }
 
 window.onkeydown = function(event) {
-     if (event.keyCode === 80) {
+     if (event.keyCode === 80) {//P keypress (checkStatusButton)
    //   	if (firstPress){
 			// myName = String(socket.id)
 			// firstPress = false
@@ -74,13 +74,13 @@ window.onkeydown = function(event) {
 
     }
      
-     if (event.keyCode === 79) {
+     if (event.keyCode === 79) {//O keypress
 	emitMyData()
     console.log("emitMyData ()") 
 
     }
 
-    if (event.keyCode === 73) {
+    if (event.keyCode === 73) {//I keyPress (changeMyVarButton)
 
 	    if (myVar == 0){
 	    	myVar = 1
@@ -92,14 +92,14 @@ window.onkeydown = function(event) {
     }
 }
 
-	var clickMeButton = document.createElement('button');
-    clickMeButton.id = 'myButton';
-    clickMeButton.innerHTML = 'Click Me';
-    clickMeButton.style.background = '#4FFF8F';
-    clickMeButton.style.width = '200px'; // setting the width to 200px
-    clickMeButton.style.height = '200px'; // setting the height to 200px
-    clickMeButton.style.zIndex = 1000;
-    clickMeButton.onclick = function(){
+	var changeMyVarButton = document.createElement('button');
+    changeMyVarButton.id = 'changeMyVarButton';
+    changeMyVarButton.innerHTML = 'Change myVar';
+    changeMyVarButton.style.background = '#4FFF8F';
+    changeMyVarButton.style.width = '200px'; // setting the width to 200px
+    changeMyVarButton.style.height = '200px'; // setting the height to 200px
+    changeMyVarButton.style.zIndex = 1000;
+    changeMyVarButton.onclick = function(){
 	    if (myVar == 0){
 	    	myVar = 1
 	    }else{
@@ -109,7 +109,25 @@ window.onkeydown = function(event) {
     console.log("emitMyData ()") 
     emitMyData()
     }
-    document.body.appendChild(clickMeButton);
+    document.body.appendChild(changeMyVarButton);
+
+    var checkStatusButton = document.createElement('button');
+    checkStatusButton.id = 'checkStatusButton';
+    checkStatusButton.innerHTML = 'Check Status';
+    checkStatusButton.style.background = '#4FFF8F';
+    checkStatusButton.style.width = '200px'; // setting the width to 200px
+    checkStatusButton.style.height = '200px'; // setting the height to 200px
+    checkStatusButton.style.zIndex = 1000;
+    checkStatusButton.onclick = function(){
+   updatePlayers(socket, myName, otherPlayer)
+      //console.log('New player joined with state:', this)
+    console.log("String(socket.id)2", String(socket.id))  
+    console.log("myName", String(myName))
+    console.log("playerCount", getOtherPlayersCount())  
+    console.log("otherPlayer.playerName", otherPlayer.playerName)
+    console.log("otherPlayer.myVar", otherPlayer.myVar) 
+    }
+    document.body.appendChild(checkStatusButton);
 
 
 
