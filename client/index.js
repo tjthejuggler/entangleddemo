@@ -35,6 +35,7 @@ function checkStatus(){
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
+		theParticleState == 'superposition'
 	}
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
@@ -76,7 +77,7 @@ function checkStatus(){
 		}
 	}
 
-	myText.innerHTML = theParticleState
+	measurementReadingText.innerHTML = theParticleState
 }
 	
 	
@@ -148,29 +149,6 @@ function getMyName(){
 
 }
 
-
-
-	var changeParticleButton = document.createElement('button');
-    changeParticleButton.id = 'changeParticleButton';
-    changeParticleButton.innerHTML = 'Change myParticle';
-    changeParticleButton.style.background = '#4FFF8F';
-    changeParticleButton.style.width = '200px'; // setting the width to 200px
-    changeParticleButton.style.height = '200px'; // setting the height to 200px
-    changeParticleButton.style.zIndex = 1000;
-    changeParticleButton.onclick = function(){
-	    if (myParticle == 0){
-	    	myParticle = 1
-	    }else{
-	    	myParticle = 0
-	    }
-	    //useOtherPlayerParticleShouldBe = false
-    console.log("my particle", myParticle)
-    console.log("emitMyData ()") 
-    emitMyData()
-    }
-    document.body.appendChild(changeParticleButton);
-
-
     var checkStatusButton = document.createElement('button');
     checkStatusButton.id = 'checkStatusButton';
     checkStatusButton.innerHTML = 'Check Status';
@@ -196,27 +174,6 @@ function getMyName(){
     }
     document.body.appendChild(checkStatusButton);
 
-
-
-    var changeOtherPlayerVar = document.createElement('button');
-    changeOtherPlayerVar.id = 'changeOtherPlayerVar';
-    changeOtherPlayerVar.innerHTML = 'Change otherPlayer particle';
-    changeOtherPlayerVar.style.background = '#4FFF8F';
-    changeOtherPlayerVar.style.width = '200px'; // setting the width to 200px
-    changeOtherPlayerVar.style.height = '200px'; // setting the height to 200px
-    changeOtherPlayerVar.style.zIndex = 1000;
-    changeOtherPlayerVar.onclick = function(){
-    	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	    if (otherPlayer.particle == 0){
-	    	myOtherPlayerParticleShouldBe = 1
-	    }else{
-	    	myOtherPlayerParticleShouldBe = 0
-	    }
-    emitMyData()
-    console.log("otherPlayerParticleShouldBe", myOtherPlayerParticleShouldBe) 
-
-    }
-    document.body.appendChild(changeOtherPlayerVar);
 
     var measureOnX = document.createElement('button');
     measureOnX.id = 'measureOnX';
@@ -314,10 +271,10 @@ function getMyName(){
 
 
 
-var myText = createMessageUnder(changeParticleButton, 'Hello, world!');
-    myText.id = 'myText';
-    myText.style.fontSize = "100px";
-    document.body.appendChild(myText);
+var measurementReadingText = createMessageUnder(changeParticleButton, 'superposition');
+    measurementReadingText.id = 'measurementReadingText';
+    measurementReadingText.style.fontSize = "65px";
+    document.body.appendChild(measurementReadingText);
 
 function createMessageUnder(elem, html) {
   // create message element
