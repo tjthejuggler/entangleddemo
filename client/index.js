@@ -91,6 +91,7 @@ function getMyName(){
     checkStatusButton.style.height = '200px'; // setting the height to 200px
     checkStatusButton.style.zIndex = 1000;
     checkStatusButton.onclick = function(){
+    emitMyData()
    	getOtherPlayerInfo(socket, myName, otherPlayer)
  //   	if (useOtherPlayerParticleShouldBe){
  //   		particle = otherPlayer.otherPlayerParticleShouldBe
