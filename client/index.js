@@ -46,8 +46,9 @@ function determineMyUserNumber(){
 	let otherPlayersName = otherPlayer.playerName
 
 const myNameIntsOnly = myName.replace(/\D/g,'');
+console.log("myNameIntsOnly",myNameIntsOnly)
 const otherPlayerNameIntsOnly = otherPlayersName.replace(/\D/g,'');
-
+console.log("otherPlayerNameIntsOnly",otherPlayerNameIntsOnly)
 if (myNameIntsOnly < otherPlayerNameIntsOnly){
 	return 1
 }else{
