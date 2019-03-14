@@ -21,7 +21,7 @@ newPlayer(socket, myVar, myName)
 getMyName()
 function getOtherPlayersCount()  {
 
-	updatePlayers(socket, myName, otherPlayerName, otherPlayerVar)
+	updatePlayers(socket, myName, otherPlayer)
 	      var count = 0
       for (let index in otherPlayers) {
         count++
