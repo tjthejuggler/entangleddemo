@@ -68,7 +68,7 @@ function emitMyData () {
         playerName: myName,
         particle: myParticle,
         otherPlayerParticleShouldBe: myOtherPlayerParticleShouldBe,
-        theParticle: toSetTheParticleTo,
+        theParticle: theParticle.isSetTo,
       })
     }
 
