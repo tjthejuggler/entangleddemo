@@ -31,7 +31,7 @@ function checkStatus(){
 	if (myUserNumber == 3){
 		var playerCount = getOtherPlayersCount()
 	}
-	emitMyData()
+	//emitMyData()
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
