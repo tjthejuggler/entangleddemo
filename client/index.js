@@ -88,6 +88,7 @@ window.onkeydown = function(event) {
 	    	myVar = 0
 	    }
     console.log("myVar", myVar) 
+    emitMyData()
     }
 }
 
