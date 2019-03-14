@@ -32,13 +32,13 @@ io.on('connection', socket => {
       }
   
     // Emit the update-players method in the client side
-    io.emit('update-players', {players, theParticle} )
+    io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
     //io.emit('count-players', players)
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
-    io.emit('update-players', {players, theParticle})
+    io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
     //io.emit('count-players', players)
   })
 
@@ -62,7 +62,7 @@ io.on('connection', socket => {
 
     //io.emit('players-count', players.length())
     // Send the data back to the client
-    io.emit('update-players', {players, theParticle})
+    io.emit('update-players', {playersVar: players, theParticleVar:theParticle})
     //io.emit('count-players', players)
   })
 
