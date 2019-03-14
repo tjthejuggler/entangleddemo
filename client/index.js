@@ -222,7 +222,7 @@ function getMyName(){
 	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 2 ){
 	    		measurement = randomMeasurement
 	    	}else{
-	    		measurement = getOneDigit(theParticle.isSetTo)
+	    		measurement = getOnesDigit(theParticle.isSetTo)
 	    	}
 			theParticle.isSetTo = myUserNumber*100+10+measurement
 			hasMeasured = true
@@ -248,7 +248,7 @@ function getMyName(){
 	    	if (theParticle.isSetTo < 0){
 	    		measurement = randomMeasurement
 	    	}else{
-	    		measurement = getOneDigit(theParticle.isSetTo)
+	    		measurement = getOnesDigit(theParticle.isSetTo)
 	    	}
 			theParticle.isSetTo = myUserNumber*100+20+measurement
 			hasMeasured = true
@@ -274,7 +274,7 @@ function getMyName(){
 	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 1 ){
 	    		measurement = randomMeasurement
 	    	}else{
-	    		measurement = getOneDigit(theParticle.isSetTo)
+	    		measurement = getOnesDigit(theParticle.isSetTo)
 	    	}
 			theParticle.isSetTo = myUserNumber*100+30+measurement
 			hasMeasured = true
