@@ -20,6 +20,7 @@ let myName = 'house'
 let myOtherPlayerParticleShouldBe = 0
 let myUserNumber = 3
 let hasMeasured = false
+let theParticleState = ''
 socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
@@ -35,8 +36,7 @@ function checkStatus(){
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
 	}
-	if (!hasMeasured){
-	let theParticleState = 'superposition'
+	if (theParticleState == 'superposition'){
 	let measurementResult = ''
 	let measurementAxis = ''
 	if (theParticle.isSetTo>0){
@@ -306,6 +306,7 @@ function getMyName(){
     createEntangledPair.onclick = function(){
 		theParticle.isSetTo = -1
 		hasMeasured = false
+		theParticleState = 'superposition'
 		emitMyData ()
 		console.log("theParticle", theParticle.isSetTo)
     }
