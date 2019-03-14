@@ -19,6 +19,7 @@ var myParticle = 1
 let myName = 'house'
 let myOtherPlayerParticleShouldBe = 0
 let myUserNumber = 3
+let hasMeasured = false
 socket = io(SERVER_IP)
 newPlayer(socket, myName, myParticle, myOtherPlayerParticleShouldBe)
 getMyName()
@@ -26,6 +27,43 @@ getMyName()
 var t=setInterval(checkStatus,1000);
 
 function checkStatus(){
+	let theParticleState = 'superposition'
+	let measurementResult = ''
+	let measurementAxis = ''
+	if (theParticle.isSetTo>0){
+		if (myUserNumber == 1){
+			if (theParticle.isSetTo<150){
+				if (theParticle.isSetTo % 10 == 1){ //I think this can be combined with below by doing a (this and that) OR (other this and other that)
+					measurementResult = 'Down Spin'
+				}else if(theParticle.isSetTo % 10 == 2){
+					measurementResult = 'Up Spin'
+				}
+				if (Math.round(theParticle.isSetTo/10) % 10 == 1){
+					measurementAxis = '(X)'
+				}else if (Math.round(theParticle.isSetTo/10) % 10 == 2){
+					measurementAxis = '(D)'
+				}else if (Math.round(theParticle.isSetTo/10) % 10 == 3){
+					measurementAxis = '(Y)'
+				}
+			}
+		}
+				if (myUserNumber == 2){
+			if (theParticle.isSetTo>150){
+				if (theParticle.isSetTo % 10 == 1){
+					measurementResult = 'Down Spin'
+				}else if(theParticle.isSetTo % 10 == 2){
+					measurementResult = 'Up Spin'
+				}
+				if (Math.round(theParticle.isSetTo/10) % 10 == 1){
+					measurementAxis = '(X)'
+				}else if (Math.round(theParticle.isSetTo/10) % 10 == 2){
+					measurementAxis = '(D)'
+				}else if (Math.round(theParticle.isSetTo/10) % 10 == 3){
+					measurementAxis = '(Y)'
+				}
+			}
+		}
+	}
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	myText.innerHTML = theParticle.isSetTo
 }
@@ -167,6 +205,7 @@ function getMyName(){
     measureOnX.style.zIndex = 1000;
     measureOnX.onclick = function(){
 		theParticle.isSetTo = myUserNumber*100+10+1
+		hasMeasured = true
 		emitMyData ()
     }
     document.body.appendChild(measureOnX);
@@ -180,6 +219,7 @@ function getMyName(){
     measureOnD.style.zIndex = 1000;
     measureOnD.onclick = function(){
 		theParticle.isSetTo = myUserNumber*100+20+1
+		hasMeasured = true
 		emitMyData ()
     }
     document.body.appendChild(measureOnD);
@@ -193,6 +233,21 @@ function getMyName(){
     measureOnY.style.zIndex = 1000;
     measureOnY.onclick = function(){
 		theParticle.isSetTo = myUserNumber*100+30+1
+		hasMeasured = true
+		emitMyData ()
+    }
+    document.body.appendChild(measureOnY);
+
+    var createEntangledPair = document.createElement('button');
+    createEntangledPair.id = 'createEntangledPair';
+    createEntangledPair.innerHTML = 'create entangled particles';
+    createEntangledPair.style.background = '#4FFF8F';
+    createEntangledPair.style.width = '200px'; // setting the width to 200px
+    createEntangledPair.style.height = '200px'; // setting the height to 200px
+    createEntangledPair.style.zIndex = 1000;
+    createEntangledPair.onclick = function(){
+		theParticle.isSetTo = -1
+		hasMeasured = false
 		emitMyData ()
     }
     document.body.appendChild(measureOnY);
