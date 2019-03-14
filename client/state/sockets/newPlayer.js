@@ -5,7 +5,7 @@ const newPlayer = (socket, myName, particle, otherPlayerParticleShouldBe) => {
     socket.emit('new-player', {
       playerName: myName,
       particle: particle,
-      otherPlayerParticleShouldBe: otherPlayerParticleShouldBe
+      otherPlayerParticleShouldBe: otherPlayerParticleShouldBe,
     })
   })
 }
