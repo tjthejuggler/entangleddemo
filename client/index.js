@@ -1,6 +1,4 @@
-import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
-//import Game from './state/Game'
-//import player from './state/player/index'
+//import { WINDOW_WIDTH, WINDOW_HEIGHT } from './config'
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 
