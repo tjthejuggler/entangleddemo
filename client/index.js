@@ -75,6 +75,7 @@ function getMyName(){
 	    }else{
 	    	particle = 0
 	    }
+	    otherPlayer.otherPlayerParticleShouldBe = particle
     console.log("my particle", particle)
     console.log("emitMyData ()") 
     emitMyData()
