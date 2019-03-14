@@ -1,5 +1,5 @@
-import player from './../player'
-import { createText } from '../utils'
+//import player from './../player'
+//import { createText } from '../utils'
 //RIGHT NOW THE FIRST PLAYER DOESNT GET TO SEE SECOND PLAYERS SPEED OR MYVARIABLE
 
 const updatePlayers = (socket, otherPlayers) => {
