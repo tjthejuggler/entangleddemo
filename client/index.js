@@ -198,7 +198,7 @@ function getMyName(){
     		let randomNumber = Math.random()
     		console.log(randomNumber)
     		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
-	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 2 ){
+	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 3 ){
 	    		measurement = randomMeasurement
 	    	}else{
 	    		measurement = getOnesDigit(theParticle.isSetTo)
