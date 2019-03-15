@@ -83,7 +83,7 @@ function getOtherPlayersCount()  {
 function determineMyUserNumber(){
 	let otherPlayersName = otherPlayer.playerName
 	const myNameWithoutSpecialCharacter = myName.replace(/[^\w\s]/gi, '')
-	console.log("myNameWithoutSpecialCharacter",myNameWithoutSpecialCharacter)
+	console.log("myNameWithoutSpecialCharacter ",myNameWithoutSpecialCharacter)
 	const otherPlayersNameWithoutSpecialCharacter = otherPlayersName.replace(/[^\w\s]/gi, '')
 	console.log("otherPlayersNameWithoutSpecialCharacter",otherPlayersNameWithoutSpecialCharacter)
 	if (myNameWithoutSpecialCharacter < otherPlayersNameWithoutSpecialCharacter){
