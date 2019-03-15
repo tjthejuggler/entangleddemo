@@ -216,13 +216,8 @@ function getMyName(){
     }
     document.body.appendChild(measureOnY);
 
-    var createEntangledPair = document.createElement('button');
-    createEntangledPair.id = 'createEntangledPair';
-    createEntangledPair.innerHTML = 'create entangled particle pair';
-    createEntangledPair.style.background = '#4FFF8F';
-    createEntangledPair.style.width = '200px'; // setting the width to 200px
-    createEntangledPair.style.height = '200px'; // setting the height to 200px
-    createEntangledPair.style.zIndex = 1000;
+    var createEntangledPair = createButton
+    	('createEntangledPair','create entangled particle pair');
     createEntangledPair.onclick = function(){
 		theParticle.isSetTo = -1
 		hasMeasured = false
@@ -243,8 +238,15 @@ var userNumberText = createMessageUnder
 	(measurementReadingText, '#:', 'userNumberText', "35px");
     document.body.appendChild(userNumberText);
 
-function createButton(){
-
+function createButton(id,text){
+    var but = document.createElement('button');
+    but.id = id;
+    but.innerHTML = text;
+    but.style.background = '#4FFF8F';
+    but.style.width = '200px'; // setting the width to 200px
+    but.style.height = '200px'; // setting the height to 200px
+    but.style.zIndex = 1000;
+    return but;
 }
 
 function createMessageUnder(elem, html, id, fontSize) {
