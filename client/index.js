@@ -254,6 +254,10 @@ function createMessageUnder(elem, html, id, fontSize) {
 var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
+  let coords = userNumberText.getBoundingClientRect();
+
+  radioInput.style.left = coords.left + "px";
+  radioInput.style.top = coords.bottom + "px";
 
 
 
