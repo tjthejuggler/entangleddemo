@@ -258,6 +258,7 @@ radioInput.setAttribute('name', 'testing');
 
   radioInput.style.left = coords.left + "px";
   radioInput.style.top = coords.bottom + "px";
+  document.body.appendChild(radioInput);
 
 
 
