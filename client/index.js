@@ -254,11 +254,24 @@ function createMessageUnder(elem, html, id, fontSize) {
 var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
+radioInput.innerHTML = 'first';
+
   let coords = userNumberText.getBoundingClientRect();
 
   radioInput.style.left = coords.left + "px";
   radioInput.style.top = coords.bottom + "px";
   document.body.appendChild(radioInput);
+
+  var radioInputII = document.createElement('input');
+radioInputII.setAttribute('type', 'radio');
+radioInputII.setAttribute('name', 'testing');
+radioInputII.innerHTML = 'second';
+
+  let coordsII = radioInput.getBoundingClientRect();
+
+  radioInputII.style.left = coordsII.left + "px";
+  radioInputII.style.top = coordsII.bottom + "px";
+  document.body.appendChild(radioInputII);
 
 
 
