@@ -112,121 +112,102 @@ function getMyName(){
     }, 500);
 }
 
-    var checkStatusButton = document.createElement('button');
-    checkStatusButton.id = 'checkStatusButton';
-    checkStatusButton.innerHTML = 'Check Status';
-    checkStatusButton.style.background = '#4FFF8F';
-    checkStatusButton.style.width = '200px'; // setting the width to 200px
-    checkStatusButton.style.height = '200px'; // setting the height to 200px
-    checkStatusButton.style.zIndex = 1000;
-    checkStatusButton.onclick = function(){
-	    emitMyData()
-	   	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	    console.log("String(socket.id)2", String(socket.id))  
-	    console.log("myName", String(myName))
-	    console.log("myUserNumber", myUserNumber)
-	    console.log("playerCount", getOtherPlayersCount())  
-	    console.log("otherPlayer.playerName", otherPlayer.playerName)
-	    console.log("theParticle", theParticle.isSetTo) 
-    }
-    document.body.appendChild(checkStatusButton);
+var checkStatusButton = createButton('checkStatusButton','Check Status')
+checkStatusButton.onclick = function(){
+    emitMyData()
+   	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
+    console.log("String(socket.id)2", String(socket.id))  
+    console.log("myName", String(myName))
+    console.log("myUserNumber", myUserNumber)
+    console.log("playerCount", getOtherPlayersCount())  
+    console.log("otherPlayer.playerName", otherPlayer.playerName)
+    console.log("theParticle", theParticle.isSetTo) 
+}
+document.body.appendChild(checkStatusButton);
 
 
-    var measureOnX = document.createElement('button');
-    measureOnX.id = 'measureOnX';
-    measureOnX.innerHTML = 'measure On X';
-    measureOnX.style.background = '#4FFF8F';
-    measureOnX.style.width = '200px'; // setting the width to 200px
-    measureOnX.style.height = '200px'; // setting the height to 200px
-    measureOnX.style.zIndex = 1000;
-    measureOnX.onclick = function(){
-    	if (!hasMeasured){
-    		let measurement = 0
-    		let randomNumber = Math.random()
-    		console.log(randomNumber)
-    		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
-	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 3 ){
-	    		measurement = randomMeasurement
-	    	}else{
-	    		measurement = getOnesDigit(theParticle.isSetTo)
-	    	}
-			theParticle.isSetTo = myUserNumber*100+10+measurement
-			hasMeasured = true
-			emitMyData ()
-		}else{
-			alert("Particle already measured.")
-		}
-		console.log("theParticle", theParticle.isSetTo)
-    }
-    document.body.appendChild(measureOnX);
-
-        var measureOnD = document.createElement('button');
-    measureOnD.id = 'measureOnD';
-    measureOnD.innerHTML = 'measure On D';
-    measureOnD.style.background = '#4FFF8F';
-    measureOnD.style.width = '200px'; // setting the width to 200px
-    measureOnD.style.height = '200px'; // setting the height to 200px
-    measureOnD.style.zIndex = 1000;
-    measureOnD.onclick = function(){
-    	if (!hasMeasured){
-    		let measurement = 0
-    		let randomNumber = Math.random()
-    		console.log(randomNumber)
-    		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
-	    	if (theParticle.isSetTo < 0){
-	    		measurement = randomMeasurement
-	    	}else{
-	    		measurement = getOnesDigit(theParticle.isSetTo)
-	    	}
-			theParticle.isSetTo = myUserNumber*100+20+measurement
-			hasMeasured = true
-			emitMyData ()
-		}else{
-			alert("Particle already measured.")
-		}
-		console.log("theParticle", theParticle.isSetTo)
-    }
-    document.body.appendChild(measureOnD);
-
-        var measureOnY = document.createElement('button');
-    measureOnY.id = 'measureOnY';
-    measureOnY.innerHTML = 'measure On Y';
-    measureOnY.style.background = '#4FFF8F';
-    measureOnY.style.width = '200px'; // setting the width to 200px
-    measureOnY.style.height = '200px'; // setting the height to 200px
-    measureOnY.style.zIndex = 1000;
-    measureOnY.onclick = function(){
-    	if (!hasMeasured){
-    		let measurement = 0
-    		let randomNumber = Math.random()
-    		console.log(randomNumber)
-    		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
-	    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 1 ){
-	    		measurement = randomMeasurement
-	    	}else{
-	    		measurement = getOnesDigit(theParticle.isSetTo)
-	    	}
-			theParticle.isSetTo = myUserNumber*100+30+measurement
-			hasMeasured = true
-			emitMyData ()
-		}else{
-			alert("Particle already measured.")
-		}
-		console.log("theParticle", theParticle.isSetTo) 
-    }
-    document.body.appendChild(measureOnY);
-
-    var createEntangledPair = createButton
-    	('createEntangledPair','create entangled particle pair');
-    createEntangledPair.onclick = function(){
-		theParticle.isSetTo = -1
-		hasMeasured = false
-		theParticleState = 'superposition'
-		measurementReadingText.innerHTML = theParticleState
+var measureOnX = createButton('measureOnX','measure On X');
+measureOnX.onclick = function(){
+	if (!hasMeasured){
+		let measurement = 0
+		let randomNumber = Math.random()
+		console.log(randomNumber)
+		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
+    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 3 ){
+    		measurement = randomMeasurement
+    	}else{
+    		measurement = getOnesDigit(theParticle.isSetTo)
+    	}
+		theParticle.isSetTo = myUserNumber*100+10+measurement
+		hasMeasured = true
 		emitMyData ()
-		console.log("theParticle", theParticle.isSetTo)
+	}else{
+		alert("Particle already measured.")
+	}
+	console.log("theParticle", theParticle.isSetTo)
+}
+document.body.appendChild(measureOnX);
+
+var measureOnD = createButton('measureOnD','measure On D');
+measureOnD.onclick = function(){
+	if (!hasMeasured){
+		let measurement = 0
+		let randomNumber = Math.random()
+		console.log(randomNumber)
+		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
+    	if (theParticle.isSetTo < 0){
+    		measurement = randomMeasurement
+    	}else{
+    		measurement = getOnesDigit(theParticle.isSetTo)
+    	}
+		theParticle.isSetTo = myUserNumber*100+20+measurement
+		hasMeasured = true
+		emitMyData ()
+	}else{
+		alert("Particle already measured.")
+	}
+	console.log("theParticle", theParticle.isSetTo)
+}
+document.body.appendChild(measureOnD);
+
+var measureOnY = createButton('measureOnY','measure On Y');
+measureOnY.onclick = function(){
+	if (!hasMeasured){
+		let measurement = 0
+		let randomNumber = Math.random()
+		console.log(randomNumber)
+		const randomMeasurement = randomNumber < 0.5 ? 1 : 2;
+    	if (theParticle.isSetTo < 0 || getTensDigit(theParticle.isSetTo) == 1 ){
+    		measurement = randomMeasurement
+    	}else{
+    		measurement = getOnesDigit(theParticle.isSetTo)
+    	}
+		theParticle.isSetTo = myUserNumber*100+30+measurement
+		hasMeasured = true
+		emitMyData ()
+	}else{
+		alert("Particle already measured.")
+	}
+	console.log("theParticle", theParticle.isSetTo) 
+}
+document.body.appendChild(measureOnY);
+
+
+
+
+
+
+var createEntangledPair = createButton
+    	('createEntangledPair','create entangled particle pair');
+createEntangledPair.onclick = function(){
+	theParticle.isSetTo = -1
+	hasMeasured = false
+	theParticleState = 'superposition'
+	measurementReadingText.innerHTML = theParticleState
+	emitMyData ()
+	console.log("theParticle", theParticle.isSetTo)
     }
-    document.body.appendChild(createEntangledPair);
+document.body.appendChild(createEntangledPair);
 
 
 
