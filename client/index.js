@@ -235,21 +235,26 @@ function getMyName(){
 
 
 
-var measurementReadingText = createMessageUnder(checkStatusButton, 'superposition');
-    measurementReadingText.id = 'measurementReadingText';
-    measurementReadingText.style.fontSize = "65px";
+var measurementReadingText = createMessageUnder
+	(checkStatusButton, 'superposition', 'measurementReadingText', "65px");
     document.body.appendChild(measurementReadingText);
 
-var userNumberText = createMessageUnder(measurementReadingText, '#:');
-    userNumberText.id = 'userNumberText';
-    userNumberText.style.fontSize = "35px";
+var userNumberText = createMessageUnder
+	(measurementReadingText, '#:', 'userNumberText', "35px");
     document.body.appendChild(userNumberText);
 
-function createMessageUnder(elem, html) {
+function createButton(){
+
+}
+
+function createMessageUnder(elem, html, id, fontSize) {
   // create message element
   let message = document.createElement('div');
   // better to use a css class for the style here
   message.style.cssText = "position:fixed; color: red";
+  message.style.fontSize = fontSize;
+  message.id = id;
+
 
   // assign coordinates, don't forget "px"!
   let coords = elem.getBoundingClientRect();
