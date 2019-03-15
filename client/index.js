@@ -2,9 +2,12 @@ import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 
 //TODO
-//	-make a function that makes buttons
-//	-delete files not being used
 //	-allow user to input 'lab name'
+//		-this is a combination of text inout and a 'ok' button
+//		-when ok is clicked, emit the lab name to the server just like playerName,
+//			and also set a local variable, myLabName
+//		-when determining the player count, only use players from the same lab
+//		-when ok is clicked, update a little stats readout that says the name of who is in the lab
 //	-make an array of entangled particles and show their states with the buttons
 //	-get rid of all the phaser stuff
 //	-see what i need in node_modules and get rid of anything extra
@@ -12,24 +15,22 @@ import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
-let socket = null
+let socket = io(SERVER_IP)
 let otherPlayer = {playerName:"otherPlayer"}
 const theParticle = {isSetTo: -1}
 let myName = 'house'
 let myUserNumber = 3
 let hasMeasured = false
 let theParticleState = ''
-socket = io(SERVER_IP)
+//socket = io(SERVER_IP)  --> IF there is a problem then init socket as null and uncomment this
 newPlayer(socket, myName)
 getMyName()
-
 var t=setInterval(checkStatus,100);
 
 function checkStatus(){
 	if (myUserNumber == 3){
 		var playerCount = getOtherPlayersCount()
 	}
-	//emitMyData()
 	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)	
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
@@ -250,6 +251,9 @@ function createMessageUnder(elem, html, id, fontSize) {
   return message;
 }
 
+var radioInput = document.createElement('input');
+radioInput.setAttribute('type', 'radio');
+radioInput.setAttribute('name', 'testing');
 
 
 
