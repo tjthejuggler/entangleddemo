@@ -254,6 +254,7 @@ function createMessageUnder(elem, html, id, fontSize) {
 var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
+radioInput.setAttribute('value', 'first value');
 radioInput.innerHTML = 'first';
 
   // let coords = userNumberText.getBoundingClientRect();
@@ -265,6 +266,7 @@ radioInput.innerHTML = 'first';
   var radioInputII = document.createElement('input');
 radioInputII.setAttribute('type', 'radio');
 radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
+radioInput.setAttribute('value', 'second value');
 radioInputII.innerHTML = 'second';
 
   // let coordsII = radioInput.getBoundingClientRect();
