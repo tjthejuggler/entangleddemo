@@ -264,7 +264,7 @@ radioInput.innerHTML = 'first';
 
   var radioInputII = document.createElement('input');
 radioInputII.setAttribute('type', 'radio');
-radioInputII.setAttribute('name', 'testingII');
+radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
 radioInputII.innerHTML = 'second';
 
   let coordsII = radioInput.getBoundingClientRect();
