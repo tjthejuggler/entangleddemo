@@ -264,9 +264,10 @@ var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
 radioInput.setAttribute('value', 'first value');
-radioInput.setAttribute('id', 'first value');
+radioInput.setAttribute('id', 'firstvalue');
+('myLabel').insertBefore('firstvalue');
 //radioInput.setAttribute('label', 'first value');
-radioInput.appendChild(label);
+//radioInput.appendChild(label);
 
   // let coords = userNumberText.getBoundingClientRect();
 
