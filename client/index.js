@@ -256,7 +256,7 @@ label = document.createElement('label');
 //input = document.createElement('input');
 // Set type, name, value, etc on input
 //label.appendChild(input);
-label.appendChild('Water');
+label.innerHTML = 'water'
 //foo.appendChild(label);
 
 
