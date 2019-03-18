@@ -212,10 +212,16 @@ document.body.appendChild(createEntangledPair);
 
 var radioButtonSimple = createRadioButton
 	('radioButtonSimple','radioButtons','Easy')
+	radioButtonSimple.onclick = function(){
+		console.log("simple") 
+	}
 document.body.appendChild(radioButtonSimple);
 
 var radioButtonCHSH = createRadioButton
 	('radioButtonCHSH','radioButtons','CHSH')
+		radioButtonCHSH.onclick = function(){
+		console.log("CHSH") 
+	}
 document.body.appendChild(radioButtonCHSH);
 
 var radioButtonGHZ = createRadioButton
