@@ -256,6 +256,7 @@ radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
 radioInput.setAttribute('value', 'first value');
 radioInput.setAttribute('id', 'first value');
+radioInput.setAttribute('label', 'first value');
 radioInput.innerHTML = 'first';
 
   // let coords = userNumberText.getBoundingClientRect();
@@ -269,6 +270,7 @@ radioInputII.setAttribute('type', 'radio');
 radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
 radioInputII.setAttribute('value', 'second value');
 radioInputII.setAttribute('id', 'second value');
+radioInputII.setAttribute('label', 'second value');
 radioInputII.innerHTML = 'second';
 
   // let coordsII = radioInput.getBoundingClientRect();
