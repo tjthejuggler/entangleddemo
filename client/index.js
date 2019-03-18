@@ -210,7 +210,17 @@ createEntangledPair.onclick = function(){
     }
 document.body.appendChild(createEntangledPair);
 
+var radioButtonSimple = createRadioButton
+	('radioButtonSimple','radioButtons','Easy')
+document.body.appendChild(radioButtonSimple);
 
+var radioButtonCHSH = createRadioButton
+	('radioButtonCHSH','radioButtons','Easy')
+document.body.appendChild(radioButtonCHSH);
+
+var radioButtonGHZ = createRadioButton
+	('radioButtonGHZ','radioButtons','Easy')
+document.body.appendChild(radioButtonGHZ);
 
 var measurementReadingText = createMessageUnder
 	(checkStatusButton, 'superposition', 'measurementReadingText', "65px");
@@ -251,6 +261,20 @@ function createMessageUnder(elem, html, id, fontSize) {
   return message;
 }
 
+function createRadioButton(id,groupName,text){
+    var radioInput = document.createElement('radio'+id);
+    radioInput.setAttribute('type', 'radio');
+	radioInput.setAttribute('name', groupName);
+	radioInput.setAttribute('id', id);
+
+	var label = document.createElement('radioLabel'+id);
+    label.innerHTML = text;
+    document.body.appendChild(label);
+
+    return radioInput
+    
+}
+
 //var label, input;
 //label = document.createElement('label');
 //input = document.createElement('input');
@@ -260,43 +284,43 @@ function createMessageUnder(elem, html, id, fontSize) {
 //foo.appendChild(label);
 
 
-var radioInput = document.createElement('input');
-radioInput.setAttribute('type', 'radio');
-radioInput.setAttribute('name', 'testing');
-radioInput.setAttribute('value', 'first value');
-radioInput.setAttribute('id', 'first value');
-//('myLabel').insertBefore('firstvalue');
-//radioInput.setAttribute('label', 'first value');
-//radioInput.appendChild(label);
-  var mylabel1 = document.createElement("mylabel");
-    mylabel1.innerHTML += "oops";
-    document.body.appendChild(mylabel1);
-  // let coords = userNumberText.getBoundingClientRect();
+// var radioInput = document.createElement('input');
+// radioInput.setAttribute('type', 'radio');
+// radioInput.setAttribute('name', 'testing');
+// radioInput.setAttribute('value', 'first value');
+// radioInput.setAttribute('id', 'first value');
+// //('myLabel').insertBefore('firstvalue');
+// //radioInput.setAttribute('label', 'first value');
+// //radioInput.appendChild(label);
+//   var mylabel1 = document.createElement("mylabel");
+//     mylabel1.innerHTML += "oops";
+//     document.body.appendChild(mylabel1);
+//   // let coords = userNumberText.getBoundingClientRect();
 
-  // radioInput.style.left = coords.left + "px";
-  // radioInput.style.top = coords.bottom + "px";
-  //document.body.appendChild(label);
-  document.body.appendChild(radioInput);
+//   // radioInput.style.left = coords.left + "px";
+//   // radioInput.style.top = coords.bottom + "px";
+//   //document.body.appendChild(label);
+//   document.body.appendChild(radioInput);
 
-  var radioInputII = document.createElement('input');
-radioInputII.setAttribute('type', 'radio');
-radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
-radioInputII.setAttribute('value', 'second value');
-radioInputII.setAttribute('id', 'second value');
-//radioInputII.appendChild(label);
-//radioInputII.setAttribute('label', 'second value');
-//radioInputII.innerHTML = 'second';
+//   var radioInputII = document.createElement('input');
+// radioInputII.setAttribute('type', 'radio');
+// radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
+// radioInputII.setAttribute('value', 'second value');
+// radioInputII.setAttribute('id', 'second value');
+// //radioInputII.appendChild(label);
+// //radioInputII.setAttribute('label', 'second value');
+// //radioInputII.innerHTML = 'second';
 
-  // let coordsII = radioInput.getBoundingClientRect();
+//   // let coordsII = radioInput.getBoundingClientRect();
 
-  // radioInputII.style.left = coordsII.left + "px";
-  // radioInputII.style.top = coordsII.bottom + "px";
-  document.body.appendChild(radioInputII);
+//   // radioInputII.style.left = coordsII.left + "px";
+//   // radioInputII.style.top = coordsII.bottom + "px";
+//   document.body.appendChild(radioInputII);
 
 
-  var mylabel2 = document.createElement("mylabel");
-    mylabel2.innerHTML += "oops2";
-    document.body.appendChild(mylabel2);
+//   var mylabel2 = document.createElement("mylabel");
+//     mylabel2.innerHTML += "oops2";
+//     document.body.appendChild(mylabel2);
 
         // function addradiobutton(type, text) {
         //     var label = document.createElement("label");
