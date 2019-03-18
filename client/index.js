@@ -251,12 +251,12 @@ function createMessageUnder(elem, html, id, fontSize) {
   return message;
 }
 
-var label, input;
-label = document.createElement('label');
+//var label, input;
+//label = document.createElement('label');
 //input = document.createElement('input');
 // Set type, name, value, etc on input
 //label.appendChild(input);
-label.innerHTML = 'water'
+
 //foo.appendChild(label);
 
 
@@ -264,8 +264,8 @@ var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
 radioInput.setAttribute('value', 'first value');
-radioInput.setAttribute('id', 'firstvalue');
-('myLabel').insertBefore('firstvalue');
+radioInput.setAttribute('id', 'first value');
+//('myLabel').insertBefore('firstvalue');
 //radioInput.setAttribute('label', 'first value');
 //radioInput.appendChild(label);
 
@@ -273,7 +273,7 @@ radioInput.setAttribute('id', 'firstvalue');
 
   // radioInput.style.left = coords.left + "px";
   // radioInput.style.top = coords.bottom + "px";
-  document.body.appendChild(label);
+  //document.body.appendChild(label);
   document.body.appendChild(radioInput);
 
   var radioInputII = document.createElement('input');
@@ -281,7 +281,7 @@ radioInputII.setAttribute('type', 'radio');
 radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
 radioInputII.setAttribute('value', 'second value');
 radioInputII.setAttribute('id', 'second value');
-radioInputII.appendChild(label);
+//radioInputII.appendChild(label);
 //radioInputII.setAttribute('label', 'second value');
 radioInputII.innerHTML = 'second';
 
@@ -291,7 +291,24 @@ radioInputII.innerHTML = 'second';
   // radioInputII.style.top = coordsII.bottom + "px";
   document.body.appendChild(radioInputII);
 
+        function addradiobutton(type, text) {
+            var label = document.createElement("label");
 
+            var element = document.createElement("input");
+            //Assign different attributes to the element.
+            element.setAttribute("type", type);
+            element.setAttribute("value", type);
+            element.setAttribute("name", type);
+
+            label.appendChild(element);
+            label.innerHTML += text;
+
+            var foo = document.getElementById("fooBar");
+            //Append the element in page (in span).
+            foo.appendChild(label);
+            counter = counter + 1;
+        }
+        addradiobutton("radio", "Water");
 
 
 //document.getElementById("myelement1") = "Hello world!";
