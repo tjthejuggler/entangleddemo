@@ -265,13 +265,14 @@ radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
 radioInput.setAttribute('value', 'first value');
 radioInput.setAttribute('id', 'first value');
-radioInput.setAttribute('label', 'first value');
+//radioInput.setAttribute('label', 'first value');
 radioInput.appendChild(label);
 
   // let coords = userNumberText.getBoundingClientRect();
 
   // radioInput.style.left = coords.left + "px";
   // radioInput.style.top = coords.bottom + "px";
+  document.body.appendChild(label);
   document.body.appendChild(radioInput);
 
   var radioInputII = document.createElement('input');
@@ -279,7 +280,8 @@ radioInputII.setAttribute('type', 'radio');
 radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
 radioInputII.setAttribute('value', 'second value');
 radioInputII.setAttribute('id', 'second value');
-radioInputII.setAttribute('label', 'second value');
+radioInputII.appendChild(label);
+//radioInputII.setAttribute('label', 'second value');
 radioInputII.innerHTML = 'second';
 
   // let coordsII = radioInput.getBoundingClientRect();
