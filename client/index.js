@@ -291,6 +291,11 @@ radioInputII.setAttribute('id', 'second value');
   // radioInputII.style.top = coordsII.bottom + "px";
   document.body.appendChild(radioInputII);
 
+
+  var mylabel = document.createElement("mylabel");
+    mylabel.innerHTML += "oops";
+    document.body.appendChild(mylabel);
+
         // function addradiobutton(type, text) {
         //     var label = document.createElement("label");
 
