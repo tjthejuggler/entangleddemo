@@ -262,12 +262,12 @@ function createMessageUnder(elem, html, id, fontSize) {
 }
 
 function createRadioButton(id,groupName,text){
-    var radioInput = document.createElement('radio'+id);
+    var radioInput = document.createElement('input');
     radioInput.setAttribute('type', 'radio');
-	radioInput.setAttribute('name', groupName);
+	radioInput.setAttribute('name', 'radioGroup');
 	radioInput.setAttribute('id', id);
 
-	var label = document.createElement('radioLabel'+id);
+	var label = document.createElement('radioLabel');
     label.innerHTML = text;
     document.body.appendChild(label);
 
@@ -292,9 +292,12 @@ radioInput.setAttribute('id', 'first value');
 //('myLabel').insertBefore('firstvalue');
 //radioInput.setAttribute('label', 'first value');
 //radioInput.appendChild(label);
+
   var mylabel1 = document.createElement("mylabel");
     mylabel1.innerHTML += "oops";
     document.body.appendChild(mylabel1);
+
+
   // let coords = userNumberText.getBoundingClientRect();
 
   // radioInput.style.left = coords.left + "px";
