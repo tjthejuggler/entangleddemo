@@ -269,8 +269,8 @@ radioInput.setAttribute('id', 'first value');
 //radioInput.setAttribute('label', 'first value');
 //radioInput.appendChild(label);
   var mylabel1 = document.createElement("mylabel");
-    mylabel.innerHTML += "oops";
-    document.body.appendChild(mylabel);
+    mylabel1.innerHTML += "oops";
+    document.body.appendChild(mylabel1);
   // let coords = userNumberText.getBoundingClientRect();
 
   // radioInput.style.left = coords.left + "px";
@@ -295,8 +295,8 @@ radioInputII.setAttribute('id', 'second value');
 
 
   var mylabel2 = document.createElement("mylabel");
-    mylabel.innerHTML += "oops2";
-    document.body.appendChild(mylabel);
+    mylabel2.innerHTML += "oops2";
+    document.body.appendChild(mylabel2);
 
         // function addradiobutton(type, text) {
         //     var label = document.createElement("label");
