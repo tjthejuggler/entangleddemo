@@ -283,7 +283,7 @@ radioInputII.setAttribute('value', 'second value');
 radioInputII.setAttribute('id', 'second value');
 //radioInputII.appendChild(label);
 //radioInputII.setAttribute('label', 'second value');
-radioInputII.innerHTML = 'second';
+//radioInputII.innerHTML = 'second';
 
   // let coordsII = radioInput.getBoundingClientRect();
 
@@ -291,24 +291,24 @@ radioInputII.innerHTML = 'second';
   // radioInputII.style.top = coordsII.bottom + "px";
   document.body.appendChild(radioInputII);
 
-        function addradiobutton(type, text) {
-            var label = document.createElement("label");
+        // function addradiobutton(type, text) {
+        //     var label = document.createElement("label");
 
-            var element = document.createElement("input");
-            //Assign different attributes to the element.
-            element.setAttribute("type", type);
-            element.setAttribute("value", type);
-            element.setAttribute("name", type);
+        //     var element = document.createElement("input");
+        //     //Assign different attributes to the element.
+        //     element.setAttribute("type", type);
+        //     element.setAttribute("value", type);
+        //     element.setAttribute("name", type);
 
-            label.appendChild(element);
-            label.innerHTML += text;
+        //     label.appendChild(element);
+        //     label.innerHTML += text;
 
-            var foo = document.getElementById("fooBar");
-            //Append the element in page (in span).
-            foo.appendChild(label);
-            counter = counter + 1;
-        }
-        addradiobutton("radio", "Water");
+        //     var foo = document.getElementById("fooBar");
+        //     //Append the element in page (in span).
+        //     foo.appendChild(label);
+        //     counter = counter + 1;
+        // }
+        // addradiobutton("radio", "Water");
 
 
 //document.getElementById("myelement1") = "Hello world!";
