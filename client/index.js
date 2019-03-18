@@ -287,7 +287,7 @@ function createRadioButton(id,groupName,text){
 var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
-radioInput.setAttribute('value', 'first value');
+//radioInput.setAttribute('value', 'first value');
 radioInput.setAttribute('id', 'first value');
 //('myLabel').insertBefore('firstvalue');
 //radioInput.setAttribute('label', 'first value');
@@ -305,7 +305,7 @@ radioInput.setAttribute('id', 'first value');
   var radioInputII = document.createElement('input');
 radioInputII.setAttribute('type', 'radio');
 radioInputII.setAttribute('name', 'testing');//name is defining the group, different name, different group
-radioInputII.setAttribute('value', 'second value');
+//radioInputII.setAttribute('value', 'second value');
 radioInputII.setAttribute('id', 'second value');
 //radioInputII.appendChild(label);
 //radioInputII.setAttribute('label', 'second value');
