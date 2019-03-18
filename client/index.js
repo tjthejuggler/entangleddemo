@@ -215,11 +215,11 @@ var radioButtonSimple = createRadioButton
 document.body.appendChild(radioButtonSimple);
 
 var radioButtonCHSH = createRadioButton
-	('radioButtonCHSH','radioButtons','Easy')
+	('radioButtonCHSH','radioButtons','CHSH')
 document.body.appendChild(radioButtonCHSH);
 
 var radioButtonGHZ = createRadioButton
-	('radioButtonGHZ','radioButtons','Easy')
+	('radioButtonGHZ','radioButtons','GHZ')
 document.body.appendChild(radioButtonGHZ);
 
 var measurementReadingText = createMessageUnder
