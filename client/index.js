@@ -251,13 +251,22 @@ function createMessageUnder(elem, html, id, fontSize) {
   return message;
 }
 
+var label, input;
+label = document.createElement('label');
+//input = document.createElement('input');
+// Set type, name, value, etc on input
+//label.appendChild(input);
+label.appendChild('Water');
+//foo.appendChild(label);
+
+
 var radioInput = document.createElement('input');
 radioInput.setAttribute('type', 'radio');
 radioInput.setAttribute('name', 'testing');
 radioInput.setAttribute('value', 'first value');
 radioInput.setAttribute('id', 'first value');
 radioInput.setAttribute('label', 'first value');
-radioInput.innerHTML = 'first';
+radioInput.appendChild(label);
 
   // let coords = userNumberText.getBoundingClientRect();
 
