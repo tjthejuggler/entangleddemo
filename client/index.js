@@ -41,8 +41,9 @@ function checkStatus(){
 		theParticleState = 'superposition'
 		measurementReadingText.innerHTML = theParticleState
 	}
-	userNumberText.innerHTML = '#:'+myUserNumber
-	userNameText.innerHTML = 'userName:'+myName
+	userNumberText.innerHTML = 'number:'+myUserNumber
+	userNameText.innerHTML = 'myName:'+myName
+	userNameText.innerHTML = 'otherPlayerName:'+otherPlayer.playerName
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
 	let measurementAxis = ''
@@ -79,6 +80,10 @@ var userNumberText = createMessageUnder
 var userNameText = createMessageUnder
 	(measurementReadingText, 'username:', 'userNameText', "35px");
     document.body.appendChild(userNameText);
+
+var otherUserNameText = createMessageUnder
+	(measurementReadingText, 'other username:', 'otherUserNameText', "35px");
+    document.body.appendChild(otherUserNameText);
 
 
 var labText = document.createElement('input');
