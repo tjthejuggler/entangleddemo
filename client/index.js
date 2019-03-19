@@ -35,6 +35,7 @@ function checkStatus(){
 	if (myUserNumber == 3){
 		var playerCount = getOtherPlayersCount()
 	}
+	otherPlayer.playerName = ''
 	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)	
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
@@ -44,6 +45,7 @@ function checkStatus(){
 	userNumberText.innerHTML = 'number:'+myUserNumber
 	userNameText.innerHTML = 'myName:'+myName
 	otherUserNameText.innerHTML = 'otherPlayerName:'+otherPlayer.playerName
+	myLabNameText = 'myLabName:'+myLabName
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
 	let measurementAxis = ''
@@ -84,6 +86,10 @@ var userNameText = createMessageUnder
 var otherUserNameText = createMessageUnder
 	(measurementReadingText, 'other username:', 'otherUserNameText', "35px");
     document.body.appendChild(otherUserNameText);
+
+var myLabNameText = createMessageUnder
+	(measurementReadingText, 'My Lab name:', 'myLabNameText', "35px");
+    document.body.appendChild(myLabNameText);
 
 
 var labText = document.createElement('input');
