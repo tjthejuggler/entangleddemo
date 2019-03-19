@@ -3,6 +3,7 @@ import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 import { createRadioButton } from './state/utils'
 import { createButton } from './state/utils'
 import { createMessageUnder } from './state/utils'
+import { getOtherPlayersCount } from './state/sockets'
 
 //TODO
 //	-allow user to input 'lab name'
@@ -73,16 +74,6 @@ function getOnesDigit(numberToUse){
 
 function getTensDigit(numberToUse){
 	return Math.round(numberToUse/10) % 10  
-}
-
-function getOtherPlayersCount()  {
-	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	    var count = 1
-	if (otherPlayer.playerName !== "otherPlayer"){
-		count = 2
-		myUserNumber = determineMyUserNumber()
-	}
-    return count
 }
 
 function determineMyUserNumber(){
