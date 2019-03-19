@@ -87,7 +87,7 @@ document.body.appendChild(setLab);
 var checkStatusButton = createButton('checkStatusButton','Check Status','200px')
 checkStatusButton.onclick = function(){
     emitMyData()
-   	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
+   	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)
     console.log("String(socket.id)2", String(socket.id))  
     console.log("myName", String(myName))
     console.log("myUserNumber", myUserNumber)
