@@ -227,7 +227,7 @@ function determineMyUserNumber(){
 }
 
 function getOtherPlayersCount()  {
-	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
+	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)
 	    var count = 1
 	if (otherPlayer.playerName !== "otherPlayer"){
 		count = 2
