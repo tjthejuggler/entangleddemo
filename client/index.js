@@ -19,7 +19,7 @@ console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = io(SERVER_IP)
-let otherPlayer = {playerName:"otherPlayer"}
+let otherPlayer = {playerName:"otherPlayer", playerLabName:"austinLab"}
 const theParticle = {isSetTo: -1}
 let myName = 'house'
 let myLabName = 'austinLab'
@@ -35,7 +35,10 @@ function checkStatus(){
 	if (myUserNumber == 3){
 		var playerCount = getOtherPlayersCount()
 	}
-	otherPlayer.playerName = ''
+
+	if (otherPlayer.playerLabName !== myLabName){
+		otherPlayer.playerName = ''
+	}
 	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)	
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
