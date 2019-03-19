@@ -113,7 +113,7 @@ function getMyName(){
     }, 500);
 }
 
-var checkStatusButton = createButton('checkStatusButton','Check Status')
+var checkStatusButton = createButton('checkStatusButton','Check Status','200px')
 checkStatusButton.onclick = function(){
     emitMyData()
    	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
@@ -127,7 +127,7 @@ checkStatusButton.onclick = function(){
 document.body.appendChild(checkStatusButton);
 
 
-var measureOnX = createButton('measureOnX','measure On X');
+var measureOnX = createButton('measureOnX','measure On X','200px');
 measureOnX.onclick = function(){
 	if (!hasMeasured){
 		let measurement = 0
@@ -149,7 +149,7 @@ measureOnX.onclick = function(){
 }
 document.body.appendChild(measureOnX);
 
-var measureOnD = createButton('measureOnD','measure On D');
+var measureOnD = createButton('measureOnD','measure On D','200px');
 measureOnD.onclick = function(){
 	if (!hasMeasured){
 		let measurement = 0
@@ -171,7 +171,7 @@ measureOnD.onclick = function(){
 }
 document.body.appendChild(measureOnD);
 
-var measureOnY = createButton('measureOnY','measure On Y');
+var measureOnY = createButton('measureOnY','measure On Y','200px');
 measureOnY.onclick = function(){
 	if (!hasMeasured){
 		let measurement = 0
@@ -199,7 +199,7 @@ document.body.appendChild(measureOnY);
 
 
 var createEntangledPair = createButton
-    	('createEntangledPair','create entangled particle pair');
+    	('createEntangledPair','create entangled particle pair','200px');
 createEntangledPair.onclick = function(){
 	theParticle.isSetTo = -1
 	hasMeasured = false
@@ -239,15 +239,23 @@ var userNumberText = createMessageUnder
 var labText = document.createElement('input');
 labText.type = 'text'
 labText.name = 'labText'
+labText.id = 'labText'
 document.body.appendChild(labText);
 
-function createButton(id,text){
+var setLab = createButton
+    	('setLab','OK', '25px');
+createEntangledPair.onclick = function(){
+	console.log('lab set as',document.getElementById('labText').value)
+    }
+document.body.appendChild(createEntangledPair);
+
+function createButton(id,text,size){
     var but = document.createElement('button');
     but.id = id;
     but.innerHTML = text;
     but.style.background = '#4FFF8F';
-    but.style.width = '200px'; // setting the width to 200px
-    but.style.height = '200px'; // setting the height to 200px
+    but.style.width = size; // setting the width to 200px
+    but.style.height = size; // setting the height to 200px
     but.style.zIndex = 1000;
     return but;
 }
