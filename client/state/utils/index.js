@@ -27,7 +27,8 @@ export function createMessageUnder(elem, html, id, fontSize) {
   // create message element
   let message = document.createElement('div');
   // better to use a css class for the style here
-  message.style.cssText = "position:fixed; color: red";
+  //message.style.cssText = "position:fixed; color: red";
+  message.style.cssText = "color: red";
   message.style.fontSize = fontSize;
   message.id = id;
 
