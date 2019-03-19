@@ -9,7 +9,7 @@ const getOtherPlayerInfo = (socket, myName, otherPlayer, theParticle) => {
       const data = playersData[index]
 
       // Update otherPlayer data
-      if (data.playerName !== myName) {
+      if (data.playeLabName == myLabName && data.playerName !== myName) {
         otherPlayer.playerName = data.playerName
 
       }

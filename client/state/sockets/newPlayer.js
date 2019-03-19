@@ -1,7 +1,8 @@
-const newPlayer = (socket, myName, myParticle, myOtherPlayerParticleShouldBe) => {
+const newPlayer = (socket, myName, myLabName) => {
   socket.on('connect', () => {
     socket.emit('new-player', {
       playerName: myName,
+      playerLabName: myLabName,
     })
   })
 }

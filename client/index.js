@@ -67,57 +67,6 @@ function checkStatus(){
 	
 }
 
-function getOnesDigit(numberToUse){
-	return numberToUse % 10
-}
-
-function getTensDigit(numberToUse){
-	return Math.round(numberToUse/10) % 10  
-}
-
-function determineMyUserNumber(){
-	let otherPlayersName = otherPlayer.playerName
-	const myNameWithoutSpecialCharacter = myName.replace(/[^\w\s]/gi, '')
-	console.log("myNameWithoutSpecialCharacter ",myNameWithoutSpecialCharacter)
-	const otherPlayersNameWithoutSpecialCharacter = otherPlayersName.replace(/[^\w\s]/gi, '')
-	console.log("otherPlayersNameWithoutSpecialCharacter",otherPlayersNameWithoutSpecialCharacter)
-	if (myNameWithoutSpecialCharacter < otherPlayersNameWithoutSpecialCharacter){
-		console.log("returning 1")
-		return 1
-	}else{
-		console.log("returning 2")
-		return 2
-	}
-	return 0
-}
-
-function getOtherPlayersCount()  {
-	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	    var count = 1
-	if (otherPlayer.playerName !== "otherPlayer"){
-		count = 2
-		myUserNumber = determineMyUserNumber()
-	}
-    return count
-}
-
-function emitMyData () {
-      // Emit the 'move-player' event, updating the player's data on the server
-      socket.emit('move-player', {
-        playerName: myName,
-        toSetTheParticleTo: theParticle.isSetTo,
-      })
-    }
-
-function getMyName(){
-	console.log("getMyName()") 
-    setTimeout(function () {
-		myName = String(socket.id)
-		emitMyData ()
-    }, 500);
-}
-
-
 
 
 var labText = document.createElement('input');
@@ -215,11 +164,6 @@ measureOnY.onclick = function(){
 }
 document.body.appendChild(measureOnY);
 
-
-
-
-
-
 var createEntangledPair = createButton
     	('createEntangledPair','create entangled particle pair','200px');
 createEntangledPair.onclick = function(){
@@ -258,7 +202,56 @@ var userNumberText = createMessageUnder
 	(measurementReadingText, '#:', 'userNumberText', "35px");
     document.body.appendChild(userNumberText);
 
+function getOnesDigit(numberToUse){
+	return numberToUse % 10
+}
 
+function getTensDigit(numberToUse){
+	return Math.round(numberToUse/10) % 10  
+}
+
+function determineMyUserNumber(){
+	let otherPlayersName = otherPlayer.playerName
+	const myNameWithoutSpecialCharacter = myName.replace(/[^\w\s]/gi, '')
+	console.log("myNameWithoutSpecialCharacter ",myNameWithoutSpecialCharacter)
+	const otherPlayersNameWithoutSpecialCharacter = otherPlayersName.replace(/[^\w\s]/gi, '')
+	console.log("otherPlayersNameWithoutSpecialCharacter",otherPlayersNameWithoutSpecialCharacter)
+	if (myNameWithoutSpecialCharacter < otherPlayersNameWithoutSpecialCharacter){
+		console.log("returning 1")
+		return 1
+	}else{
+		console.log("returning 2")
+		return 2
+	}
+	return 0
+}
+
+function getOtherPlayersCount()  {
+	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
+	    var count = 1
+	if (otherPlayer.playerName !== "otherPlayer"){
+		count = 2
+		myUserNumber = determineMyUserNumber()
+	}
+    return count
+}
+
+function emitMyData () {
+      // Emit the 'move-player' event, updating the player's data on the server
+      socket.emit('move-player', {
+        playerName: myName,
+        playerLabName: myLabName,
+        toSetTheParticleTo: theParticle.isSetTo,
+      })
+    }
+
+function getMyName(){
+	console.log("getMyName()") 
+    setTimeout(function () {
+		myName = String(socket.id)
+		emitMyData ()
+    }, 500);
+}
 
 
 
