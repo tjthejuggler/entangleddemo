@@ -113,6 +113,19 @@ function getMyName(){
     }, 500);
 }
 
+var labText = document.createElement('input');
+labText.type = 'text'
+labText.name = 'labText'
+labText.id = 'labText'
+document.body.appendChild(labText);
+
+var setLab = createButton
+    	('setLab','OK', '25px');
+setLab.onclick = function(){
+	console.log('lab set as',document.getElementById('labText').value)
+    }
+document.body.appendChild(setLab);
+
 var checkStatusButton = createButton('checkStatusButton','Check Status','200px')
 checkStatusButton.onclick = function(){
     emitMyData()
@@ -236,18 +249,7 @@ var userNumberText = createMessageUnder
 	(measurementReadingText, '#:', 'userNumberText', "35px");
     document.body.appendChild(userNumberText);
 
-var labText = document.createElement('input');
-labText.type = 'text'
-labText.name = 'labText'
-labText.id = 'labText'
-document.body.appendChild(labText);
 
-var setLab = createButton
-    	('setLab','OK', '25px');
-createEntangledPair.onclick = function(){
-	console.log('lab set as',document.getElementById('labText').value)
-    }
-document.body.appendChild(createEntangledPair);
 
 function createButton(id,text,size){
     var but = document.createElement('button');
