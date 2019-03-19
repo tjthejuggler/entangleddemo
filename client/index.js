@@ -1,5 +1,6 @@
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
+import createRadioButton from './state/utils'
 
 //TODO
 //	-allow user to input 'lab name'
@@ -285,18 +286,6 @@ function createMessageUnder(elem, html, id, fontSize) {
   return message;
 }
 
-function createRadioButton(id,groupName,text){
-    var radioInput = document.createElement('input');
-    radioInput.setAttribute('type', 'radio');
-	radioInput.setAttribute('name', 'radioGroup');
-	radioInput.setAttribute('id', id);
 
-	var label = document.createElement('radioLabel');
-    label.innerHTML = text;
-    document.body.appendChild(label);
-
-    return radioInput
-    
-}
 
 
