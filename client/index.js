@@ -72,8 +72,12 @@ var measurementReadingText = createMessageUnder
     document.body.appendChild(measurementReadingText);
 
 var userNumberText = createMessageUnder
-	(measurementReadingText, '#:', 'userNumberText', "35px");
+	(measurementReadingText, 'user number:', 'userNumberText', "35px");
     document.body.appendChild(userNumberText);
+
+var userNameText = createMessageUnder
+	(measurementReadingText, 'username:', 'userNameText', "35px");
+    document.body.appendChild(userNameText);
 
 
 var labText = document.createElement('input');
