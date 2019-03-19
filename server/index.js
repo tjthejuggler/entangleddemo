@@ -45,6 +45,7 @@ io.on('connection', socket => {
     }
 
     players[socket.id].playerName = playerName
+    players[socket.id].playerLabName = playerLabName
 
     theParticle = toSetTheParticleTo
 
