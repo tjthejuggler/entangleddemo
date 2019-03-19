@@ -67,6 +67,13 @@ function checkStatus(){
 	
 }
 
+var measurementReadingText = createMessageUnder
+	(checkStatusButton, 'superposition', 'measurementReadingText', "65px");
+    document.body.appendChild(measurementReadingText);
+
+var userNumberText = createMessageUnder
+	(measurementReadingText, '#:', 'userNumberText', "35px");
+    document.body.appendChild(userNumberText);
 
 
 var labText = document.createElement('input');
@@ -194,13 +201,7 @@ var radioButtonGHZ = createRadioButton
 	('radioButtonGHZ','radioButtons','GHZ')
 document.body.appendChild(radioButtonGHZ);
 
-var measurementReadingText = createMessageUnder
-	(checkStatusButton, 'superposition', 'measurementReadingText', "65px");
-    document.body.appendChild(measurementReadingText);
 
-var userNumberText = createMessageUnder
-	(measurementReadingText, '#:', 'userNumberText', "35px");
-    document.body.appendChild(userNumberText);
 
 function getOnesDigit(numberToUse){
 	return numberToUse % 10

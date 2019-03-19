@@ -33,10 +33,10 @@ export function createMessageUnder(elem, html, id, fontSize) {
 
 
   // assign coordinates, don't forget "px"!
-  let coords = elem.getBoundingClientRect();
+  // let coords = elem.getBoundingClientRect();
 
-  message.style.left = coords.left + "px";
-  message.style.top = coords.bottom + "px";
+  // message.style.left = coords.left + "px";
+  // message.style.top = coords.bottom + "px";
 
   message.innerHTML = html;
 
