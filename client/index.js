@@ -1,6 +1,8 @@
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
 import { createRadioButton } from './state/utils'
+import { createButton } from './state/utils'
+import { createMessageUnder } from './state/utils'
 
 //TODO
 //	-allow user to input 'lab name'
@@ -255,36 +257,7 @@ var userNumberText = createMessageUnder
 
 
 
-function createButton(id,text,size){
-    var but = document.createElement('button');
-    but.id = id;
-    but.innerHTML = text;
-    but.style.background = '#4FFF8F';
-    but.style.width = size; // setting the width to 200px
-    but.style.height = size; // setting the height to 200px
-    but.style.zIndex = 1000;
-    return but;
-}
 
-function createMessageUnder(elem, html, id, fontSize) {
-  // create message element
-  let message = document.createElement('div');
-  // better to use a css class for the style here
-  message.style.cssText = "position:fixed; color: red";
-  message.style.fontSize = fontSize;
-  message.id = id;
-
-
-  // assign coordinates, don't forget "px"!
-  let coords = elem.getBoundingClientRect();
-
-  message.style.left = coords.left + "px";
-  message.style.top = coords.bottom + "px";
-
-  message.innerHTML = html;
-
-  return message;
-}
 
 
 
