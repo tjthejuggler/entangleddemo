@@ -37,7 +37,7 @@ io.on('connection', socket => {
 
   // When a player moves
   socket.on('move-player', data => {
-    const { playerName, toSetTheParticleTo } = data
+    const { playerName, playerLabName, toSetTheParticleTo } = data
 
     // If the player is invalid, return
     if (players[socket.id] === undefined) {
