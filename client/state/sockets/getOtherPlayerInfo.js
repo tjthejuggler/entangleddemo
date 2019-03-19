@@ -1,4 +1,4 @@
-const getOtherPlayerInfo = (socket, myName, otherPlayer, theParticle) => {
+const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle) => {
   socket.on('update-players', function(data) {
       var playersData = data.playersVar
       //console.log("playersData", playersData)
