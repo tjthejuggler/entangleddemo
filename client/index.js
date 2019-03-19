@@ -19,6 +19,7 @@ let socket = io(SERVER_IP)
 let otherPlayer = {playerName:"otherPlayer"}
 const theParticle = {isSetTo: -1}
 let myName = 'house'
+let myLabName = 'austinLab'
 let myUserNumber = 3
 let hasMeasured = false
 let theParticleState = ''
@@ -120,9 +121,11 @@ labText.id = 'labText'
 document.body.appendChild(labText);
 
 var setLab = createButton
-    	('setLab','OK', '25px');
+    	('setLab','Set Lab Name', '200px');
 setLab.onclick = function(){
-	console.log('lab set as',document.getElementById('labText').value)
+	
+	myLabName = document.getElementById('labText').value
+	console.log('lab set as',myLabName)
     }
 document.body.appendChild(setLab);
 
