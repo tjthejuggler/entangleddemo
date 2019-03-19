@@ -1,6 +1,6 @@
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
-import createRadioButton from './state/utils'
+import { createRadioButton } from './state/utils'
 
 //TODO
 //	-allow user to input 'lab name'
