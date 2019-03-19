@@ -236,6 +236,9 @@ var userNumberText = createMessageUnder
 	(measurementReadingText, '#:', 'userNumberText', "35px");
     document.body.appendChild(userNumberText);
 
+var labText = document.createElement('text');
+document.body.appendChild(labText);
+
 function createButton(id,text){
     var but = document.createElement('button');
     but.id = id;
