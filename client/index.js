@@ -45,7 +45,7 @@ function checkStatus(){
 	userNumberText.innerHTML = 'number:'+myUserNumber
 	userNameText.innerHTML = 'myName:'+myName
 	otherUserNameText.innerHTML = 'otherPlayerName:'+otherPlayer.playerName
-	myLabNameText = 'myLabName:'+myLabName
+	myLabNameText.innerHTML = 'myLabName:'+myLabName
 	if (theParticleState == 'superposition'){
 	let measurementResult = ''
 	let measurementAxis = ''
