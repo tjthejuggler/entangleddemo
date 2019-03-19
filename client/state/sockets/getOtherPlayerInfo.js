@@ -9,8 +9,11 @@ const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle)
       const data = playersData[index]
 
       // Update otherPlayer data
-      //if (data.playeLabName == myLabName && data.playerName !== myName) {
-              if (data.playerName !== myName) {
+      console.log('myLabName',myLabName)
+      console.log('data.playeLabName',data.playeLabName)
+      if (data.playeLabName == myLabName && data.playerName !== myName) {
+        //TODO, USE SOME CONSOLE PRINTS TO FIGURE OUT WHY THE ABOVE LINE LEAVES BOTH PLAYERS AS PLAYER 3
+              //if (data.playerName !== myName) {
         otherPlayer.playerName = data.playerName
 
       }
