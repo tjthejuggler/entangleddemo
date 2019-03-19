@@ -1,5 +1,6 @@
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
+import { getOtherPlayersCount } from './state/sockets/getOtherPlayersCount'
 import { createRadioButton } from './state/utils'
 import { createButton } from './state/utils'
 import { createMessageUnder } from './state/utils'
@@ -107,15 +108,7 @@ function getMyName(){
     }, 500);
 }
 
-function getOtherPlayersCount()  {
-	getOtherPlayerInfo(socket, myName, otherPlayer, theParticle)
-	    var count = 1
-	if (otherPlayer.playerName !== "otherPlayer"){
-		count = 2
-		myUserNumber = determineMyUserNumber()
-	}
-    return count+100
-}
+
 
 
 var labText = document.createElement('input');
