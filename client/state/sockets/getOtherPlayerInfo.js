@@ -1,5 +1,3 @@
-import getOtherPlayerInfo from '../sockets/getOtherPlayerInfo'
-
 const getOtherPlayerInfo = (socket, myName, otherPlayer, theParticle) => {
   socket.on('update-players', function(data) {
       var playersData = data.playersVar
