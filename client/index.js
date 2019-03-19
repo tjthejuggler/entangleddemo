@@ -1,6 +1,5 @@
 import newPlayer from './state/sockets/newPlayer'
 import getOtherPlayerInfo from './state/sockets/getOtherPlayerInfo'
-import { getOtherPlayersCount } from './state/sockets/getOtherPlayersCount'
 import { createRadioButton } from './state/utils'
 import { createButton } from './state/utils'
 import { createMessageUnder } from './state/utils'
