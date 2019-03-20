@@ -35,12 +35,13 @@ function checkStatus(){
 	if (myUserNumber == 3){
 		var playerCount = getOtherPlayersCount()
 	}
-      console.log('otherPlayer.playerLabName',otherPlayer.playerLabName)
-      console.log('myLabName',myLabName)
+
 	if (otherPlayer.playerLabName !== myLabName){
 		otherPlayer.playerName = ''
 	}
 	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)	
+	      console.log('otherPlayer.playerLabName',otherPlayer.playerLabName)
+      console.log('myLabName',myLabName)
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
 		theParticleState = 'superposition'
