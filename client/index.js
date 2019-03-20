@@ -40,8 +40,8 @@ function checkStatus(){
 		otherPlayer.playerName = ''
 	}
 	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)	
-	      console.log('otherPlayer.playerLabName',otherPlayer.playerLabName)
-      console.log('myLabName',myLabName)
+	      //console.log('otherPlayer.playerLabName',otherPlayer.playerLabName)
+      //console.log('myLabName',myLabName)
 	if (theParticle.isSetTo < 0){
 		hasMeasured = false
 		theParticleState = 'superposition'
