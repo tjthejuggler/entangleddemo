@@ -35,7 +35,8 @@ function checkStatus(){
 	if (myUserNumber == 3){
 		var playerCount = getOtherPlayersCount()
 	}
-
+      console.log('otherPlayer.playerLabName',otherPlayer.playerLabName)
+      console.log('myLabName',myLabName)
 	if (otherPlayer.playerLabName !== myLabName){
 		otherPlayer.playerName = ''
 	}
