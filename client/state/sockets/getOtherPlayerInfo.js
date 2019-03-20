@@ -10,7 +10,8 @@ const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle)
 
 //TODO make it so it only shows other player name if in the same lab
 
-
+      console.log('myLabName',myLabName)
+      console.log('data.playerLabName',data.playerLabName)
       // Update otherPlayer data
       if (data.playerLabName == myLabName && data.playerName !== myName) {
         //TODO, USE SOME CONSOLE PRINTS TO FIGURE OUT WHY THE ABOVE LINE LEAVES BOTH PLAYERS AS PLAYER 3
