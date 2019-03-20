@@ -16,10 +16,10 @@ const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle)
         //TODO, USE SOME CONSOLE PRINTS TO FIGURE OUT WHY THE ABOVE LINE LEAVES BOTH PLAYERS AS PLAYER 3
               //if (data.playerName !== myName) {
         otherPlayer.playerName = data.playerName
-
+        theParticle.isSetTo = theParticleFromServer
       }
     }
-  theParticle.isSetTo = theParticleFromServer
+  
   })
 }
 
