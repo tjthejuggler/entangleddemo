@@ -107,6 +107,7 @@ setLab.onclick = function(){
 	
 	myLabName = document.getElementById('labText').value
 	console.log('lab set as',myLabName)
+	emitMyData()
     }
 document.body.appendChild(setLab);
 
