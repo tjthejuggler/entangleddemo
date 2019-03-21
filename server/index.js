@@ -8,6 +8,7 @@ const io = require('socket.io')(Server)
 Server.listen(PORT, () => console.log('Game server running on:', PORT))
 
 const players = {}
+const labs = {}
 let theParticle = -1
 io.on('connection', socket => {
   // When a player connects
@@ -25,13 +26,17 @@ io.on('connection', socket => {
       }
   
     // Emit the update-players method in the client side
-    io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
+    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
+    io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+
     //io.emit('count-players', players)
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
-    io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+
     //io.emit('count-players', players)
   })
 
@@ -47,9 +52,11 @@ io.on('connection', socket => {
     players[socket.id].playerName = playerName
     players[socket.id].playerLabName = playerLabName
 
-    theParticle = toSetTheParticleTo
+    labs[playerLabName].particle = toSetTheParticleTo
 
-    io.emit('update-players', {playersVar: players, theParticleVar:theParticle})
+    //theParticle = toSetTheParticleTo
+//io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
   })
 
 

@@ -5,21 +5,21 @@ import { createButton } from './state/utils'
 import { createMessageUnder } from './state/utils'
 
 //TODO
-//	-allow user to input 'lab name'
-//		-this is a combination of text inout and a 'ok' button
-//		-when ok is clicked, emit the lab name to the server just like playerName,
-//			and also set a local variable, myLabName
-//		-when determining the player count, only use players from the same lab
-//		-when ok is clicked, update a little stats readout that says the name of who is in the lab
-//	-make an array of entangled particles and show their states with the buttons
-//	-get rid of all the phaser stuff
+//	-mskr simple and chsh radiobuttons actually change behavior
 //	-see what i need in node_modules and get rid of anything extra
+//	-the particle needs to be associated with the lab
+//	-changing the entanglement type should automatically change it for any other users in the lab
+//	-just like how we have a list of player objects we also want a list of lab
+//		objects which will have their own particle
+//	-ignoring ghz for now, if a player tries to join a lab and there are already 2 users in
+//		the lab, it should not let them join and give them a message telling them
 
 console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 let socket = io(SERVER_IP)
 let otherPlayer = {playerName:"otherPlayer", playerLabName:"austinLab"}
+//let myLabInfo = {theParticle: -1, name: 'austinLab'}
 const theParticle = {isSetTo: -1}
 let myName = 'house'
 let myLabName = 'austinLab'
