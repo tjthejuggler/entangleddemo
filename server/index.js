@@ -17,7 +17,7 @@ io.on('connection', socket => {
 
     console.log('New player joined with state:', state)
     players[socket.id] = state
-    labs[players.playerLabName] = {particle: -1}
+    //labs[players.playerLabName] = {particle: -1} 
 
       var count = 0
       for (let index in players) {
@@ -28,14 +28,14 @@ io.on('connection', socket => {
       }
   
     // Emit the update-players method in the client side
-    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
-    io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
+    //io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
-    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    //io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
   })
 
   // When a player moves
@@ -54,11 +54,11 @@ io.on('connection', socket => {
     //   return
     // }
 
-    labs[playerLabName].particle = toSetTheParticleTo
+    //labs[playerLabName].particle = toSetTheParticleTo
 
-    //theParticle = toSetTheParticleTo
-//io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+    theParticle = toSetTheParticleTo
+io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    //io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
   })
 
 
