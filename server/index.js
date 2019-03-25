@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 8000
 const io = require('socket.io')(Server)
 
 Server.listen(PORT, () => console.log('Game server running on:', PORT))
+//todo - currently crashing because of new attempt at putting the particle into labs{}
 
 const players = {}
 const labs = {}
