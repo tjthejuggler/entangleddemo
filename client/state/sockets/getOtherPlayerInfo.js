@@ -6,18 +6,18 @@ const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle)
       //console.log("theParticleFromServer", theParticleFromServer)
     // Iterate over all players
     for (let index in playersData) {
-      const datas = playersData[index]
+      const data = playersData[index]
 
 //TODO make it so it only shows other player name if in the same lab
 
-       //console.log('myLabName',myLabName)
-       //console.log('data.playerLabName',data.playerLabName)
+       console.log('myLabName',myLabName)
+       console.log('data.playerLabName',data.playerLabName)
       // Update otherPlayer data
-      if (datas.playerLabName == myLabName && datas.playerName !== myName) {
+      if (data.playerLabName == myLabName && data.playerName !== myName) {
         //TODO, USE SOME CONSOLE PRINTS TO FIGURE OUT WHY THE ABOVE LINE LEAVES BOTH PLAYERS AS PLAYER 3
               //if (data.playerName !== myName) {
-        otherPlayer.playerName = datas.playerName
-        otherPlayer.playerLabName = datas.playerLabName
+        otherPlayer.playerName = data.playerName
+        otherPlayer.playerLabName = data.playerLabName
         theParticle.isSetTo = theParticleFromServer
       }
     }
