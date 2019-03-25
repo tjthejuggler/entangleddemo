@@ -6,7 +6,10 @@ const PORT = process.env.PORT || 8000
 const io = require('socket.io')(Server)
 
 Server.listen(PORT, () => console.log('Game server running on:', PORT))
-//todo - currently crashing because of new attempt at putting the particle into labs{}
+//todo - currently crashing because of new attempt at putting the particle into labs{},
+//      i tried to remove all the labs{} stuff, but it is still not working like it should.
+//      there is an issue with getting 'data.playerLabName' to print correctly over in
+//      getOtherPlayerInfo.js
 
 const players = {}
 const labs = {}
@@ -19,13 +22,13 @@ io.on('connection', socket => {
     players[socket.id] = state
     //labs[players.playerLabName] = {particle: -1} 
 
-      var count = 0
-      for (let index in players) {
-        count++
-      }
-      if (count > 2){
-        delete players[socket.id]
-      }
+      // var count = 0
+      // for (let index in players) {
+      //   count++
+      // }
+      // if (count > 2){
+      //   delete players[socket.id]
+      // }
   
     // Emit the update-players method in the client side
     io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
