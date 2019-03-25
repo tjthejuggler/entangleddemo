@@ -27,7 +27,7 @@ let myUserNumber = 3
 let hasMeasured = false
 let theParticleState = ''
 //socket = io(SERVER_IP)  --> IF there is a problem then init socket as null and uncomment this
-newPlayer(socket, myName)
+newPlayer(socket, myName, myLabName)
 getMyName()
 var t=setInterval(checkStatus,100);
 
