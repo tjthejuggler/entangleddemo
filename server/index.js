@@ -22,6 +22,12 @@ io.on('connection', socket => {
     players[socket.id] = state
     //labs[players.playerLabName] = {particle: -1} 
 
+    for (let index in players){
+      if (players[index].playerName == 'house'){
+        delete players[index]
+  }
+    }
+
       // var count = 0
       // for (let index in players) {
       //   count++
