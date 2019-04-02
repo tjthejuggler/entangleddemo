@@ -2,7 +2,7 @@ const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle)
   socket.on('update-players', function(data) {
       var playersData = data.playersVar
 
-      console.log("playersData", playersData)
+      //console.log("playersData", playersData)
       var theParticleFromServer = data.theParticleVar 
       //console.log("theParticleFromServer", theParticleFromServer)
     // Iterate over all players
