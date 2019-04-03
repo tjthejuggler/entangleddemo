@@ -114,6 +114,9 @@ setLab.onclick = function(){
     }
 document.body.appendChild(setLab);
 
+linebreak = document.createElement("br");
+document.body.appendChild(linebreak);
+
 var checkStatusButton = createButton('checkStatusButton','Check Status',buttonSize)
 checkStatusButton.onclick = function(){
     emitMyData()
@@ -194,8 +197,7 @@ measureOnY.onclick = function(){
 }
 document.body.appendChild(measureOnY);
 
-var createEntangledPair = createButton
-    	('createEntangledPair','create entangled pair',buttonSize);
+var createEntangledPair = createButton('createEntangledPair','entangle',buttonSize);
 createEntangledPair.onclick = function(){
 	theParticle.isSetTo = -1
 	hasMeasured = false
