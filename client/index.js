@@ -115,6 +115,8 @@ var radioButtonGHZ = createRadioButton
 	('radioButtonGHZ','radioButtons','GHZ')
 document.body.appendChild(radioButtonGHZ);
 
+document.body.appendChild(document.createElement("br"));
+
 var labText = document.createElement('input');
 labText.type = 'text'
 labText.name = 'labText'
