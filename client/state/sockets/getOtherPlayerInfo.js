@@ -3,7 +3,8 @@ const getOtherPlayerInfo = (socket, myName, myLabName, otherPlayer, theParticle)
       var playersData = data.playersVar
 
       //console.log("playersData", playersData)
-      var theParticleFromServer = data.theParticleVar 
+      //var theParticleFromServer = data.theParticleVar
+      var theParticleFromServer = data.theParticleVar[myLabName].particle
       //console.log("theParticleFromServer", theParticleFromServer)
     // Iterate over all players
     for (let index in playersData) {

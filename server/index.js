@@ -38,13 +38,13 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
   
     // Emit the update-players method in the client side
     //io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
-    io.emit('update-players', {playersVar: players, theParticleVar: labs[playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs})
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
     //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    io.emit('update-players', {playersVar: players, theParticleVar: labs[playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs})
   })
 
   // When a player moves
@@ -67,7 +67,7 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
 
     theParticle = toSetTheParticleTo
     //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    io.emit('update-players', {playersVar: players, theParticleVar: labs[playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs})
   })
 
 
