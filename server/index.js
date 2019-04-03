@@ -63,6 +63,7 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
     //   return
     // }
 
+    labs[playerLabName] = {particle: -1} 
     labs[playerLabName].particle = toSetTheParticleTo
 
     theParticle = toSetTheParticleTo
