@@ -5,18 +5,18 @@ import { createButton } from './state/utils'
 import { createMessageUnder } from './state/utils'
 
 //TODO
-//	-mskr simple and chsh radiobuttons actually change behavior
-//	-see what i need in node_modules and get rid of anything extra
-//	-the particle needs to be associated with the lab
+//	-make simple and chsh radiobuttons actually change behavior
 //	-changing the entanglement type should automatically change it for any other users in the lab
 //	-just like how we have a list of player objects we also want a list of lab
 //		objects which will have their own particle
 //	-ignoring ghz for now, if a player tries to join a lab and there are already 2 users in
 //		the lab, it should not let them join and give them a message telling them
+//	-see what i need in node_modules and get rid of anything extra
 
 console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
+const buttonSize = '70px'
 let socket = io(SERVER_IP)
 let otherPlayer = {playerName:"otherPlayer", playerLabName:"austinLab"}
 //let myLabInfo = {theParticle: -1, name: 'austinLab'}
@@ -104,7 +104,7 @@ labText.id = 'labText'
 document.body.appendChild(labText);
 
 var setLab = createButton
-    	('setLab','Set Lab Name', '200px');
+    	('setLab','Set Lab Name', buttonSize);
 setLab.onclick = function(){
 	otherPlayer.playerName = ''
 	myLabName = document.getElementById('labText').value
@@ -113,7 +113,7 @@ setLab.onclick = function(){
     }
 document.body.appendChild(setLab);
 
-var checkStatusButton = createButton('checkStatusButton','Check Status','200px')
+var checkStatusButton = createButton('checkStatusButton','Check Status',buttonSize)
 checkStatusButton.onclick = function(){
     emitMyData()
    	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)
@@ -127,7 +127,7 @@ checkStatusButton.onclick = function(){
 document.body.appendChild(checkStatusButton);
 
 
-var measureOnX = createButton('measureOnX','measure On X','200px');
+var measureOnX = createButton('measureOnX','measure On X',buttonSize);
 measureOnX.onclick = function(){
 	if (!hasMeasured){
 		let measurement = 0
@@ -149,7 +149,7 @@ measureOnX.onclick = function(){
 }
 document.body.appendChild(measureOnX);
 
-var measureOnD = createButton('measureOnD','measure On D','200px');
+var measureOnD = createButton('measureOnD','measure On D',buttonSize);
 measureOnD.onclick = function(){
 	if (!hasMeasured){
 		let measurement = 0
@@ -171,7 +171,7 @@ measureOnD.onclick = function(){
 }
 document.body.appendChild(measureOnD);
 
-var measureOnY = createButton('measureOnY','measure On Y','200px');
+var measureOnY = createButton('measureOnY','measure On Y',buttonSize);
 measureOnY.onclick = function(){
 	if (!hasMeasured){
 		let measurement = 0
@@ -194,7 +194,7 @@ measureOnY.onclick = function(){
 document.body.appendChild(measureOnY);
 
 var createEntangledPair = createButton
-    	('createEntangledPair','create entangled particle pair','200px');
+    	('createEntangledPair','create entangled particle pair',buttonSize);
 createEntangledPair.onclick = function(){
 	theParticle.isSetTo = -1
 	hasMeasured = false
