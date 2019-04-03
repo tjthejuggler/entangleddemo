@@ -20,8 +20,8 @@ io.on('connection', socket => {
 
     console.log('New player joined with state:', state)
     players[socket.id] = state
-    labs[players[socket.id].playerLabName] = {particle: -1} 
-console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
+    labs[playerLabName] = {particle: -1} 
+console.log('Should be -1:', labs[playerLabName].particle)
   //   for (let index in players){
   //     if (players[index].playerName == 'house'){
   //       delete players[index]
@@ -38,13 +38,13 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
   
     // Emit the update-players method in the client side
     //io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
-    io.emit('update-players', {playersVar: players, theParticleVar: labs[players[socket.id].playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs[playerLabName].particle})
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
     //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    io.emit('update-players', {playersVar: players, theParticleVar: labs[players[socket.id].playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs[playerLabName].particle})
   })
 
   // When a player moves
@@ -63,11 +63,11 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
     //   return
     // }
 
-    labs[players[socket.id].playerLabName].particle = toSetTheParticleTo
+    labs[playerLabName].particle = toSetTheParticleTo
 
     theParticle = toSetTheParticleTo
     //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    io.emit('update-players', {playersVar: players, theParticleVar: labs[players[socket.id].playerLabName].particle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs[playerLabName].particle})
   })
 
 
@@ -84,4 +84,4 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
 //            2)"The exadurated version of the CHSH quantum effect"
 //            3)"The way things actually are."
 
-//to check server logs: 
+//to check server logs: heroku logs -t --app entangleddemo
