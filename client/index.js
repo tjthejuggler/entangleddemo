@@ -114,8 +114,7 @@ setLab.onclick = function(){
     }
 document.body.appendChild(setLab);
 
-linebreak = document.createElement("br");
-document.body.appendChild(linebreak);
+document.body.appendChild(document.createElement("br"));
 
 var checkStatusButton = createButton('checkStatusButton','Check Status',buttonSize)
 checkStatusButton.onclick = function(){
