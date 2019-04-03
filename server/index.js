@@ -20,7 +20,7 @@ io.on('connection', socket => {
 
     console.log('New player joined with state:', state)
     players[socket.id] = state
-    labs[players.playerLabName] = {particle: -1} 
+    labs[players[socket.id].playerLabName] = {particle: -1} 
 console.log('Should be -1:', labs[players.playerLabName].particle)
   //   for (let index in players){
   //     if (players[index].playerName == 'house'){
@@ -38,7 +38,7 @@ console.log('Should be -1:', labs[players.playerLabName].particle)
   
     // Emit the update-players method in the client side
     io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
-    //io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+    //io.emit('update-players', {playersVar: players, theParticleVar: labs[players.playerLabName].particle})
   })
 
   socket.on('disconnect', state => {
