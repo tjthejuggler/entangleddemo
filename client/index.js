@@ -17,6 +17,7 @@ console.log("begin program")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 const buttonSize = '70px'
+const textSize = '20px'
 let socket = io(SERVER_IP)
 let otherPlayer = {playerName:"otherPlayer", playerLabName:"austinLab"}
 //let myLabInfo = {theParticle: -1, name: 'austinLab'}
@@ -77,23 +78,23 @@ function checkStatus(){
 }
 
 var measurementReadingText = createMessageUnder
-	(checkStatusButton, 'superposition', 'measurementReadingText', "65px");
+	(checkStatusButton, 'superposition', 'measurementReadingText', "45px");
     document.body.appendChild(measurementReadingText);
 
 var userNumberText = createMessageUnder
-	(measurementReadingText, 'user number:', 'userNumberText', "35px");
+	(measurementReadingText, 'user number:', 'userNumberText', textSize);
     document.body.appendChild(userNumberText);
 
 var userNameText = createMessageUnder
-	(measurementReadingText, 'username:', 'userNameText', "35px");
+	(measurementReadingText, 'username:', 'userNameText', textSize);
     document.body.appendChild(userNameText);
 
 var otherUserNameText = createMessageUnder
-	(measurementReadingText, 'other username:', 'otherUserNameText', "35px");
+	(measurementReadingText, 'other username:', 'otherUserNameText', textSize);
     document.body.appendChild(otherUserNameText);
 
 var myLabNameText = createMessageUnder
-	(measurementReadingText, 'My Lab name:', 'myLabNameText', "35px");
+	(measurementReadingText, 'My Lab name:', 'myLabNameText', textSize);
     document.body.appendChild(myLabNameText);
 
 
@@ -194,7 +195,7 @@ measureOnY.onclick = function(){
 document.body.appendChild(measureOnY);
 
 var createEntangledPair = createButton
-    	('createEntangledPair','create entangled particle pair',buttonSize);
+    	('createEntangledPair','create entangled pair',buttonSize);
 createEntangledPair.onclick = function(){
 	theParticle.isSetTo = -1
 	hasMeasured = false
