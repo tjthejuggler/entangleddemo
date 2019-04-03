@@ -37,14 +37,14 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
       // }
   
     // Emit the update-players method in the client side
-    io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
-    //io.emit('update-players', {playersVar: players, theParticleVar: labs[players.playerLabName].particle})
+    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle} )
+    io.emit('update-players', {playersVar: players, theParticleVar: labs[players[socket.id].playerLabName].particle})
   })
 
   socket.on('disconnect', state => {
     delete players[socket.id]
-    io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    //io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs[players[socket.id].playerLabName].particle})
   })
 
   // When a player moves
@@ -63,11 +63,11 @@ console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
     //   return
     // }
 
-    //labs[playerLabName].particle = toSetTheParticleTo
+    labs[players[socket.id].playerLabName].particle = toSetTheParticleTo
 
     theParticle = toSetTheParticleTo
-io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
-    //io.emit('update-players', {playersVar: players, theParticleVar:labs[playerLabName].particle})
+    //io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
+    io.emit('update-players', {playersVar: players, theParticleVar: labs[players[socket.id].playerLabName].particle})
   })
 
 
@@ -83,3 +83,5 @@ io.emit('update-players', {playersVar: players, theParticleVar: theParticle})
 //3 settings, 1)"I have no idea about anything, just want to be amazed"
 //            2)"The exadurated version of the CHSH quantum effect"
 //            3)"The way things actually are."
+
+//to check server logs: 
