@@ -97,6 +97,23 @@ var myLabNameText = createMessageUnder
 	(measurementReadingText, 'My Lab name:', 'myLabNameText', textSize);
     document.body.appendChild(myLabNameText);
 
+var radioButtonSimple = createRadioButton
+	('radioButtonSimple','radioButtons','Easy')
+	radioButtonSimple.onclick = function(){
+		console.log("simple") 
+	}
+document.body.appendChild(radioButtonSimple);
+
+var radioButtonCHSH = createRadioButton
+	('radioButtonCHSH','radioButtons','CHSH')
+		radioButtonCHSH.onclick = function(){
+		console.log("CHSH") 
+	}
+document.body.appendChild(radioButtonCHSH);
+
+var radioButtonGHZ = createRadioButton
+	('radioButtonGHZ','radioButtons','GHZ')
+document.body.appendChild(radioButtonGHZ);
 
 var labText = document.createElement('input');
 labText.type = 'text'
@@ -114,20 +131,10 @@ setLab.onclick = function(){
     }
 document.body.appendChild(setLab);
 
+//this is a line break
 document.body.appendChild(document.createElement("br"));
 
-var checkStatusButton = createButton('checkStatusButton','Check Status',buttonSize)
-checkStatusButton.onclick = function(){
-    emitMyData()
-   	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)
-    console.log("String(socket.id)2", String(socket.id))  
-    console.log("myName", String(myName))
-    console.log("myUserNumber", myUserNumber)
-    console.log("playerCount", getOtherPlayersCount())  
-    console.log("otherPlayer.playerName", otherPlayer.playerName)
-    console.log("theParticle", theParticle.isSetTo) 
-}
-document.body.appendChild(checkStatusButton);
+
 
 
 var measureOnX = createButton('measureOnX','measure On X',buttonSize);
@@ -195,6 +202,7 @@ measureOnY.onclick = function(){
 	console.log("theParticle", theParticle.isSetTo) 
 }
 document.body.appendChild(measureOnY);
+document.body.appendChild(document.createElement("br"));
 
 var createEntangledPair = createButton('createEntangledPair','entangle',buttonSize);
 createEntangledPair.onclick = function(){
@@ -206,26 +214,21 @@ createEntangledPair.onclick = function(){
 	console.log("theParticle", theParticle.isSetTo)
     }
 document.body.appendChild(createEntangledPair);
-
-var radioButtonSimple = createRadioButton
-	('radioButtonSimple','radioButtons','Easy')
-	radioButtonSimple.onclick = function(){
-		console.log("simple") 
-	}
-document.body.appendChild(radioButtonSimple);
-
-var radioButtonCHSH = createRadioButton
-	('radioButtonCHSH','radioButtons','CHSH')
-		radioButtonCHSH.onclick = function(){
-		console.log("CHSH") 
-	}
-document.body.appendChild(radioButtonCHSH);
-
-var radioButtonGHZ = createRadioButton
-	('radioButtonGHZ','radioButtons','GHZ')
-document.body.appendChild(radioButtonGHZ);
+document.body.appendChild(document.createElement("br"));
 
 
+var checkStatusButton = createButton('checkStatusButton','Check Status',buttonSize)
+checkStatusButton.onclick = function(){
+    emitMyData()
+   	getOtherPlayerInfo(socket, myName, myLabName, otherPlayer, theParticle)
+    console.log("String(socket.id)2", String(socket.id))  
+    console.log("myName", String(myName))
+    console.log("myUserNumber", myUserNumber)
+    console.log("playerCount", getOtherPlayersCount())  
+    console.log("otherPlayer.playerName", otherPlayer.playerName)
+    console.log("theParticle", theParticle.isSetTo) 
+}
+document.body.appendChild(checkStatusButton);
 
 function getOnesDigit(numberToUse){
 	return numberToUse % 10
