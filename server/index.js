@@ -20,8 +20,8 @@ io.on('connection', socket => {
 
     console.log('New player joined with state:', state)
     players[socket.id] = state
-    labs[playerLabName] = {particle: -1} 
-console.log('Should be -1:', labs[playerLabName].particle)
+    labs[players[socket.id].playerLabName] = {particle: -1} 
+console.log('Should be -1:', labs[players[socket.id].playerLabName].particle)
   //   for (let index in players){
   //     if (players[index].playerName == 'house'){
   //       delete players[index]
