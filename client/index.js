@@ -106,7 +106,7 @@ document.body.appendChild(labText);
 var setLab = createButton
     	('setLab','Set Lab Name', '200px');
 setLab.onclick = function(){
-	
+	otherPlayer.playerName = ''
 	myLabName = document.getElementById('labText').value
 	console.log('lab set as',myLabName)
 	emitMyData()
