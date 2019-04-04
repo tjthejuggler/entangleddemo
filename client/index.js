@@ -77,6 +77,8 @@ function checkStatus(){
 	
 }
 
+document.body.style.textAlign = 'center'
+
 var measurementReadingText = createMessageUnder
 	(checkStatusButton, 'superposition', 'measurementReadingText', "45px");
     document.body.appendChild(measurementReadingText);
