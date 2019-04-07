@@ -58,9 +58,17 @@ function checkStatus(){
 		if (theParticle.isSetTo>0){
 			if ((myUserNumber == 1 && theParticle.isSetTo<150) || (myUserNumber == 2 && theParticle.isSetTo>150) ){
 				if (getOnesDigit(theParticle.isSetTo) == 1){ 
-					measurementResult = 'Down Spin '
+					if (myUserNumber == 1){
+						measurementResult = 'Down Spin '
+					}else if (myUserNumber == 2){
+						measurementResult = 'Up Spin '
+					}
 				}else if(getOnesDigit(theParticle.isSetTo) == 2){
-					measurementResult = 'Up Spin '
+					if (myUserNumber == 1){
+						measurementResult = 'Up Spin '
+					}else if (myUserNumber == 2){
+						measurementResult = 'Down Spin '
+					}
 				}
 				if (getTensDigit(theParticle.isSetTo) == 1){//TODO these conditionals could turn into some kind of case usage
 					measurementAxis = '(X)'
