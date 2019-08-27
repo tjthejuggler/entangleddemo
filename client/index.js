@@ -13,7 +13,7 @@ import { createMessageUnder } from './state/utils'
 //		the lab, it should not let them join and give them a message telling them
 //	-see what i need in node_modules and get rid of anything extra
 
-console.log("begin program")
+console.log("begin program2")
 
 const SERVER_IP = 'https://entangleddemo.herokuapp.com/'
 const buttonSize = '70px'
